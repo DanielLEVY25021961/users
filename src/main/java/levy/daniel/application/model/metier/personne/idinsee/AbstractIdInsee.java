@@ -259,6 +259,42 @@ public abstract class AbstractIdInsee implements IIdInsee {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
+	public String toString() {
+		
+		final StringBuilder builder = new StringBuilder();
+		
+		builder.append("AbstractIdInsee [");
+		
+		/* id. */
+		builder.append("id=");
+		if (this.id != null) {			
+			builder.append(this.id);			
+		} else {
+			builder.append(NULL);
+		}
+		
+		builder.append(VIRGULE_ESPACE);
+		
+		/* numeroInsee. */
+		builder.append("numeroInsee=");
+		if (this.numeroInsee != null) {			
+			builder.append(this.numeroInsee);
+		} else {
+			builder.append(NULL);
+		}
+		
+		builder.append(']');
+		
+		return builder.toString();
+		
+	} // Fin de toString().________________________________________________
+
+
+
+	/**
+	 * {@inheritDoc}
+	 */
 	@Transient
 	@Override
 	public final String getEnTeteCsv() {

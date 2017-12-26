@@ -7,7 +7,51 @@ import levy.daniel.application.model.metier.personne.idinsee.AbstractIdInsee;
 
 /**
  * class IdInsee :<br/>
- * .<br/>
+ * <p>
+ * <b>CLASSE CONCRETE</b> qui modélise un <b>IdInsee</b>, c'est à dire un 
+ * <b>identifiant INSEE unique</b> qui identifie de manière 
+ * unique une Personne.
+ * </p>
+ * 
+ * <ul>
+ * <li>Implémentation <b>CONCRETE</b> de IdInsee.</li>
+ * <li>HERITE de AbstractIdInsee.</li>
+ * </ul>
+ * 
+ * <p>
+ * <span style="text-decoration: underline;">ATTRIBUTS</span>
+ * </p>
+ * <ul>
+ * <li>Les <b>attributs</b> d'un IdInsee sont : </li>
+ * <ul>
+ * <li><b>id</b> pour la mise en base.</li>
+ * <li><b>numeroInsee</b>.</li>
+ * </ul>
+ * </ul>
+ * 
+ * <p>
+ * <span style="text-decoration: underline;">DIAGRAMME DE CLASSES</span>
+ * </p>
+ * <ul>
+ * <li>
+ * <img src="../../../../../../../../../../../javadoc/images/implementation_idinsee.png" 
+ * alt="implémentation du IdInsee" border="1" align="center" />
+ * </li>
+ * </ul>
+ * 
+ * <br/>
+ * <p>
+ * <span style="text-decoration: underline;">EGALITE METIER</span>
+ * </p>
+ * <ul>
+ * <li>
+ * L'<b>égalité metier</b> d'un IdInsee est vérifiée sur :
+ * <ul>
+ * <li><b>numeroInsee</b></li>
+ * </ul>
+ * </li>
+ * </ul>
+ * 
  * <br/>
  *
  * - Exemple d'utilisation :<br/>
