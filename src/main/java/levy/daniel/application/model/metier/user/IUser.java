@@ -2,7 +2,6 @@ package levy.daniel.application.model.metier.user;
 
 import levy.daniel.application.model.metier.IExportateurCsv;
 import levy.daniel.application.model.metier.IExportateurJTable;
-import levy.daniel.application.model.metier.user.usersimple.IUserSimple;
 
 
 /**
@@ -71,14 +70,14 @@ public interface IUser
 		
 	/**
 	 * method clone() :<br/>
-	 * Clone un IUserSimple.<br/>
+	 * Clone un IUser.<br/>
 	 * <br/>
 	 *
-	 * @return IUserSimple : clone.<br/>
+	 * @return IUser : clone.<br/>
 	 * 
 	 * @throws CloneNotSupportedException
 	 */
-	IUserSimple clone() throws CloneNotSupportedException;
+	IUser clone() throws CloneNotSupportedException;
 	
 	
 

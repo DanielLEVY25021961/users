@@ -584,13 +584,13 @@ public class UserSimple
 	 */
 	@Override
 	public final int compareTo(
-			final IUserSimple pUserSimple) {
+			final IUserSimple pObject) {
 
-		if (this == pUserSimple) {
+		if (this == pObject) {
 			return 0;
 		}
 
-		if (pUserSimple == null) {
+		if (pObject == null) {
 			return -1;
 		}
 
@@ -599,16 +599,16 @@ public class UserSimple
 		
 		/* login. */
 		if (this.getLogin() == null) {
-			if (pUserSimple.getLogin() != null) {
+			if (pObject.getLogin() != null) {
 				return +1;
 			}
 		} else {
-			if (pUserSimple.getLogin() == null) {
+			if (pObject.getLogin() == null) {
 				return -1;
 			}
 			
 			compareLogin 
-			= this.getLogin().compareToIgnoreCase(pUserSimple.getLogin());
+			= this.getLogin().compareToIgnoreCase(pObject.getLogin());
 		
 			if (compareLogin != 0) {
 				return compareLogin;
@@ -619,18 +619,18 @@ public class UserSimple
 
 		/* Mdp. */
 		if (this.getMdp() == null) {
-			if (pUserSimple.getMdp() != null) {
+			if (pObject.getMdp() != null) {
 				return +1;
 			}
 			return 0;
 		} 
 		
-		if (pUserSimple.getMdp() == null) {
+		if (pObject.getMdp() == null) {
 			return -1;
 		}
 		
 		compareMdp 
-			= this.getMdp().compareToIgnoreCase(pUserSimple.getMdp());
+			= this.getMdp().compareToIgnoreCase(pObject.getMdp());
 		
 		return compareMdp;
 		
@@ -644,18 +644,18 @@ public class UserSimple
 	@Override
 	public final UserSimple clone() throws CloneNotSupportedException {
 		
-		final UserSimple userClone = (UserSimple) super.clone();
+		final UserSimple clone = (UserSimple) super.clone();
 		
-		userClone.setId(this.getId());
-		userClone.setCivilite(this.getCivilite());
-		userClone.setPrenom(this.getPrenom());
-		userClone.setNom(this.getNom());
-		userClone.setEmail(this.getEmail());
-		userClone.setLogin(this.getLogin());
-		userClone.setMdp(this.getMdp());
-		userClone.setProfil(this.getProfil());
+		clone.setId(this.getId());
+		clone.setCivilite(this.getCivilite());
+		clone.setPrenom(this.getPrenom());
+		clone.setNom(this.getNom());
+		clone.setEmail(this.getEmail());
+		clone.setLogin(this.getLogin());
+		clone.setMdp(this.getMdp());
+		clone.setProfil(this.getProfil());
 		
-		return userClone;
+		return clone;
 		
 	} // Fin de clone().___________________________________________________
 	
