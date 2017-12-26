@@ -117,6 +117,14 @@ public class DaoCiviliteTest {
 
 	
 	/**
+	 * TEST_CREATE : String :<br/>
+	 * "testCreate()".<br/>
+	 */
+	public static final String TEST_CREATE 
+		= "testCreate()";
+	
+	
+	/**
 	 * LOT_OBJET_INITIAL : String :<br/>
 	 * "LOT D'OBJETS INITIALEMENT EN BASE : ".<br/>
 	 */
@@ -325,7 +333,7 @@ public class DaoCiviliteTest {
 		if (AFFICHAGE_GENERAL && affichage) {
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println("testCreate()");
+			System.out.println(TEST_CREATE);
 			System.out.println("NOMBRE D'OBJETS INITIALEMENT En BASE : " + nombreObjetsinitial);
 			System.out.println("OBJET1 NON PERSISTANT : " + objet1.toString());
 			System.out.println("OBJET2 NON PERSISTANT : " + objet2.toString());
@@ -351,7 +359,7 @@ public class DaoCiviliteTest {
 			
 		}
 		catch (AbstractDaoException e) {
-			System.out.println("testCreate()");
+			System.out.println(TEST_CREATE);
 			this.afficherAbstractDaoException(e);
 			e.printStackTrace();
 		}
@@ -361,7 +369,7 @@ public class DaoCiviliteTest {
 			
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println("testCreate()");
+			System.out.println(TEST_CREATE);
 			System.out.println("NOMBRE D'OBJETS PERSISTES APRES CREATE : " + nombreObjetsFinal);
 			if (objet1Persistant != null) {
 				System.out.println(
@@ -397,7 +405,7 @@ public class DaoCiviliteTest {
 			
 		}
 		catch (AbstractDaoException e) {
-			System.out.println("testCreate()");
+			System.out.println(TEST_CREATE);
 			this.afficherAbstractDaoException(e);
 			e.printStackTrace();
 		}
@@ -407,7 +415,7 @@ public class DaoCiviliteTest {
 			
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println("testCreate()");
+			System.out.println(TEST_CREATE);
 			if (objet3Persistant != null) {
 				System.out.println(
 						"OBJET3 PERSISTANT APRES Create(T Object) : " 

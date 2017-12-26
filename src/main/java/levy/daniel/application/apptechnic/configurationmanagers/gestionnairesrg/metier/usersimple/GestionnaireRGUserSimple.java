@@ -60,7 +60,21 @@ public final class GestionnaireRGUserSimple {
 
 	// ************************ATTRIBUTS************************************/
 
+	/**
+	 * USERSIMPLE : String :<br/>
+	 * "UserSimple".<br/>
+	 */
+	public static final String USERSIMPLE 
+		= "UserSimple";
 
+	/**
+	 * VALIDEUR_USERSIMPLE : String :<br/>
+	 * "ValideurUserSimple".<br/>
+	 */
+	public static final String VALIDEUR_USERSIMPLE 
+		= "ValideurUserSimple";
+	
+	
 	/**
 	 * RG_USERSIMPLE_CIVILITE_NOMENCLATURE_01 : String :<br/>
 	 * "RG_USERSIMPLE_CIVILITE_NOMENCLATURE_01 : 
@@ -563,8 +577,8 @@ public final class GestionnaireRGUserSimple {
 						, RG_USERSIMPLE_CIVILITE_NOMENCLATURE_01
 						, 4
 						, fournirMessageRG(RG_USERSIMPLE_CIVILITE_NOMENCLATURE_01)
-						, "UserSimple", "Civilite"
-						, "ValideurUserSimple"
+						, USERSIMPLE, "Civilite"
+						, VALIDEUR_USERSIMPLE
 						, "validerRGUserSimpleCiviliteNomenclature01(...)"
 						, fournirNomCompletProperties()
 						, fournirCleValiderUserSimpleCiviliteNomenclature01());
@@ -581,8 +595,8 @@ public final class GestionnaireRGUserSimple {
 					, RG_USERSIMPLE_PRENOM_RENSEIGNE_02
 					, 1
 					, fournirMessageRG(RG_USERSIMPLE_PRENOM_RENSEIGNE_02)
-					, "UserSimple", "prenom"
-					, "ValideurUserSimple"
+					, USERSIMPLE, "prenom"
+					, VALIDEUR_USERSIMPLE
 					, "validerRGUserSimplePrenomRenseigne02(...)"
 					, fournirNomCompletProperties()
 					, fournirCleValiderUserSimplePrenomRenseigne02());
@@ -598,8 +612,8 @@ public final class GestionnaireRGUserSimple {
 					, RG_USERSIMPLE_PRENOM_LITTERAL_03
 					, 2
 					, fournirMessageRG(RG_USERSIMPLE_PRENOM_LITTERAL_03)
-					, "UserSimple", "prenom"
-					, "ValideurUserSimple"
+					, USERSIMPLE, "prenom"
+					, VALIDEUR_USERSIMPLE
 					, "validerRGUserSimplePrenomLitteral03(...)"
 					, fournirNomCompletProperties()
 					, fournirCleValiderUserSimplePrenomLitteral03());
@@ -615,8 +629,8 @@ public final class GestionnaireRGUserSimple {
 					, RG_USERSIMPLE_PRENOM_LONGUEUR_04
 					, 6
 					, fournirMessageRG(RG_USERSIMPLE_PRENOM_LONGUEUR_04)
-					, "UserSimple", "prenom"
-					, "ValideurUserSimple"
+					, USERSIMPLE, "prenom"
+					, VALIDEUR_USERSIMPLE
 					, "validerRGUserSimplePrenomLongueur04(...)"
 					, fournirNomCompletProperties()
 					, fournirCleValiderUserSimplePrenomLongueur04());
@@ -633,8 +647,8 @@ public final class GestionnaireRGUserSimple {
 					, RG_USERSIMPLE_NOM_RENSEIGNE_05
 					, 1
 					, fournirMessageRG(RG_USERSIMPLE_NOM_RENSEIGNE_05)
-					, "UserSimple", "nom"
-					, "ValideurUserSimple"
+					, USERSIMPLE, "nom"
+					, VALIDEUR_USERSIMPLE
 					, "validerRGUserSimpleNomRenseigne05(...)"
 					, fournirNomCompletProperties()
 					, fournirCleValiderUserSimpleNomRenseigne05());
@@ -650,8 +664,8 @@ public final class GestionnaireRGUserSimple {
 					, RG_USERSIMPLE_NOM_LITTERAL_06
 					, 2
 					, fournirMessageRG(RG_USERSIMPLE_NOM_LITTERAL_06)
-					, "UserSimple", "nom"
-					, "ValideurUserSimple"
+					, USERSIMPLE, "nom"
+					, VALIDEUR_USERSIMPLE
 					, "validerRGUserSimpleNomLitteral06(...)"
 					, fournirNomCompletProperties()
 					, fournirCleValiderUserSimpleNomLitteral06());
@@ -667,8 +681,8 @@ public final class GestionnaireRGUserSimple {
 					, RG_USERSIMPLE_NOM_LONGUEUR_07
 					, 6
 					, fournirMessageRG(RG_USERSIMPLE_NOM_LONGUEUR_07)
-					, "UserSimple", "nom"
-					, "ValideurUserSimple"
+					, USERSIMPLE, "nom"
+					, VALIDEUR_USERSIMPLE
 					, "validerRGUserSimpleNomLongueur07(...)"
 					, fournirNomCompletProperties()
 					, fournirCleValiderUserSimpleNomLongueur07());
@@ -685,8 +699,8 @@ public final class GestionnaireRGUserSimple {
 					, RG_USERSIMPLE_EMAIL_MOTIF_08
 					, 7
 					, fournirMessageRG(RG_USERSIMPLE_EMAIL_MOTIF_08)
-					, "UserSimple", "email"
-					, "ValideurUserSimple"
+					, USERSIMPLE, "email"
+					, VALIDEUR_USERSIMPLE
 					, "validerRGUserSimpleEmailMotif08(...)"
 					, fournirNomCompletProperties()
 					, fournirCleValiderUserSimpleEmailMotif08());
@@ -703,8 +717,8 @@ public final class GestionnaireRGUserSimple {
 					, RG_USERSIMPLE_LOGIN_RENSEIGNE_09
 					, 1
 					, fournirMessageRG(RG_USERSIMPLE_LOGIN_RENSEIGNE_09)
-					, "UserSimple", "login"
-					, "ValideurUserSimple", "validerRGUserSimpleLoginRenseigne09(...)"
+					, USERSIMPLE, "login"
+					, VALIDEUR_USERSIMPLE, "validerRGUserSimpleLoginRenseigne09(...)"
 					, fournirNomCompletProperties()
 					, fournirCleValiderUserSimpleLoginRenseigne09());
 			
@@ -719,8 +733,8 @@ public final class GestionnaireRGUserSimple {
 					, RG_USERSIMPLE_LOGIN_LONGUEUR_10
 					, 6
 					, fournirMessageRG(RG_USERSIMPLE_LOGIN_LONGUEUR_10)
-					, "UserSimple", "login"
-					, "ValideurUserSimple", "validerRGUserSimpleLoginLongueur10(...)"
+					, USERSIMPLE, "login"
+					, VALIDEUR_USERSIMPLE, "validerRGUserSimpleLoginLongueur10(...)"
 					, fournirNomCompletProperties()
 					, fournirCleValiderUserSimpleLoginLongueur10());
 			
@@ -736,8 +750,8 @@ public final class GestionnaireRGUserSimple {
 					, RG_USERSIMPLE_MDP_RENSEIGNE_11
 					, 1
 					, fournirMessageRG(RG_USERSIMPLE_MDP_RENSEIGNE_11)
-					, "UserSimple", "mdp"
-					, "ValideurUserSimple", "validerRGUserSimpleMdpRenseigne11(...)"
+					, USERSIMPLE, "mdp"
+					, VALIDEUR_USERSIMPLE, "validerRGUserSimpleMdpRenseigne11(...)"
 					, fournirNomCompletProperties()
 					, fournirCleValiderUserSimpleMdpRenseigne11());
 			
@@ -753,8 +767,8 @@ public final class GestionnaireRGUserSimple {
 					, RG_USERSIMPLE_MDP_LONGUEUR_12
 					, 6
 					, fournirMessageRG(RG_USERSIMPLE_MDP_LONGUEUR_12)
-					, "UserSimple", "mdp"
-					, "ValideurUserSimple", "validerRGUserSimpleMdpLongueur12(...)"
+					, USERSIMPLE, "mdp"
+					, VALIDEUR_USERSIMPLE, "validerRGUserSimpleMdpLongueur12(...)"
 					, fournirNomCompletProperties()
 					, fournirCleValiderUserSimpleMdpLongueur12());
 			
@@ -771,8 +785,8 @@ public final class GestionnaireRGUserSimple {
 					, RG_USERSIMPLE_MDP_MOTIF_13
 					, 7
 					, fournirMessageRG(RG_USERSIMPLE_MDP_MOTIF_13)
-					, "UserSimple", "mdp"
-					, "ValideurUserSimple", "validerRGUserSimpleMdpMotif13(...)"
+					, USERSIMPLE, "mdp"
+					, VALIDEUR_USERSIMPLE, "validerRGUserSimpleMdpMotif13(...)"
 					, fournirNomCompletProperties()
 					, fournirCleValiderUserSimpleMdpMotif13());
 			
@@ -789,8 +803,8 @@ public final class GestionnaireRGUserSimple {
 					, RG_USERSIMPLE_PROFIL_RENSEIGNE_14
 					, 1
 					, fournirMessageRG(RG_USERSIMPLE_PROFIL_RENSEIGNE_14)
-					, "UserSimple", "profil"
-					, "ValideurUserSimple", "validerRGUserSimpleRenseigne14(...)"
+					, USERSIMPLE, "profil"
+					, VALIDEUR_USERSIMPLE, "validerRGUserSimpleRenseigne14(...)"
 					, fournirNomCompletProperties()
 					, fournirCleValiderUserSimpleProfilRenseigne14());
 			
@@ -806,8 +820,8 @@ public final class GestionnaireRGUserSimple {
 					, RG_USERSIMPLE_PROFIL_NOMENCLATURE_15
 					, 4
 					, fournirMessageRG(RG_USERSIMPLE_PROFIL_NOMENCLATURE_15)
-					, "UserSimple", "profil"
-					, "ValideurUserSimple", "validerRGUserSimpleNomenclature15(...)"
+					, USERSIMPLE, "profil"
+					, VALIDEUR_USERSIMPLE, "validerRGUserSimpleNomenclature15(...)"
 					, fournirNomCompletProperties()
 					, fournirCleValiderUserSimpleProfilNomenclature15());
 			
