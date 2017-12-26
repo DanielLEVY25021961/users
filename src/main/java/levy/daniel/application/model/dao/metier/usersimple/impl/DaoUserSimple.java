@@ -4,9 +4,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Repository;
 
-import levy.daniel.application.model.dao.daoexceptions.AbstractDaoException;
 import levy.daniel.application.model.dao.metier.usersimple.AbstractDaoUserSimple;
-import levy.daniel.application.model.metier.user.usersimple.impl.UserSimple;
 
 
 /**
@@ -85,48 +83,48 @@ public class DaoUserSimple extends AbstractDaoUserSimple {
 	/**
 	 * {@inheritDoc}
 	 */
-	@Override
-	public UserSimple findById(
-			final Long pId) throws AbstractDaoException {
-		
-		UserSimple objetTrouve = null;
-		
-		/* retourne null si pId == null. */
-		if (pId == null) {
-			return null;
-		}
-
-		/* Cas où this.entityManager == null. */
-		if (this.entityManager == null) {
-						
-			/* LOG. */
-			if (LOG.isFatalEnabled()) {
-				LOG.fatal(MESSAGE_ENTITYMANAGER_NULL);
-			}
-			return null;
-		}
-
-		try {
-			
-			objetTrouve 
-				= this.entityManager.find(UserSimple.class, pId);
-			
-		}
-		catch (Exception e) {
-			
-			objetTrouve = null;
-			
-			/* Gestion de la DAO Exception. */
-			this.gestionnaireException
-				.gererException(
-						CLASSE_DAO_USERSIMPLE
-						, "Méthode findById(Long pId)", e);
-			
-		}
-		
-		return objetTrouve;
-				
-	} // Fin de findById(...)._____________________________________________
+//	@Override
+//	public UserSimple findById(
+//			final Long pId) throws AbstractDaoException {
+//		
+//		UserSimple objetTrouve = null;
+//		
+//		/* retourne null si pId == null. */
+//		if (pId == null) {
+//			return null;
+//		}
+//
+//		/* Cas où this.entityManager == null. */
+//		if (this.entityManager == null) {
+//						
+//			/* LOG. */
+//			if (LOG.isFatalEnabled()) {
+//				LOG.fatal(MESSAGE_ENTITYMANAGER_NULL);
+//			}
+//			return null;
+//		}
+//
+//		try {
+//			
+//			objetTrouve 
+//				= this.entityManager.find(UserSimple.class, pId);
+//			
+//		}
+//		catch (Exception e) {
+//			
+//			objetTrouve = null;
+//			
+//			/* Gestion de la DAO Exception. */
+//			this.gestionnaireException
+//				.gererException(
+//						CLASSE_DAO_USERSIMPLE
+//						, "Méthode findById(Long pId)", e);
+//			
+//		}
+//		
+//		return objetTrouve;
+//				
+//	} // Fin de findById(...)._____________________________________________
 	
 	
 		

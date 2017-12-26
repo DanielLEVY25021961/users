@@ -1,4 +1,4 @@
-package levy.daniel.application.model.dao.metier.usersimple;
+package levy.daniel.application.model.dao.metier.personne.idinsee;
 
 import java.util.List;
 
@@ -11,23 +11,23 @@ import org.apache.commons.logging.LogFactory;
 
 import levy.daniel.application.model.dao.AbstractDaoGenericJPASpring;
 import levy.daniel.application.model.dao.daoexceptions.AbstractDaoException;
-import levy.daniel.application.model.metier.user.usersimple.IUserSimple;
+import levy.daniel.application.model.metier.personne.idinsee.IIdInsee;
 
 /**
- * class AbstractDaoUserSimple :<br/>
+ * class AbstractDaoIdInsee :<br/>
  * <ul>
  * <li>
  * DAO ABSTRAIT SPRING pour les 
- * <b>IUserSimple</b>.
+ * <b>IIdInsee</b>.
  * </li>
  * <li>
  * Comporte l'implémentation des méthodes <b>spécifiques</b> aux 
- * IUserSimple.
+ * IIdInsee.
  * </li>
- * <li>IMPLEMENTE L'INTERFACE IDaoUserSimple.</li>
+ * <li>IMPLEMENTE L'INTERFACE IDaoIdInsee.</li>
  * <li>
  * HERITE DE LA CLASSE ABSTRAITE 
- * AbstractDaoGenericJPASpring&lt;IUserSimple, Long&gt;.
+ * AbstractDaoGenericJPASpring&lt;IIdInsee, Long&gt;.
  * </li>
  * <br/>
  * <li>
@@ -35,7 +35,6 @@ import levy.daniel.application.model.metier.user.usersimple.IUserSimple;
  * alt="implémentation des DAOs" border="1" align="center" />
  * </li>
  * </ul>
- * <br/>
  *
  * - Exemple d'utilisation :<br/>
  *<br/>
@@ -49,22 +48,22 @@ import levy.daniel.application.model.metier.user.usersimple.IUserSimple;
  *
  * @author daniel.levy Lévy
  * @version 1.0
- * @since 30 nov. 2017
+ * @since 26 déc. 2017
  *
  */
-public abstract class AbstractDaoUserSimple 
-		extends AbstractDaoGenericJPASpring<IUserSimple, Long>
-										implements IDaoUserSimple {
+public abstract class AbstractDaoIdInsee 
+		extends AbstractDaoGenericJPASpring<IIdInsee, Long>
+				implements IDaoIdInsee {
 
 	// ************************ATTRIBUTS************************************/
 
 
 	/**
-	 * CLASSE_ABSTRACTDAO_USERSIMPLE : String :<br/>
-	 * "Classe AbstractDaoUserSimple".<br/>
+	 * CLASSE_ABSTRACTDAO_IDINSEE : String :<br/>
+	 * "Classe AbstractDaoIdInsee".<br/>
 	 */
-	public static final String CLASSE_ABSTRACTDAO_USERSIMPLE 
-		= "Classe AbstractDaoUserSimple";
+	public static final String CLASSE_ABSTRACTDAO_IDINSEE 
+		= "Classe AbstractDaoIdInsee";
 
 	/**
 	 * SAUT_LIGNE_JAVA : char :<br/>
@@ -75,44 +74,42 @@ public abstract class AbstractDaoUserSimple
 	
 	/**
 	 * SELECT_OBJET : String :<br/>
-	 * "select usersimple from 
-	 * UserSimple as usersimple ".<br/>
+	 * "select idInsee from 
+	 * AbstractIdInsee as idInsee ".<br/>
 	 */
 	public static final String SELECT_OBJET 
-		= "select usersimple from "
-				+ "UserSimple as usersimple ";
+		= "select idInsee from "
+				+ "AbstractIdInsee as idInsee ";
 
-	
+
 	/**
 	 * LOG : Log : 
 	 * Logger pour Log4j (utilisant commons-logging).
 	 */
-	private static final Log LOG 
-		= LogFactory.getLog(AbstractDaoUserSimple.class);
-	
+	private static final Log LOG = LogFactory.getLog(AbstractDaoIdInsee.class);
 
 	// *************************METHODES************************************/
-	
+
 	
 	 /**
-	 * method CONSTRUCTEUR AbstractDaoUserSimple() :<br/>
+	 * method CONSTRUCTEUR AbstractDaoIdInsee() :<br/>
 	 * CONSTRUCTEUR D'ARITE NULLE.<br/>
 	 * <br/>
 	 */
-	public AbstractDaoUserSimple() {
+	public AbstractDaoIdInsee() {
 		super();
 	} // Fin de CONSTRUCTEUR D'ARITE NULLE.________________________________
 
 
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	public final Long createReturnId(
-			final IUserSimple pObject) 
-					throws AbstractDaoException {
-				
+			final IIdInsee pObject) 
+						throws AbstractDaoException {
+		
 		/* retourne null si pObject == null. */
 		if (pObject == null) {
 			return null;
@@ -132,9 +129,9 @@ public abstract class AbstractDaoUserSimple
 		if (this.exists(pObject)) {
 			return null;
 		}
-
+		
 		/* Crée l'Objet en base ou jette une AbstractDaoException. */
-		final IUserSimple objetPersistant 
+		final IIdInsee objetPersistant 
 			= this.create(pObject);
 		
 		/* retourne null si l'objet pObject n'a pu être créé en base. */
@@ -144,17 +141,17 @@ public abstract class AbstractDaoUserSimple
 		
 		/* retourne l'ID de l'objet persistant. */
 		return objetPersistant.getId();	
-		
+
 	} // Fin de createReturnId(...)._______________________________________
+
+
 	
-
-
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
-	public final IUserSimple retrieve(
-			final IUserSimple pObject) 
+	public final IIdInsee retrieve(
+			final IIdInsee pObject) 
 						throws AbstractDaoException {
 
 		/* return null si pObject == null. */
@@ -162,27 +159,25 @@ public abstract class AbstractDaoUserSimple
 			return null;
 		}
 		
-		IUserSimple objetResultat = null;
+		IIdInsee objetResultat = null;
 		
 		/* REQUETE HQL PARMETREE. */
 		final String requeteString 
 			= SELECT_OBJET
-				+ "where usersimple.login = :pLogin "
-				+ "and usersimple.mdp = :pMdp";
+				+ "where idInsee.numeroInsee = :pNumeroInsee";
 		
 		/* Construction de la requête HQL. */
 		final Query requete 
 			= this.entityManager.createQuery(requeteString);
 		
 		/* Passage des paramètres de la requête HQL. */
-		requete.setParameter("pLogin", pObject.getLogin());
-		requete.setParameter("pMdp", pObject.getMdp());
+		requete.setParameter("pNumeroInsee", pObject.getNumeroInsee());
 		
 		try {
 			
 			/* Execution de la requete HQL. */
 			objetResultat 
-			= (IUserSimple) requete.getSingleResult();
+			= (IIdInsee) requete.getSingleResult();
 			
 		}
 		catch (NoResultException noResultExc) {
@@ -201,8 +196,8 @@ public abstract class AbstractDaoUserSimple
 			/* Gestion de la DAO Exception. */
 			this.gestionnaireException
 				.gererException(
-						CLASSE_ABSTRACTDAO_USERSIMPLE
-						, "Méthode retrieve(UserSimple pObject)", e);
+						CLASSE_ABSTRACTDAO_IDINSEE
+						, "Méthode retrieve(IIdInsee pObject)", e);
 		}
 				
 		return objetResultat;
@@ -210,56 +205,52 @@ public abstract class AbstractDaoUserSimple
 	} // Fin de retrieve(...)._____________________________________________
 
 
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
-	public final IUserSimple retrieveByIdMetier(
-			final IUserSimple pObjet) throws AbstractDaoException {
+	public final IIdInsee retrieveByIdMetier(
+			final IIdInsee pObjet) 
+								throws AbstractDaoException {
 		return this.retrieve(pObjet);
 	} // Fin de retrieveByIdMetier(...).___________________________________
-
-
 	
+	
+
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
-	public final List<IUserSimple> retrieveByNomPrenom(
-			final String pNom
-				, final String pPrenom) throws AbstractDaoException {
+	public final IIdInsee retrieveByNumeroInsee(
+			final String pNumeroInsee) 
+									throws AbstractDaoException {
 		
-		/* Retourne null si pNom est blank. */
-		if (StringUtils.isBlank(pNom)) {
+		/* Retourne null si pNumeroInsee est blank. */
+		if (StringUtils.isBlank(pNumeroInsee)) {
 			return null;
 		}
-		
-		/* Retourne null si pPrenom est blank. */
-		if (StringUtils.isBlank(pPrenom)) {
-			return null;
-		}
-		
-		List<IUserSimple> objetResultat = null;
+				
+		IIdInsee objetResultat = null;
 		
 		/* REQUETE HQL PARMETREE. */
 		final String requeteString 
 			= SELECT_OBJET
-				+ "where usersimple.nom = :pNom "
-				+ "and usersimple.prenom = :pPrenom";
+				+ "where idInsee.numeroInsee = :pNumeroInsee";
 		
 		/* Construction de la requête HQL. */
 		final Query requete 
 			= this.entityManager.createQuery(requeteString);
 		
 		/* Passage des paramètres de la requête HQL. */
-		requete.setParameter("pNom", pNom);
-		requete.setParameter("pPrenom", pPrenom);
+		requete.setParameter("pNumeroInsee", pNumeroInsee);
 		
 		try {
 			
 			/* Execution de la requete HQL. */
-			objetResultat = requete.getResultList();
+			/* Execution de la requete HQL. */
+			objetResultat 
+			= (IIdInsee) requete.getSingleResult();
 			
 		}
 		catch (NoResultException noResultExc) {
@@ -278,34 +269,35 @@ public abstract class AbstractDaoUserSimple
 			/* Gestion de la DAO Exception. */
 			this.gestionnaireException
 				.gererException(
-						CLASSE_ABSTRACTDAO_USERSIMPLE
-						, "Méthode retrieveByNomPrenom(...)", e);
+						CLASSE_ABSTRACTDAO_IDINSEE
+						, "Méthode retrieveByNumeroInsee(...)", e);
 		}
 
 		return objetResultat;
 		
 	} // Fin de retrieveByNomPrenom(...).__________________________________
-	
-	
+
+
 	
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	public final void deleteById(
-			final Long pId) throws AbstractDaoException {
+			final Long pId) 
+					throws AbstractDaoException {
 		
 		/* ne fait rien si pId == null. */
 		if (pId == null) {
 			return;
 		}
 
-		IUserSimple objetPersistant = null;
+		IIdInsee objetPersistant = null;
 
 		/* REQUETE HQL PARAMETREE. */
 		final String requeteString 
 		= SELECT_OBJET 
-		+ "where usersimple.id = :pId";
+		+ "where idInsee.id = :pId";
 
 		/* Construction de la requête HQL. */
 		final Query requete 
@@ -317,7 +309,7 @@ public abstract class AbstractDaoUserSimple
 		try {
 			/* Execution de la requete HQL. */
 			objetPersistant 
-			= (IUserSimple) requete.getSingleResult();
+			= (IIdInsee) requete.getSingleResult();
 		}
 		catch (NoResultException noResultExc) {
 			objetPersistant = null;
@@ -346,20 +338,21 @@ public abstract class AbstractDaoUserSimple
 
 			/* Gestion de la DAO Exception. */
 			this.gestionnaireException
-				.gererException(CLASSE_ABSTRACTDAO_USERSIMPLE
+				.gererException(CLASSE_ABSTRACTDAO_IDINSEE
 						, "Méthode deleteById(Long pId)", e);
 		}
 		
 	} // Fin de deleteById(...).___________________________________________
-	
-	
 
+	
+	
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	public final boolean deleteByIdBoolean(
-			final Long pId) throws AbstractDaoException {
+			final Long pId) 
+						throws AbstractDaoException {
 		
 		/* retourne false si pId == null. */
 		if (pId == null) {
@@ -368,12 +361,12 @@ public abstract class AbstractDaoUserSimple
 		
 		boolean resultat = false;
 		
-		IUserSimple objetPersistant = null;
+		IIdInsee objetPersistant = null;
 
 		/* REQUETE HQL PARAMETREE. */
 		final String requeteString 
 		= SELECT_OBJET 
-		+ "where usersimple.id = :pId";
+		+ "where idInsee.id = :pId";
 
 		/* Construction de la requête HQL. */
 		final Query requete 
@@ -385,7 +378,7 @@ public abstract class AbstractDaoUserSimple
 		try {
 			/* Execution de la requete HQL. */
 			objetPersistant 
-			= (IUserSimple) requete.getSingleResult();
+			= (IIdInsee) requete.getSingleResult();
 		}
 		catch (NoResultException noResultExc) {
 			objetPersistant = null;
@@ -415,7 +408,7 @@ public abstract class AbstractDaoUserSimple
 
 			/* Gestion de la DAO Exception. */
 			this.gestionnaireException
-				.gererException(CLASSE_ABSTRACTDAO_USERSIMPLE
+				.gererException(CLASSE_ABSTRACTDAO_IDINSEE
 						, "Méthode deleteByIdBoolean(Long pId)", e);
 		}
 		
@@ -424,13 +417,14 @@ public abstract class AbstractDaoUserSimple
 	} // Fin de deleteByIdBoolean(...).____________________________________
 
 
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	public final boolean exists(
-			final IUserSimple pObject) throws AbstractDaoException {
+			final IIdInsee pObject) 
+					throws AbstractDaoException {
 		
 		/* retourne false si pObject == null. */
 		if (pObject == null) {
@@ -438,27 +432,25 @@ public abstract class AbstractDaoUserSimple
 		}
 
 		boolean resultat = false;		
-		IUserSimple objetResultat = null;
+		IIdInsee objetResultat = null;
 		
 		/* REQUETE HQL PARMETREE. */
 		final String requeteString 
 			= SELECT_OBJET
-				+ "where usersimple.login = :pLogin "
-				+ "and usersimple.mdp = :pMdp";
+				+ " idInsee.numeroInsee = :pNumeroInsee";
 		
 		/* Construction de la requête HQL. */
 		final Query requete 
 			= this.entityManager.createQuery(requeteString);
 		
 		/* Passage des paramètres de la requête HQL. */
-		requete.setParameter("pLogin", pObject.getLogin());
-		requete.setParameter("pMdp", pObject.getMdp());
+		requete.setParameter("pNumeroInsee", pObject.getNumeroInsee());
 		
 		try {
 			
 			/* Execution de la requete HQL. */
 			objetResultat 
-			= (IUserSimple) requete.getSingleResult();
+			= (IIdInsee) requete.getSingleResult();
 			
 			/* retourne true si l'objet existe en base. */
 			if (objetResultat != null) {
@@ -481,8 +473,8 @@ public abstract class AbstractDaoUserSimple
 			
 			/* Gestion de la DAO Exception. */
 			this.gestionnaireException
-				.gererException(CLASSE_ABSTRACTDAO_USERSIMPLE
-						, "Méthode exists(UserSimple pObject)", e);
+				.gererException(CLASSE_ABSTRACTDAO_IDINSEE
+						, "Méthode exists(IIdInsee pObject)", e);
 		}
 				
 		return resultat;
@@ -496,7 +488,8 @@ public abstract class AbstractDaoUserSimple
 	 */
 	@Override
 	public final boolean exists(
-			final Long pId) throws AbstractDaoException {
+			final Long pId) 
+					throws AbstractDaoException {
 		
 		/* retourne false si pId == null . */
 		if (pId == null) {
@@ -511,15 +504,15 @@ public abstract class AbstractDaoUserSimple
 		return false;
 		
 	} // Fin de exists(...)._______________________________________________
-
-
 	
+
+
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	public final String afficherListe(
-			final List<IUserSimple> pListe) {
+			final List<IIdInsee> pListe) {
 		
 		/* retourne null si pListe == null. */
 		if (pListe == null) {
@@ -528,13 +521,13 @@ public abstract class AbstractDaoUserSimple
 		
 		final StringBuilder stb = new StringBuilder();
 		
-		for (final IUserSimple objet : pListe) {
+		for (final IIdInsee objet : pListe) {
 			stb.append(objet.toString());
 			stb.append(SAUT_LIGNE_JAVA);
 		}
 				
-		return stb.toString();
-			
+		return stb.toString();			
+
 	} // Fin de afficherListe(...).________________________________________
 
 
@@ -542,17 +535,17 @@ public abstract class AbstractDaoUserSimple
 	/**
 	 * {@inheritDoc}
 	 * <br/>
-	 * this.<b>classObjetMetier</b> dans AbstractDaoUserSimple : 
-	 * <b>IUserSimple.class</b><br/>
+	 * this.<b>classObjetMetier</b> dans AbstractDaoIdInsee : 
+	 * <b>IIdInsee.class</b><br/>
 	 * <br/>
 	 */
 	@Override
-	protected void renseignerClassObjetMetier() {
+	protected final void renseignerClassObjetMetier() {
 
-		this.setClassObjetMetier(IUserSimple.class);
+		this.setClassObjetMetier(IIdInsee.class);
 
 	} // Fin de renseignerClassObjetMetier().______________________________
 
 
 	
-} // FIN DE LA CLASSE AbstractDaoUserSimple.---------------------------------
+} // FIN DE LA CLASSE AbstractDaoIdInsee.------------------------------------

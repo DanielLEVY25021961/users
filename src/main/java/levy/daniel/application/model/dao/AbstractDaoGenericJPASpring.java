@@ -394,7 +394,7 @@ public abstract class AbstractDaoGenericJPASpring<T, ID extends Serializable>
 	 * {@inheritDoc}
 	 */
 	@Override
-	public <S extends T> Iterable<S> save(
+	public final <S extends T> Iterable<S> save(
 			final Iterable<S> pObjects) 
 			throws AbstractDaoException {
 
@@ -504,7 +504,7 @@ public abstract class AbstractDaoGenericJPASpring<T, ID extends Serializable>
 	 * {@inheritDoc}
 	 */
 	@Override
-	public T findById(
+	public final T findById(
 			final ID pId) throws AbstractDaoException {
 		
 		T objetTrouve = null;
