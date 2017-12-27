@@ -437,7 +437,7 @@ public abstract class AbstractDaoIdInsee
 		/* REQUETE HQL PARMETREE. */
 		final String requeteString 
 			= SELECT_OBJET
-				+ " idInsee.numeroInsee = :pNumeroInsee";
+				+ "where idInsee.numeroInsee = :pNumeroInsee";
 		
 		/* Construction de la requête HQL. */
 		final Query requete 

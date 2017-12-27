@@ -69,12 +69,90 @@ public class DaoProfilSimpleTest {
 
 	
 	/**
+	 * TEST_CREATE_NULL : String :<br/>
+	 * "testCreateNull()".<br/>
+	 */
+	public static final String TEST_CREATE_NULL 
+		= "testCreateNull()";
+
+	
+	/**
+	 * TEST_CREATE : String :<br/>
+	 * "testCreate()".<br/>
+	 */
+	public static final String TEST_CREATE 
+		= "testCreate()";
+	
+	/**
+	 * TEST_CREATE_DOUBLON : String :<br/>
+	 * "testCreateDoublon()".<br/>
+	 */
+	public static final String TEST_CREATE_DOUBLON 
+		= "testCreateDoublon()";
+	
+	/**
+	 * TEST_SAVE_NULL : String :<br/>
+	 * "testSaveNull()".<br/>
+	 */
+	public static final String TEST_SAVE_NULL 
+		= "testSaveNull()";
+	
+	/**
+	 * TEST_SAVE : String :<br/>
+	 * "testSave()".<br/>
+	 */
+	public static final String TEST_SAVE 
+		= "testSave()";
+	
+	
+	/**
+	 * TEST_SAVE_DOUBLON : String :<br/>
+	 * "testSaveDoublon()".<br/>
+	 */
+	public static final String TEST_SAVE_DOUBLON 
+		= "testSaveDoublon()";
+
+	
+	/**
+	 * TEST_PERSIST_NULL : String :<br/>
+	 * "testPersistNull()".<br/>
+	 */
+	public static final String TEST_PERSIST_NULL 
+		= "testPersistNull()";
+
+	
+	/**
+	 * TEST_PERSIST : String :<br/>
+	 * "testPersist()".<br/>
+	 */
+	public static final String TEST_PERSIST 
+		= "testPersist()";
+
+	
+	/**
+	 * TEST_PERSIST_DOUBLON : String :<br/>
+	 * "testPersistDoublon()".<br/>
+	 */
+	public static final String TEST_PERSIST_DOUBLON 
+	= "testPersistDoublon()";
+
+
+	
+	/**
 	 * TIRETS : String :<br/>
 	 * "--------------------------------------------------------".<br/>
 	 */
 	public static final String TIRETS 
 	= "--------------------------------------------------------";
 
+	
+	/**
+	 * NBRE_OBJET_INITIAL : String :<br/>
+	 * "NOMBRE D'OBJETS INITIALEMENT En BASE : ".<br/>
+	 */
+	public static final String NBRE_OBJET_INITIAL 
+		= "NOMBRE D'OBJETS INITIALEMENT En BASE : ";
+	
 	
 	/**
 	 * NBRE_OBJETS_FINAL_DOIT : String :<br/>
@@ -115,6 +193,19 @@ public class DaoProfilSimpleTest {
 	public static final String NBRE_INITIAL_PLUS_TROIS 
 	= "nombreObjetsinitial + 3 : ";
 
+	/**
+	 * OBJET1_NON_PERSISTANT : String :<br/>
+	 * "OBJET1 NON PERSISTANT : ".<br/>
+	 */
+	public static final String OBJET1_NON_PERSISTANT 
+		= "OBJET1 NON PERSISTANT : ";
+	
+	/**
+	 * OBJET2_NON_PERSISTANT_DOUBLON1 : String :<br/>
+	 * "OBJET2 NON PERSISTANT (DOUBLON DE OBJET1) : ".<br/>
+	 */
+	public static final String OBJET2_NON_PERSISTANT_DOUBLON1 
+		= "OBJET2 NON PERSISTANT (DOUBLON DE OBJET1) : ";
 	
 	/**
 	 * LOT_OBJET_INITIAL : String :<br/>
@@ -211,7 +302,7 @@ public class DaoProfilSimpleTest {
 			
 			/* AFFICHAGE A LA CONSOLE. */
 			if (AFFICHAGE_GENERAL && affichage) {
-				System.out.println("testCreateNull()");
+				System.out.println(TEST_CREATE_NULL);
 				this.afficherDAONonInstancie();
 			}			
 			return;
@@ -232,7 +323,7 @@ public class DaoProfilSimpleTest {
 		nombreObjetsinitial = this.daoProfilSimple.count();
 		
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testCreateNull()");
+			System.out.println(TEST_CREATE_NULL);
 			this.afficherNbreObjetsInitial(nombreObjetsinitial);			
 		}
 		
@@ -253,14 +344,14 @@ public class DaoProfilSimpleTest {
 			
 		}
 		catch (AbstractDaoException e) {
-			System.out.println("testCreateNull()");
+			System.out.println(TEST_CREATE_NULL);
 			this.afficherAbstractDaoException(e);			
 			e.printStackTrace();
 		}
 		
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testCreateNull()");
+			System.out.println(TEST_CREATE_NULL);
 			this.afficherObjetPersistant(
 					objet1Persistant, nombreObjetsFinal);						
 		}
@@ -325,9 +416,9 @@ public class DaoProfilSimpleTest {
 		if (AFFICHAGE_GENERAL && affichage) {
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println("testCreate()");
-			System.out.println("NOMBRE D'OBJETS INITIALEMENT En BASE : " + nombreObjetsinitial);
-			System.out.println("OBJET1 NON PERSISTANT : " + objet1.toString());
+			System.out.println(TEST_CREATE);
+			System.out.println(NBRE_OBJET_INITIAL + nombreObjetsinitial);
+			System.out.println(OBJET1_NON_PERSISTANT + objet1.toString());
 			System.out.println("OBJET2 NON PERSISTANT : " + objet2.toString());
 			System.out.println(TIRETS);
 			System.out.println();
@@ -351,7 +442,7 @@ public class DaoProfilSimpleTest {
 			
 		}
 		catch (AbstractDaoException e) {
-			System.out.println("testCreate()");
+			System.out.println(TEST_CREATE);
 			this.afficherAbstractDaoException(e);
 			e.printStackTrace();
 		}
@@ -361,7 +452,7 @@ public class DaoProfilSimpleTest {
 			
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println("testCreate()");
+			System.out.println(TEST_CREATE);
 			System.out.println("NOMBRE D'OBJETS PERSISTES APRES CREATE : " + nombreObjetsFinal);
 			if (objet1Persistant != null) {
 				System.out.println(
@@ -397,7 +488,7 @@ public class DaoProfilSimpleTest {
 			
 		}
 		catch (AbstractDaoException e) {
-			System.out.println("testCreate()");
+			System.out.println(TEST_CREATE);
 			this.afficherAbstractDaoException(e);
 			e.printStackTrace();
 		}
@@ -407,7 +498,7 @@ public class DaoProfilSimpleTest {
 			
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println("testCreate()");
+			System.out.println(TEST_CREATE);
 			if (objet3Persistant != null) {
 				System.out.println(
 						"OBJET3 PERSISTANT APRES Create(T Object) : " 
@@ -451,7 +542,7 @@ public class DaoProfilSimpleTest {
 			
 			/* AFFICHAGE A LA CONSOLE. */
 			if (AFFICHAGE_GENERAL && affichage) {
-				System.out.println("testCreateDoublon()");
+				System.out.println(TEST_CREATE_DOUBLON);
 				this.afficherDAONonInstancie();
 			}			
 			return;
@@ -484,10 +575,10 @@ public class DaoProfilSimpleTest {
 		if (AFFICHAGE_GENERAL && affichage) {
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println("testCreateDoublon()");
-			System.out.println("NOMBRE D'OBJETS INITIALEMENT En BASE : " + nombreObjetsinitial);
-			System.out.println("OBJET1 NON PERSISTANT : " + objet1.toString());
-			System.out.println("OBJET2 NON PERSISTANT (DOUBLON DE OBJET1) : " + objet2Equals1.toString());
+			System.out.println(TEST_CREATE_DOUBLON);
+			System.out.println(NBRE_OBJET_INITIAL + nombreObjetsinitial);
+			System.out.println(OBJET1_NON_PERSISTANT + objet1.toString());
+			System.out.println(OBJET2_NON_PERSISTANT_DOUBLON1 + objet2Equals1.toString());
 			System.out.println(TIRETS);
 			System.out.println();
 		}
@@ -510,7 +601,7 @@ public class DaoProfilSimpleTest {
 			
 		}
 		catch (AbstractDaoException e) {
-			System.out.println("testCreateDoublon()");
+			System.out.println(TEST_CREATE_DOUBLON);
 			this.afficherAbstractDaoException(e);
 			e.printStackTrace();
 		}
@@ -519,7 +610,7 @@ public class DaoProfilSimpleTest {
 		if (AFFICHAGE_GENERAL && affichage) {
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println("testCreateDoublon()");
+			System.out.println(TEST_CREATE_DOUBLON);
 			System.out.println("NOMBRE D'OBJETS PERSISTES APRES CREATE : " + nombreObjetsFinal);
 			if (objet1Persistant != null) {
 				System.out.println(
@@ -571,7 +662,7 @@ public class DaoProfilSimpleTest {
 			
 			/* AFFICHAGE A LA CONSOLE. */
 			if (AFFICHAGE_GENERAL && affichage) {
-				System.out.println("testSaveNull()");
+				System.out.println(TEST_SAVE_NULL);
 				this.afficherDAONonInstancie();
 			}			
 			return;
@@ -593,7 +684,7 @@ public class DaoProfilSimpleTest {
 		nombreObjetsinitial = this.daoProfilSimple.count();
 		
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testSaveNull()");
+			System.out.println(TEST_SAVE_NULL);
 			this.afficherNbreObjetsInitial(nombreObjetsinitial);			
 		}
 		
@@ -614,14 +705,14 @@ public class DaoProfilSimpleTest {
 			
 		}
 		catch (AbstractDaoException e) {
-			System.out.println("testSaveNull()");
+			System.out.println(TEST_SAVE_NULL);
 			this.afficherAbstractDaoException(e);			
 			e.printStackTrace();
 		}
 		
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testSaveNull()");
+			System.out.println(TEST_SAVE_NULL);
 			this.afficherObjetPersistant(
 					objet1Persistant, nombreObjetsFinal);						
 		}
@@ -655,7 +746,7 @@ public class DaoProfilSimpleTest {
 			
 			/* AFFICHAGE A LA CONSOLE. */
 			if (AFFICHAGE_GENERAL && affichage) {
-				System.out.println("testSave()");
+				System.out.println(TEST_SAVE);
 				this.afficherDAONonInstancie();
 			}			
 			return;
@@ -683,9 +774,9 @@ public class DaoProfilSimpleTest {
 		if (AFFICHAGE_GENERAL && affichage) {
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println("testSave()");
-			System.out.println("NOMBRE D'OBJETS INITIALEMENT En BASE : " + nombreObjetsinitial);
-			System.out.println("OBJET1 NON PERSISTANT : " + objet1.toString());
+			System.out.println(TEST_SAVE);
+			System.out.println(NBRE_OBJET_INITIAL + nombreObjetsinitial);
+			System.out.println(OBJET1_NON_PERSISTANT + objet1.toString());
 			System.out.println(TIRETS);
 			System.out.println();
 		}
@@ -707,7 +798,7 @@ public class DaoProfilSimpleTest {
 						
 		}
 		catch (AbstractDaoException e) {
-			System.out.println("testSave()");
+			System.out.println(TEST_SAVE);
 			this.afficherAbstractDaoException(e);
 			e.printStackTrace();
 		}
@@ -716,7 +807,7 @@ public class DaoProfilSimpleTest {
 		if (AFFICHAGE_GENERAL && affichage) {
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println("testSave()");
+			System.out.println(TEST_SAVE);
 			System.out.println("NOMBRE D'OBJETS PERSISTES APRES SAVE : " + nombreObjetsFinal);
 			if (objet1Persistant != null) {
 				System.out.println(
@@ -760,7 +851,7 @@ public class DaoProfilSimpleTest {
 			
 			/* AFFICHAGE A LA CONSOLE. */
 			if (AFFICHAGE_GENERAL && affichage) {
-				System.out.println("testSaveDoublon()");
+				System.out.println(TEST_SAVE_DOUBLON);
 				this.afficherDAONonInstancie();
 			}			
 			return;
@@ -793,10 +884,10 @@ public class DaoProfilSimpleTest {
 		if (AFFICHAGE_GENERAL && affichage) {
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println("testSaveDoublon()");
-			System.out.println("NOMBRE D'OBJETS INITIALEMENT En BASE : " + nombreObjetsinitial);
-			System.out.println("OBJET1 NON PERSISTANT : " + objet1.toString());
-			System.out.println("OBJET2 NON PERSISTANT (DOUBLON DE OBJET1) : " + objet2Equals1.toString());
+			System.out.println(TEST_SAVE_DOUBLON);
+			System.out.println(NBRE_OBJET_INITIAL + nombreObjetsinitial);
+			System.out.println(OBJET1_NON_PERSISTANT + objet1.toString());
+			System.out.println(OBJET2_NON_PERSISTANT_DOUBLON1 + objet2Equals1.toString());
 			System.out.println(TIRETS);
 			System.out.println();
 		}
@@ -819,7 +910,7 @@ public class DaoProfilSimpleTest {
 			
 		}
 		catch (AbstractDaoException e) {
-			System.out.println("testSaveDoublon()");
+			System.out.println(TEST_SAVE_DOUBLON);
 			this.afficherAbstractDaoException(e);
 			e.printStackTrace();
 		}
@@ -828,7 +919,7 @@ public class DaoProfilSimpleTest {
 		if (AFFICHAGE_GENERAL && affichage) {
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println("testSaveDoublon()");
+			System.out.println(TEST_SAVE_DOUBLON);
 			System.out.println("NOMBRE D'OBJETS PERSISTES APRES SAVE : " + nombreObjetsFinal);
 			if (objet1Persistant != null) {
 				System.out.println(
@@ -879,7 +970,7 @@ public class DaoProfilSimpleTest {
 			
 			/* AFFICHAGE A LA CONSOLE. */
 			if (AFFICHAGE_GENERAL && affichage) {
-				System.out.println("testPersistNull()");
+				System.out.println(TEST_PERSIST_NULL);
 				this.afficherDAONonInstancie();
 			}			
 			return;
@@ -901,7 +992,7 @@ public class DaoProfilSimpleTest {
 		nombreObjetsinitial = this.daoProfilSimple.count();
 		
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testPersistNull()");
+			System.out.println(TEST_PERSIST_NULL);
 			this.afficherNbreObjetsInitial(nombreObjetsinitial);			
 		}
 		
@@ -925,14 +1016,14 @@ public class DaoProfilSimpleTest {
 			
 		}
 		catch (AbstractDaoException e) {
-			System.out.println("testPersistNull()");
+			System.out.println(TEST_PERSIST_NULL);
 			this.afficherAbstractDaoException(e);			
 			e.printStackTrace();
 		}
 		
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testPersistNull()");
+			System.out.println(TEST_PERSIST_NULL);
 			this.afficherObjetPersistant(
 					objet1Persistant, nombreObjetsFinal);						
 		}
@@ -967,7 +1058,7 @@ public class DaoProfilSimpleTest {
 			
 			/* AFFICHAGE A LA CONSOLE. */
 			if (AFFICHAGE_GENERAL && affichage) {
-				System.out.println("testPersist()");
+				System.out.println(TEST_PERSIST);
 				this.afficherDAONonInstancie();
 			}			
 			return;
@@ -995,9 +1086,9 @@ public class DaoProfilSimpleTest {
 		if (AFFICHAGE_GENERAL && affichage) {
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println("testPersist()");
-			System.out.println("NOMBRE D'OBJETS INITIALEMENT En BASE : " + nombreObjetsinitial);
-			System.out.println("OBJET1 NON PERSISTANT : " + objet1.toString());
+			System.out.println(TEST_PERSIST);
+			System.out.println(NBRE_OBJET_INITIAL + nombreObjetsinitial);
+			System.out.println(OBJET1_NON_PERSISTANT + objet1.toString());
 			System.out.println(TIRETS);
 			System.out.println();
 		}
@@ -1020,7 +1111,7 @@ public class DaoProfilSimpleTest {
 			
 		}
 		catch (AbstractDaoException e) {
-			System.out.println("testPersist()");
+			System.out.println(TEST_PERSIST);
 			this.afficherAbstractDaoException(e);
 			e.printStackTrace();
 		}
@@ -1029,7 +1120,7 @@ public class DaoProfilSimpleTest {
 		if (AFFICHAGE_GENERAL && affichage) {
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println("testPersist()");
+			System.out.println(TEST_PERSIST);
 			System.out.println("NOMBRE D'OBJETS PERSISTES APRES PERSIST : " + nombreObjetsFinal);
 			if (objet1Persistant != null) {
 				System.out.println(
@@ -1073,7 +1164,7 @@ public class DaoProfilSimpleTest {
 			
 			/* AFFICHAGE A LA CONSOLE. */
 			if (AFFICHAGE_GENERAL && affichage) {
-				System.out.println("testPersistDoublon()");
+				System.out.println(TEST_PERSIST_DOUBLON);
 				this.afficherDAONonInstancie();
 			}			
 			return;
@@ -1106,10 +1197,10 @@ public class DaoProfilSimpleTest {
 		if (AFFICHAGE_GENERAL && affichage) {
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println("testPersistDoublon()");
-			System.out.println("NOMBRE D'OBJETS INITIALEMENT En BASE : " + nombreObjetsinitial);
-			System.out.println("OBJET1 NON PERSISTANT : " + objet1.toString());
-			System.out.println("OBJET2 NON PERSISTANT (DOUBLON DE OBJET1) : " + objet2Equals1.toString());
+			System.out.println(TEST_PERSIST_DOUBLON);
+			System.out.println(NBRE_OBJET_INITIAL + nombreObjetsinitial);
+			System.out.println(OBJET1_NON_PERSISTANT + objet1.toString());
+			System.out.println(OBJET2_NON_PERSISTANT_DOUBLON1 + objet2Equals1.toString());
 			System.out.println(TIRETS);
 			System.out.println();
 		}
@@ -1139,7 +1230,7 @@ public class DaoProfilSimpleTest {
 			
 		}
 		catch (AbstractDaoException e) {
-			System.out.println("testPersistDoublon()");
+			System.out.println(TEST_PERSIST_DOUBLON);
 			this.afficherAbstractDaoException(e);
 			e.printStackTrace();
 		}
@@ -1148,7 +1239,7 @@ public class DaoProfilSimpleTest {
 		if (AFFICHAGE_GENERAL && affichage) {
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println("testPersistDoublon()");
+			System.out.println(TEST_PERSIST_DOUBLON);
 			System.out.println("NOMBRE D'OBJETS PERSISTES APRES PERSIST : " + nombreObjetsFinal);
 			if (objet1Persistant != null) {
 				System.out.println(
@@ -1312,8 +1403,8 @@ public class DaoProfilSimpleTest {
 			System.out.println();
 			System.out.println(TIRETS);
 			System.out.println("testPersistSousClasse()");
-			System.out.println("NOMBRE D'OBJETS INITIALEMENT En BASE : " + nombreObjetsinitial);
-			System.out.println("OBJET1 NON PERSISTANT : " + objet1.toString());
+			System.out.println(NBRE_OBJET_INITIAL + nombreObjetsinitial);
+			System.out.println(OBJET1_NON_PERSISTANT + objet1.toString());
 			System.out.println(TIRETS);
 			System.out.println();
 		}
@@ -1422,9 +1513,9 @@ public class DaoProfilSimpleTest {
 			System.out.println();
 			System.out.println(TIRETS);
 			System.out.println("testPersistSousClasseDoublon()");
-			System.out.println("NOMBRE D'OBJETS INITIALEMENT En BASE : " + nombreObjetsinitial);
-			System.out.println("OBJET1 NON PERSISTANT : " + objet1.toString());
-			System.out.println("OBJET2 NON PERSISTANT (DOUBLON DE OBJET1) : " + objet2Equals1.toString());
+			System.out.println(NBRE_OBJET_INITIAL + nombreObjetsinitial);
+			System.out.println(OBJET1_NON_PERSISTANT + objet1.toString());
+			System.out.println(OBJET2_NON_PERSISTANT_DOUBLON1 + objet2Equals1.toString());
 			System.out.println(TIRETS);
 			System.out.println();
 		}
@@ -1627,8 +1718,8 @@ public class DaoProfilSimpleTest {
 			System.out.println();
 			System.out.println(TIRETS);
 			System.out.println("testCreateReturnId()");
-			System.out.println("NOMBRE D'OBJETS INITIALEMENT En BASE : " + nombreObjetsinitial);
-			System.out.println("OBJET1 NON PERSISTANT : " + objet1.toString());
+			System.out.println(NBRE_OBJET_INITIAL + nombreObjetsinitial);
+			System.out.println(OBJET1_NON_PERSISTANT + objet1.toString());
 			System.out.println(TIRETS);
 			System.out.println();
 		}
@@ -1739,9 +1830,9 @@ public class DaoProfilSimpleTest {
 			System.out.println();
 			System.out.println(TIRETS);
 			System.out.println("testCreateReturnIdDoublon()");
-			System.out.println("NOMBRE D'OBJETS INITIALEMENT En BASE : " + nombreObjetsinitial);
-			System.out.println("OBJET1 NON PERSISTANT : " + objet1.toString());
-			System.out.println("OBJET2 NON PERSISTANT (DOUBLON DE OBJET1) : " + objet2Equals1.toString());
+			System.out.println(NBRE_OBJET_INITIAL + nombreObjetsinitial);
+			System.out.println(OBJET1_NON_PERSISTANT + objet1.toString());
+			System.out.println(OBJET2_NON_PERSISTANT_DOUBLON1 + objet2Equals1.toString());
 			System.out.println(TIRETS);
 			System.out.println();
 		}
@@ -1875,8 +1966,8 @@ public class DaoProfilSimpleTest {
 			System.out.println();
 			System.out.println(TIRETS);
 			System.out.println("testSaveLot()");
-			System.out.println("NOMBRE D'OBJETS INITIALEMENT En BASE : " + nombreObjetsinitial);
-			System.out.println("OBJET1 NON PERSISTANT : " + objet1.toString());
+			System.out.println(NBRE_OBJET_INITIAL + nombreObjetsinitial);
+			System.out.println(OBJET1_NON_PERSISTANT + objet1.toString());
 			System.out.println("OBJET2 NON PERSISTANT : NULL");
 			System.out.println("OBJET3 NON PERSISTANT (DOUBLON DE OBJET1) : " + objet3Equals1.toString());
 			System.out.println("OBJET4 NON PERSISTANT : " + objet4.toString());
@@ -2008,8 +2099,8 @@ public class DaoProfilSimpleTest {
 			System.out.println();
 			System.out.println(TIRETS);
 			System.out.println("testRetrieve()");
-			System.out.println("NOMBRE D'OBJETS INITIALEMENT En BASE : " + nombreObjetsinitial);
-			System.out.println("OBJET1 NON PERSISTANT : " + objet1.toString());
+			System.out.println(NBRE_OBJET_INITIAL + nombreObjetsinitial);
+			System.out.println(OBJET1_NON_PERSISTANT + objet1.toString());
 			System.out.println("OBJET2 NON PERSISTANT : NULL");
 			System.out.println("OBJET3 NON PERSISTANT (DOUBLON DE OBJET1) : " + objet3Equals1.toString());
 			System.out.println("OBJET4 NON PERSISTANT : " + objet4.toString());
@@ -3250,8 +3341,8 @@ public class DaoProfilSimpleTest {
 			System.out.println();
 			System.out.println(TIRETS);
 			System.out.println("remplirTable(boolean)");
-			System.out.println("NOMBRE D'OBJETS INITIALEMENT En BASE : " + nombreObjetsinitial);
-			System.out.println("OBJET1 NON PERSISTANT : " + objet1.toString());
+			System.out.println(NBRE_OBJET_INITIAL + nombreObjetsinitial);
+			System.out.println(OBJET1_NON_PERSISTANT + objet1.toString());
 			System.out.println("OBJET2 NON PERSISTANT : " + objet2.toString());
 			System.out.println("OBJET3 NON PERSISTANT : " + objet3.toString());
 			System.out.println(TIRETS);
@@ -3459,7 +3550,7 @@ public class DaoProfilSimpleTest {
 			
 		}
 		
-	} // Fin de afficherObjetNonPersistSousClasseant(...).___________________________
+	} // Fin de afficherObjetNonPersistant(...).___________________________
 	
 	
 
