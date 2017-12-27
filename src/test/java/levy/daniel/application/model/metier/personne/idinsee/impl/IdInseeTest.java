@@ -57,6 +57,22 @@ public class IdInseeTest {
 	
 	
 	/**
+	 * TEST_EQUALS : String :<br/>
+	 * "testEquals()".<br/>
+	 */
+	public static final String TEST_EQUALS 
+		= "testEquals()";
+	
+
+	/**
+	 * TEST_COMPARETO : String :<br/>
+	 * "testCompareTo()".<br/>
+	 */
+	public static final String TEST_COMPARETO 
+		= "testCompareTo()";
+	
+
+	/**
 	 * TIRETS : String :<br/>
 	 * "--------------------------------------------------------".<br/>
 	 */
@@ -166,7 +182,7 @@ public class IdInseeTest {
 
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testEquals()");
+			System.out.println(TEST_EQUALS);
 			System.out.println("OBJETNULL1 : " 
 					+ objetNull1.toString());
 			System.out.println("OBJETNULL2 : " 
@@ -191,7 +207,7 @@ public class IdInseeTest {
 
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testEquals()");
+			System.out.println(TEST_EQUALS);
 			System.out.println("OBJET1AVECNULL : " 
 					+ objet1AvecNull.toString());
 			System.out.println("OBJET2AVECNULL : " 
@@ -211,7 +227,7 @@ public class IdInseeTest {
 		
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testEquals()");
+			System.out.println(TEST_EQUALS);
 			System.out.println("OBJET1 : " 
 					+ objet1.toString());
 			System.out.println("OBJET2 : " 
@@ -238,7 +254,7 @@ public class IdInseeTest {
 
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testEquals()");
+			System.out.println(TEST_EQUALS);
 			System.out.println("OBJETDIFF1 : " 
 					+ objetDiff1.toString());
 			System.out.println("OBJETDIFF2 : " 
@@ -308,7 +324,7 @@ public class IdInseeTest {
 		
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testCompareTo()");
+			System.out.println(TEST_COMPARETO);
 			System.out.println("COMPARETO() DE LA MEME INSTANCE : " 
 					+ compareMemeInstance);
 		}
@@ -321,7 +337,7 @@ public class IdInseeTest {
 
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testCompareTo()");
+			System.out.println(TEST_COMPARETO);
 			System.out.println("COMPARETO(null)  : " 
 					+ compareToNull);
 		}
@@ -337,7 +353,7 @@ public class IdInseeTest {
 		
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testCompareTo()");
+			System.out.println(TEST_COMPARETO);
 			System.out.println("COMPARETO(equalsInstance)  : " 
 					+ compareToEquals);
 		}
@@ -354,7 +370,7 @@ public class IdInseeTest {
 		
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testCompareTo()");
+			System.out.println(TEST_COMPARETO);
 			System.out.println("COMPARETO(equalsInstanceNull)  : " 
 					+ compareToEqualsNull);
 		}
@@ -368,7 +384,7 @@ public class IdInseeTest {
 
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testCompareTo()");
+			System.out.println(TEST_COMPARETO);
 			System.out.println("COMPARETO(existant)  : " 
 					+ compare);
 		}
