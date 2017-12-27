@@ -50,7 +50,11 @@ import levy.daniel.application.model.metier.user.usersimple.impl.ProfilSimple;
  * </ul>
  * 
  * <ul>
- * <p>Garantit que tout UserSimple possède :</p>
+ * <p>
+ * <span style="text-decoration: underline;">
+ * Garantit que tout UserSimple possède :
+ * </span>
+ * </p>
  * <li><b>id</b> pour la mise en base.</li>
  * <li><b>civilite</b> (M., Mme, ...).</li>
  * <li><b>prenom</b>.</li>
