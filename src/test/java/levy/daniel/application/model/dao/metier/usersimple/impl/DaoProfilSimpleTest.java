@@ -3173,6 +3173,7 @@ public class DaoProfilSimpleTest {
 			
 			/* AFFICHAGE A LA CONSOLE. */
 			if (AFFICHAGE_GENERAL && affichage) {
+				System.out.println(TEST_DELETEBYID);
 				this.afficherDAONonInstancie();
 			}			
 			return;
@@ -3212,7 +3213,7 @@ public class DaoProfilSimpleTest {
 						
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println("testDeleteById()");
+			System.out.println(TEST_DELETEBYID);
 			System.out.println(LOT_OBJET_INITIAL);
 			System.out.println(this.daoProfilSimple.afficherListe(lotPersistant));
 			System.out.println(TIRETS);
@@ -3241,7 +3242,7 @@ public class DaoProfilSimpleTest {
 						
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println("testDeleteById()");
+			System.out.println(TEST_DELETEBYID);
 			System.out.println(LOT_OBJETS_APRES_DELETE);
 			System.out.println(this.daoProfilSimple.afficherListe(lotPersistantApresDelete));
 			System.out.println(TIRETS);
