@@ -136,165 +136,6 @@ public class DaoProfilSimpleTest {
 	public static final String TEST_PERSIST_DOUBLON 
 	= "testPersistDoublon()";
 
-	
-	/**
-	 * TEST_PERSIST_SOUSCLASSE_NULL : String :<br/>
-	 * "testPersistSousClasseNull()".<br/>
-	 */
-	public static final String TEST_PERSIST_SOUSCLASSE_NULL 
-	= "testPersistSousClasseNull()";
-
-
-	/**
-	 * TEST_PERSIST_SOUSCLASSE : String :<br/>
-	 * "testPersistSousClasse()".<br/>
-	 */
-	public static final String TEST_PERSIST_SOUSCLASSE 
-		= "testPersistSousClasse()";
-	
-	
-	/**
-	 * TEST_PERSIST_SOUSCLASSE_DOUBLON : String :<br/>
-	 * "testPersistSousClasseDoublon()".<br/>
-	 */
-	public static final String TEST_PERSIST_SOUSCLASSE_DOUBLON 
-		= "testPersistSousClasseDoublon()";
-
-	
-	/**
-	 * TEST_CREATERETURNID_NULL : String :<br/>
-	 * "testCreateReturnIdNull()".<br/>
-	 */
-	public static final String TEST_CREATERETURNID_NULL 
-		= "testCreateReturnIdNull()";
-
-	
-	/**
-	 * TEST_CREATERETURNID : String :<br/>
-	 * "testCreateReturnId()".<br/>
-	 */
-	public static final String TEST_CREATERETURNID 
-		= "testCreateReturnId()";
-	
-
-	/**
-	 * TEST_CREATERETURNID_DOUBLON : String :<br/>
-	 * "testCreateReturnIdDoublon()".<br/>
-	 */
-	public static final String TEST_CREATERETURNID_DOUBLON 
-		= "testCreateReturnIdDoublon()";
-
-	
-	/**
-	 * TEST_SAVELOT : String :<br/>
-	 * "testSaveLot()".<br/>
-	 */
-	public static final String TEST_SAVELOT 
-		= "testSaveLot()";
-	
-	/**
-	 * TEST_RETRIEVE : String :<br/>
-	 * "testRetrieve()".<br/>
-	 */
-	public static final String TEST_RETRIEVE 
-		= "testRetrieve()";
-
-	
-	/**
-	 * TEST_FINDBYID : String :<br/>
-	 * "testFindById()".<br/>
-	 */
-	public static final String TEST_FINDBYID 
-		= "testFindById()";
-
-	
-	/**
-	 * TEST_FINDALL : String :<br/>
-	 * "testFindAll()".<br/>
-	 */
-	public static final String TEST_FINDALL 
-		= "testFindAll()";
-
-	
-	/**
-	 * TEST_FINDALLMAX : String :<br/>
-	 * "testFindAllMax()".<br/>
-	 */
-	public static final String TEST_FINDALLMAX 
-		= "testFindAllMax()";
-	
-	
-	/**
-	 * TEST_FINDALLITERABLE : String :<br/>
-	 * "testFindAllIterable()".<br/>
-	 */
-	public static final String TEST_FINDALLITERABLE 
-		= "testFindAllIterable()";
-	
-	
-	/**
-	 * TEST_UPDATE_INEXISTANT : String :<br/>
-	 * "testUpdateInexistant()".<br/>
-	 */
-	public static final String TEST_UPDATE_INEXISTANT 
-		= "testUpdateInexistant()";
-	
-	
-	/**
-	 * TEST_UPDATE : String :<br/>
-	 * "testUpdate()".<br/>
-	 */
-	public static final String TEST_UPDATE 
-		= "testUpdate()";
-	
-
-	/**
-	 * TEST_DELETE_INEXISTANT : String :<br/>
-	 * "testDeleteInexistant()".<br/>
-	 */
-	public static final String TEST_DELETE_INEXISTANT 
-		= "testDeleteInexistant()";
-
-	
-	/**
-	 * TEST_DELETE : String :<br/>
-	 * "testDelete()".<br/>
-	 */
-	public static final String TEST_DELETE 
-		= "testDelete()";
-	
-	
-	/**
-	 * TEST_DELETEBYID_INEXISTANT : String :<br/>
-	 * "testDeleteByIdInexistant()".<br/>
-	 */
-	public static final String TEST_DELETEBYID_INEXISTANT 
-		= "testDeleteByIdInexistant()";
-
-		
-	/**
-	 * TEST_DELETEBYID : String :<br/>
-	 * "testDeleteById()".<br/>
-	 */
-	public static final String TEST_DELETEBYID 
-		= "testDeleteById()";
-
-	
-	/**
-	 * TEST_DELETEBYIDBOOLEAN_INEXISTANT : String :<br/>
-	 * "testDeleteByIdBooleanInexistant()".<br/>
-	 */
-	public static final String TEST_DELETEBYIDBOOLEAN_INEXISTANT 
-		= "testDeleteByIdBooleanInexistant()";
-
-		
-	/**
-	 * TEST_DELETEBYIDBOOLEAN : String :<br/>
-	 * "testDeleteByIdBoolean()".<br/>
-	 */
-	public static final String TEST_DELETEBYIDBOOLEAN 
-		= "testDeleteByIdBoolean()";
-	
 
 	
 	/**
@@ -544,7 +385,6 @@ public class DaoProfilSimpleTest {
 			
 			/* AFFICHAGE A LA CONSOLE. */
 			if (AFFICHAGE_GENERAL && affichage) {
-				System.out.println(TEST_CREATE);
 				this.afficherDAONonInstancie();
 			}			
 			return;
@@ -1450,7 +1290,6 @@ public class DaoProfilSimpleTest {
 			
 			/* AFFICHAGE A LA CONSOLE. */
 			if (AFFICHAGE_GENERAL && affichage) {
-				System.out.println(TEST_PERSIST_SOUSCLASSE_NULL);
 				this.afficherDAONonInstancie();
 			}			
 			return;
@@ -1472,7 +1311,7 @@ public class DaoProfilSimpleTest {
 		nombreObjetsinitial = this.daoProfilSimple.count();
 		
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println(TEST_PERSIST_SOUSCLASSE_NULL);
+			System.out.println("testPersistSousClasseNull()");
 			this.afficherNbreObjetsInitial(nombreObjetsinitial);			
 		}
 		
@@ -1501,7 +1340,7 @@ public class DaoProfilSimpleTest {
 		
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println(TEST_PERSIST_SOUSCLASSE_NULL);
+			System.out.println("testPersistSousClasseNull()");
 			this.afficherObjetPersistant(
 					objet1Persistant, nombreObjetsFinal);						
 		}
@@ -1536,7 +1375,6 @@ public class DaoProfilSimpleTest {
 			
 			/* AFFICHAGE A LA CONSOLE. */
 			if (AFFICHAGE_GENERAL && affichage) {
-				System.out.println(TEST_PERSIST_SOUSCLASSE);
 				this.afficherDAONonInstancie();
 			}			
 			return;
@@ -1564,7 +1402,7 @@ public class DaoProfilSimpleTest {
 		if (AFFICHAGE_GENERAL && affichage) {
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println(TEST_PERSIST_SOUSCLASSE);
+			System.out.println("testPersistSousClasse()");
 			System.out.println(NBRE_OBJET_INITIAL + nombreObjetsinitial);
 			System.out.println(OBJET1_NON_PERSISTANT + objet1.toString());
 			System.out.println(TIRETS);
@@ -1597,7 +1435,7 @@ public class DaoProfilSimpleTest {
 		if (AFFICHAGE_GENERAL && affichage) {
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println(TEST_PERSIST_SOUSCLASSE);
+			System.out.println("testPersistSousClasse()");
 			System.out.println("NOMBRE D'OBJETS PERSISTES APRES PERSISTSOUSCLASSE : " + nombreObjetsFinal);
 			if (objet1Persistant != null) {
 				System.out.println(
@@ -1642,7 +1480,6 @@ public class DaoProfilSimpleTest {
 			
 			/* AFFICHAGE A LA CONSOLE. */
 			if (AFFICHAGE_GENERAL && affichage) {
-				System.out.println(TEST_PERSIST_SOUSCLASSE_DOUBLON);
 				this.afficherDAONonInstancie();
 			}			
 			return;
@@ -1675,7 +1512,7 @@ public class DaoProfilSimpleTest {
 		if (AFFICHAGE_GENERAL && affichage) {
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println(TEST_PERSIST_SOUSCLASSE_DOUBLON);
+			System.out.println("testPersistSousClasseDoublon()");
 			System.out.println(NBRE_OBJET_INITIAL + nombreObjetsinitial);
 			System.out.println(OBJET1_NON_PERSISTANT + objet1.toString());
 			System.out.println(OBJET2_NON_PERSISTANT_DOUBLON1 + objet2Equals1.toString());
@@ -1716,7 +1553,7 @@ public class DaoProfilSimpleTest {
 		if (AFFICHAGE_GENERAL && affichage) {
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println(TEST_PERSIST_SOUSCLASSE_DOUBLON);
+			System.out.println("testPersistSousClasseDoublon()");
 			System.out.println("NOMBRE D'OBJETS PERSISTES APRES PERSISTSOUSCLASSE : " + nombreObjetsFinal);
 			if (objet1Persistant != null) {
 				System.out.println(
@@ -1768,7 +1605,6 @@ public class DaoProfilSimpleTest {
 			
 			/* AFFICHAGE A LA CONSOLE. */
 			if (AFFICHAGE_GENERAL && affichage) {
-				System.out.println(TEST_CREATERETURNID_NULL);
 				this.afficherDAONonInstancie();
 			}			
 			return;
@@ -1791,7 +1627,7 @@ public class DaoProfilSimpleTest {
 		nombreObjetsinitial = this.daoProfilSimple.count();
 		
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println(TEST_CREATERETURNID_NULL);
+			System.out.println("testCreateReturnIdNull()");
 			this.afficherNbreObjetsInitial(nombreObjetsinitial);			
 		}
 		
@@ -1819,7 +1655,7 @@ public class DaoProfilSimpleTest {
 		
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println(TEST_CREATERETURNID_NULL);
+			System.out.println("testCreateReturnIdNull()");
 			this.afficherObjetPersistant(
 					objet1Persistant, nombreObjetsFinal);						
 		}
@@ -1853,7 +1689,6 @@ public class DaoProfilSimpleTest {
 			
 			/* AFFICHAGE A LA CONSOLE. */
 			if (AFFICHAGE_GENERAL && affichage) {
-				System.out.println(TEST_CREATERETURNID);
 				this.afficherDAONonInstancie();
 			}			
 			return;
@@ -1882,7 +1717,7 @@ public class DaoProfilSimpleTest {
 		if (AFFICHAGE_GENERAL && affichage) {
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println(TEST_CREATERETURNID);
+			System.out.println("testCreateReturnId()");
 			System.out.println(NBRE_OBJET_INITIAL + nombreObjetsinitial);
 			System.out.println(OBJET1_NON_PERSISTANT + objet1.toString());
 			System.out.println(TIRETS);
@@ -1915,7 +1750,7 @@ public class DaoProfilSimpleTest {
 		if (AFFICHAGE_GENERAL && affichage) {
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println(TEST_CREATERETURNID);
+			System.out.println("testCreateReturnId()");
 			System.out.println("NOMBRE D'OBJETS PERSISTES APRES CREATERETURNID : " + nombreObjetsFinal);
 			if (objet1Persistant != null) {
 				System.out.println(
@@ -1959,7 +1794,6 @@ public class DaoProfilSimpleTest {
 			
 			/* AFFICHAGE A LA CONSOLE. */
 			if (AFFICHAGE_GENERAL && affichage) {
-				System.out.println(TEST_CREATERETURNID_DOUBLON);
 				this.afficherDAONonInstancie();
 			}			
 			return;
@@ -1995,7 +1829,7 @@ public class DaoProfilSimpleTest {
 		if (AFFICHAGE_GENERAL && affichage) {
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println(TEST_CREATERETURNID_DOUBLON);
+			System.out.println("testCreateReturnIdDoublon()");
 			System.out.println(NBRE_OBJET_INITIAL + nombreObjetsinitial);
 			System.out.println(OBJET1_NON_PERSISTANT + objet1.toString());
 			System.out.println(OBJET2_NON_PERSISTANT_DOUBLON1 + objet2Equals1.toString());
@@ -2031,7 +1865,7 @@ public class DaoProfilSimpleTest {
 		if (AFFICHAGE_GENERAL && affichage) {
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println(TEST_CREATERETURNID_DOUBLON);
+			System.out.println("testCreateReturnIdDoublon()");
 			System.out.println("NOMBRE D'OBJETS PERSISTES APRES CREATERETURNID : " + nombreObjetsFinal);
 			if (objet1Persistant != null) {
 				System.out.println(
@@ -2088,7 +1922,7 @@ public class DaoProfilSimpleTest {
 			
 			/* AFFICHAGE A LA CONSOLE. */
 			if (AFFICHAGE_GENERAL && affichage) {
-				System.out.println(TEST_SAVELOT);
+				System.out.println("testSaveLot()");
 				this.afficherDAONonInstancie();
 			}			
 			return;
@@ -2131,7 +1965,7 @@ public class DaoProfilSimpleTest {
 		if (AFFICHAGE_GENERAL && affichage) {
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println(TEST_SAVELOT);
+			System.out.println("testSaveLot()");
 			System.out.println(NBRE_OBJET_INITIAL + nombreObjetsinitial);
 			System.out.println(OBJET1_NON_PERSISTANT + objet1.toString());
 			System.out.println("OBJET2 NON PERSISTANT : NULL");
@@ -2163,7 +1997,7 @@ public class DaoProfilSimpleTest {
 									
 		}
 		catch (AbstractDaoException e) {
-			System.out.println(TEST_SAVELOT);
+			System.out.println("testSaveLot()");
 			this.afficherAbstractDaoException(e);
 			e.printStackTrace();
 		}
@@ -2172,7 +2006,7 @@ public class DaoProfilSimpleTest {
 		if (AFFICHAGE_GENERAL && affichage) {
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println(TEST_SAVELOT);
+			System.out.println("testSaveLot()");
 			System.out.println("NOMBRE D'OBJETS PERSISTES APRES save(Lot) : " + nombreObjetsFinal);
 			System.out.println("LOT D'ENREGISTREMENTS EN BASE : ");
 			System.out.println(this.daoProfilSimple.afficherListe(lotPersistant));
@@ -2212,7 +2046,6 @@ public class DaoProfilSimpleTest {
 			
 			/* AFFICHAGE A LA CONSOLE. */
 			if (AFFICHAGE_GENERAL && affichage) {
-				System.out.println(TEST_RETRIEVE);
 				this.afficherDAONonInstancie();
 			}			
 			return;
@@ -2265,7 +2098,7 @@ public class DaoProfilSimpleTest {
 		if (AFFICHAGE_GENERAL && affichage) {
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println(TEST_RETRIEVE);
+			System.out.println("testRetrieve()");
 			System.out.println(NBRE_OBJET_INITIAL + nombreObjetsinitial);
 			System.out.println(OBJET1_NON_PERSISTANT + objet1.toString());
 			System.out.println("OBJET2 NON PERSISTANT : NULL");
@@ -2301,7 +2134,7 @@ public class DaoProfilSimpleTest {
 		if (AFFICHAGE_GENERAL && affichage) {
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println(TEST_RETRIEVE);
+			System.out.println("testRetrieve()");
 			System.out.println("LOT D'ENREGISTREMENTS EN BASE : ");
 			System.out.println(this.daoProfilSimple.afficherListe(lotPersistant));
 			System.out.println(TIRETS);
@@ -2329,7 +2162,7 @@ public class DaoProfilSimpleTest {
 		
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println(TEST_RETRIEVE);
+			System.out.println("testRetrieve()");
 			this.afficherObjetPersistant(
 					objetpersistant, nombreObjetsFinal);
 		}
@@ -2365,7 +2198,6 @@ public class DaoProfilSimpleTest {
 			
 			/* AFFICHAGE A LA CONSOLE. */
 			if (AFFICHAGE_GENERAL && affichage) {
-				System.out.println(TEST_FINDBYID);
 				this.afficherDAONonInstancie();
 			}			
 			return;
@@ -2407,7 +2239,7 @@ public class DaoProfilSimpleTest {
 			
 			/* AFFICHAGE A LA CONSOLE. */
 			if (AFFICHAGE_GENERAL && affichage) {
-				System.out.println(TEST_FINDBYID);
+				System.out.println("testFindById()");
 				this.afficherObjetPersistant(
 						objetpersistant, nombreObjetsFinal);
 			}
@@ -2444,7 +2276,6 @@ public class DaoProfilSimpleTest {
 			
 			/* AFFICHAGE A LA CONSOLE. */
 			if (AFFICHAGE_GENERAL && affichage) {
-				System.out.println(TEST_FINDALL);
 				this.afficherDAONonInstancie();
 			}			
 			return;
@@ -2470,7 +2301,7 @@ public class DaoProfilSimpleTest {
 						
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println(TEST_FINDALL);
+			System.out.println("testFindAll()");
 			System.out.println("LOT D'OBJETS TROUVES EN BASE PAR findAll() : ");
 			System.out.println(this.daoProfilSimple.afficherListe(lotPersistant));
 			System.out.println(TIRETS);
@@ -2515,7 +2346,6 @@ public class DaoProfilSimpleTest {
 			
 			/* AFFICHAGE A LA CONSOLE. */
 			if (AFFICHAGE_GENERAL && affichage) {
-				System.out.println(TEST_FINDALLMAX);
 				this.afficherDAONonInstancie();
 			}			
 			return;
@@ -2541,7 +2371,7 @@ public class DaoProfilSimpleTest {
 			
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println(TEST_FINDALLMAX);
+			System.out.println("testFindAllMax()");
 			System.out.println("LOT D'OBJETS TROUVES EN BASE PAR findAllMax(2) : ");
 			System.out.println(this.daoProfilSimple.afficherListe(lotPersistant));
 			System.out.println(TIRETS);
@@ -2590,7 +2420,6 @@ public class DaoProfilSimpleTest {
 			
 			/* AFFICHAGE A LA CONSOLE. */
 			if (AFFICHAGE_GENERAL && affichage) {
-				System.out.println(TEST_FINDALLITERABLE);
 				this.afficherDAONonInstancie();
 			}			
 			return;
@@ -2622,7 +2451,7 @@ public class DaoProfilSimpleTest {
 						
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println(TEST_FINDALLITERABLE);
+			System.out.println("testFindAllIterable()");
 			System.out.println("LOT D'OBJETS TROUVES EN BASE PAR findAll(listIds) : ");
 			System.out.println(this.daoProfilSimple.afficherListe(lotPersistant));
 			System.out.println(TIRETS);
@@ -2677,7 +2506,6 @@ public class DaoProfilSimpleTest {
 			
 			/* AFFICHAGE A LA CONSOLE. */
 			if (AFFICHAGE_GENERAL && affichage) {
-				System.out.println(TEST_UPDATE_INEXISTANT);
 				this.afficherDAONonInstancie();
 			}			
 			return;
@@ -2696,7 +2524,7 @@ public class DaoProfilSimpleTest {
 		
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println(TEST_UPDATE_INEXISTANT);
+			System.out.println("testUpdateInexistant()");
 			this.afficherObjetNonPersistant(
 					objetInexistant, 0L);
 		}
@@ -2709,7 +2537,7 @@ public class DaoProfilSimpleTest {
 		
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println(TEST_UPDATE_INEXISTANT);
+			System.out.println("testUpdateInexistant()");
 			this.afficherObjetPersistant(
 					objetpersistantInexistant, 0L);
 		}
@@ -2758,7 +2586,6 @@ public class DaoProfilSimpleTest {
 			
 			/* AFFICHAGE A LA CONSOLE. */
 			if (AFFICHAGE_GENERAL && affichage) {
-				System.out.println(TEST_UPDATE);
 				this.afficherDAONonInstancie();
 			}			
 			return;
@@ -2787,7 +2614,7 @@ public class DaoProfilSimpleTest {
 		
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println(TEST_UPDATE);
+			System.out.println("testUpdate()");
 			this.afficherObjetPersistant(
 					objet1Persistant, 3L);
 		}
@@ -2804,7 +2631,7 @@ public class DaoProfilSimpleTest {
 		
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println(TEST_UPDATE);
+			System.out.println("testUpdate()");
 			this.afficherObjetPersistant(
 					objet1ModifiePersistant, 3L);
 		}
@@ -2853,7 +2680,6 @@ public class DaoProfilSimpleTest {
 			
 			/* AFFICHAGE A LA CONSOLE. */
 			if (AFFICHAGE_GENERAL && affichage) {
-				System.out.println(TEST_DELETE_INEXISTANT);
 				this.afficherDAONonInstancie();
 			}			
 			return;
@@ -2895,7 +2721,7 @@ public class DaoProfilSimpleTest {
 						
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println(TEST_DELETE_INEXISTANT);
+			System.out.println("testDeleteInexistant()");
 			System.out.println(LOT_OBJET_INITIAL);
 			System.out.println(this.daoProfilSimple.afficherListe(lotPersistant));
 			System.out.println(TIRETS);
@@ -2918,7 +2744,7 @@ public class DaoProfilSimpleTest {
 						
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println(TEST_DELETE_INEXISTANT);
+			System.out.println("testDeleteInexistant()");
 			System.out.println("LOT D'OBJETS EN BASE APRES DELETE (INEXISTANT) : ");
 			System.out.println(this.daoProfilSimple.afficherListe(lotPersistantApresDelete));
 			System.out.println(TIRETS);
@@ -2964,7 +2790,6 @@ public class DaoProfilSimpleTest {
 			
 			/* AFFICHAGE A LA CONSOLE. */
 			if (AFFICHAGE_GENERAL && affichage) {
-				System.out.println(TEST_DELETE);
 				this.afficherDAONonInstancie();
 			}			
 			return;
@@ -3002,7 +2827,7 @@ public class DaoProfilSimpleTest {
 						
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println(TEST_DELETE);
+			System.out.println("testDelete()");
 			System.out.println(LOT_OBJET_INITIAL);
 			System.out.println(this.daoProfilSimple.afficherListe(lotPersistant));
 			System.out.println(TIRETS);
@@ -3025,7 +2850,7 @@ public class DaoProfilSimpleTest {
 						
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println(TEST_DELETE);
+			System.out.println("testDelete()");
 			System.out.println(LOT_OBJETS_APRES_DELETE);
 			System.out.println(this.daoProfilSimple.afficherListe(lotPersistantApresDelete));
 			System.out.println(TIRETS);
@@ -3070,7 +2895,6 @@ public class DaoProfilSimpleTest {
 			
 			/* AFFICHAGE A LA CONSOLE. */
 			if (AFFICHAGE_GENERAL && affichage) {
-				System.out.println(TEST_DELETEBYID_INEXISTANT);
 				this.afficherDAONonInstancie();
 			}			
 			return;
@@ -3108,7 +2932,7 @@ public class DaoProfilSimpleTest {
 			
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println(TEST_DELETEBYID_INEXISTANT);
+			System.out.println("testDeleteByIdInexistant()");
 			System.out.println(LOT_OBJET_INITIAL);
 			System.out.println(this.daoProfilSimple.afficherListe(lotPersistant));
 			System.out.println(TIRETS);
@@ -3131,7 +2955,7 @@ public class DaoProfilSimpleTest {
 			
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println(TEST_DELETEBYID_INEXISTANT);
+			System.out.println("testDeleteByIdInexistant()");
 			System.out.println("LOT D'OBJETS EN BASE APRES DELETEBYID(inexistant) : ");
 			System.out.println(this.daoProfilSimple.afficherListe(lotPersistantApresDelete));
 			System.out.println(TIRETS);
@@ -3283,7 +3107,6 @@ public class DaoProfilSimpleTest {
 			
 			/* AFFICHAGE A LA CONSOLE. */
 			if (AFFICHAGE_GENERAL && affichage) {
-				System.out.println(TEST_DELETEBYIDBOOLEAN_INEXISTANT);
 				this.afficherDAONonInstancie();
 			}			
 			return;
@@ -3321,7 +3144,7 @@ public class DaoProfilSimpleTest {
 						
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println(TEST_DELETEBYIDBOOLEAN_INEXISTANT);
+			System.out.println("testDeleteByIdBooleanInexistant()");
 			System.out.println(LOT_OBJET_INITIAL);
 			System.out.println(this.daoProfilSimple.afficherListe(lotPersistant));
 			System.out.println(TIRETS);
@@ -3343,7 +3166,7 @@ public class DaoProfilSimpleTest {
 						
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println(TEST_DELETEBYIDBOOLEAN_INEXISTANT);
+			System.out.println("testDeleteByIdBooleanInexistant()");
 			System.out.println("LOT D'OBJETS EN BASE APRES DELETEBYIDBOOLEAN(inexistant) : ");
 			System.out.println(this.daoProfilSimple.afficherListe(lotPersistantApresDelete));
 			System.out.println(TIRETS);
@@ -3390,7 +3213,6 @@ public class DaoProfilSimpleTest {
 			
 			/* AFFICHAGE A LA CONSOLE. */
 			if (AFFICHAGE_GENERAL && affichage) {
-				System.out.println(TEST_DELETEBYIDBOOLEAN);
 				this.afficherDAONonInstancie();
 			}			
 			return;
@@ -3432,7 +3254,7 @@ public class DaoProfilSimpleTest {
 						
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println(TEST_DELETEBYIDBOOLEAN);
+			System.out.println("testDeleteByIdBoolean()");
 			System.out.println(LOT_OBJET_INITIAL);
 			System.out.println(this.daoProfilSimple.afficherListe(lotPersistant));
 			System.out.println(TIRETS);
@@ -3459,7 +3281,7 @@ public class DaoProfilSimpleTest {
 						
 			System.out.println();
 			System.out.println(TIRETS);
-			System.out.println(TEST_DELETEBYIDBOOLEAN);
+			System.out.println("testDeleteByIdBoolean()");
 			System.out.println("LOT D'OBJETS EN BASE APRES DELETEBYIDBOOLEAN : ");
 			System.out.println(this.daoProfilSimple.afficherListe(lotPersistantApresDelete));
 			System.out.println(TIRETS);
