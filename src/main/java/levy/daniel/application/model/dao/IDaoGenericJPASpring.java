@@ -271,6 +271,8 @@ public interface IDaoGenericJPASpring<T, ID extends Serializable> {
 	 * </ul>
 	 * retourne null si pId == null.<br/>
 	 * retourne null si pId n'existe pas en base.<br/>
+	 * ATTENTION : DOIT ETRE REDEFINI DANS LES CLASSES CONCRETES 
+	 * SI T EST UNE INTERFACE (et donc pas une Entity).<br/>
 	 * <br/>
 	 *
 	 * @param pId : ID : ID en base de l'Objet métier.<br/>

@@ -87,7 +87,7 @@ import levy.daniel.application.model.metier.user.usersimple.IUserSimple;
  * </li>
  * <br/>
  * <li>
- * <img src="../../../../../../../../../../javadoc/images/implementation_UserSimple_detaille.png" 
+ * <img src="../../../../../../../../../../../javadoc/images/implementation_UserSimple_detaille.png" 
  * alt="implémentation du UserSimple détaillée avec Objets composants" border="1" align="center" />
  * </li>
  * 
@@ -98,7 +98,7 @@ import levy.daniel.application.model.metier.user.usersimple.IUserSimple;
  * <li>l'objet UserSimple implémente l'INTERFACE IUserSimple : </li>
  * <br/>
  * <li>
- * <img src="../../../../../../../../../../javadoc/images/implementation_UserSimple.png" 
+ * <img src="../../../../../../../../../../../javadoc/images/implementation_UserSimple.png" 
  * alt="implémentation du UserSimple" border="1" align="center" />
  * </li>
  * 
@@ -110,7 +110,7 @@ import levy.daniel.application.model.metier.user.usersimple.IUserSimple;
  * <b>javax.persistence annotations</b> suivantes : </li>
  * <br/>
  * <li>
- * <img src="../../../../../../../../../../javadoc/images/UserSimple_Entity.png" 
+ * <img src="../../../../../../../../../../../javadoc/images/UserSimple_Entity.png" 
  * alt="implémentation de l'Entity UserSimple" border="1" align="center" />
  * </li>
  * 
