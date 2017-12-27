@@ -1,3 +1,5 @@
+@charset "utf-8"; /* Déclaration de l'utilisation du Charset UTF-8 dans cette css.*/
+
 /* Général -------------------------------------------------------------- */
 
 body, p, legend, label, input {

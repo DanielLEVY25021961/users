@@ -22,7 +22,7 @@ import levy.daniel.application.model.metier.personne.idinsee.impl.IdInsee;
  * </li>
  * <br/>
  * <li>
- * <img src="../../../../../../../../../../../javadoc/images/implementation_DAOs.png" 
+ * <img src="../../../../../../../../../../../../javadoc/images/implementation_DAO_IdInsee.png" 
  * alt="implémentation des DAOs" border="1" align="center" />
  * </li>
  * </ul>

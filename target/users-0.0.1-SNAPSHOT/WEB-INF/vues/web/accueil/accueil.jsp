@@ -53,6 +53,10 @@
 		<c:set var="url_context" value="http://${host}:${port}${context}"/>
 		<c:set var="url_jsp" value="http://${host}:${port}${context}${path_jsp}"/>
 		
+		<%--ANCRE POUR LE RETOUR EN HAUT --%>
+		<div id="sommet"></div>
+		
+		
     	<!-- HEADER -->
     	<header class="bordure">
     	
@@ -77,7 +81,7 @@
 		<%-- MENU EN HAUT --%>	
         <nav class="bordure_fond_bleu">
         
-			<table>			
+			<table border="1">			
 				<tr>
 					<td>
 						<%-- LIEN (URL) --%>
@@ -99,6 +103,8 @@
 						title="vers indexTest.html sous le contexte/">
 							Vers la page indexTest.html
 						</a>   
+					</td>
+					<td>
 					</td>
 				</tr>
 				
@@ -123,6 +129,8 @@
 						title="vers style_index.css sous /static/css/">
 							Vers style_index.css
 						</a>   
+					</td>
+					<td>
 					</td>
 				</tr>
 																												
@@ -152,7 +160,16 @@
 						target="_blank">
 							Vers le site de vérification des fonctionnalités des navigateurs caniuse.com
 						</a> 										
-					</td>									
+					</td>
+					<td>
+						<!-- LIEN (URL) -->
+						<!-- target="_blank" force l'ouverture dans un nouvel onglet -->
+						<a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html" 
+						title="Documentation de référence de SPRING 5.0.1" 
+						target="_blank">
+							Vers DOC SPRING 5.0.1
+						</a> 										
+					</td>																													
 				</tr>								
 			</table>													
         </nav>

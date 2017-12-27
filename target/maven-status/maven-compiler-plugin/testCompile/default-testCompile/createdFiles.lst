@@ -1,4 +1,5 @@
 levy\daniel\application\apptechnic\configurationmanagers\gestionnairesrg\ComparatorRGTest.class
+levy\daniel\application\model\dao\metier\personne\idinsee\impl\DaoIdInseeTest.class
 levy\daniel\application\model\metier\usersimple\UserSimpleTest.class
 levy\daniel\application\apptechnic\configurationmanagers\gestionnairesrg\GestionnaireRGTest.class
 levy\daniel\application\apptechnic\configurationmanagers\gestionnairesrg\metier\usersimple\GestionnaireRGUserSimpleTest.class
@@ -9,6 +10,7 @@ levy\daniel\application\model\dao\metier\usersimple\impl\DaoUserSimpleTest.class
 levy\daniel\application\apptechnic\configurationmanagers\gestionnairesrg\LigneRGTest.class
 levy\daniel\application\model\metier\usersimple\impl\CiviliteTest.class
 levy\daniel\application\apptechnic\configurationmanagers\ConfigurationBundlesManagerTest.class
+levy\daniel\application\model\metier\personne\idinsee\impl\IdInseeTest.class
 levy\daniel\application\model\dao\metier\usersimple\impl\DaoCiviliteTest.class
 levy\daniel\application\ConfigurationApplicationManagerTest.class
 levy\daniel\application\apptechnic\exceptions\technical\impl\BundleManquantExceptionTest.class

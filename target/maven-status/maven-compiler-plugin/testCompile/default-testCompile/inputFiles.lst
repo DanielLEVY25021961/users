@@ -12,3 +12,5 @@ D:\Donnees\eclipse\eclipseworkspace_neon\users\src\test\java\levy\daniel\applica
 D:\Donnees\eclipse\eclipseworkspace_neon\users\src\test\java\levy\daniel\application\apptechnic\exceptions\technical\impl\BundleManquantExceptionTest.java
 D:\Donnees\eclipse\eclipseworkspace_neon\users\src\test\java\levy\daniel\application\ConfigurationApplicationManagerTest.java
 D:\Donnees\eclipse\eclipseworkspace_neon\users\src\test\java\levy\daniel\application\apptechnic\configurationmanagers\LocaleManagerTest.java
+D:\Donnees\eclipse\eclipseworkspace_neon\users\src\test\java\levy\daniel\application\model\dao\metier\personne\idinsee\impl\DaoIdInseeTest.java
+D:\Donnees\eclipse\eclipseworkspace_neon\users\src\test\java\levy\daniel\application\model\metier\personne\idinsee\impl\IdInseeTest.java
