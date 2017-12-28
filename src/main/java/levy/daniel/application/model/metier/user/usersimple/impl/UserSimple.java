@@ -616,7 +616,6 @@ public class UserSimple
 		}
 		
 		
-
 		/* Mdp. */
 		if (this.getMdp() == null) {
 			if (pObject.getMdp() != null) {

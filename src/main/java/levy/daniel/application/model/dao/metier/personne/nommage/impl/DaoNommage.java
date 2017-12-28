@@ -1,20 +1,21 @@
-package levy.daniel.application.model.dao.metier.personne.idinsee.impl;
+package levy.daniel.application.model.dao.metier.personne.nommage.impl;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Repository;
 
 import levy.daniel.application.model.dao.daoexceptions.AbstractDaoException;
-import levy.daniel.application.model.dao.metier.personne.idinsee.AbstractDaoIdInsee;
-import levy.daniel.application.model.metier.personne.idinsee.impl.IdInsee;
+import levy.daniel.application.model.dao.metier.personne.nommage.AbstractDaoNommage;
+import levy.daniel.application.model.metier.personne.nommage.INommage;
+import levy.daniel.application.model.metier.personne.nommage.impl.Nommage;
 
 
 /**
- * class DaoIdInsee :<br/>
+ * class DaoNommage :<br/>
  * <ul>
- * <li>DAO <b>CONCRET</b> pour les <b>IdInsee</b>.</li>
+ * <li>DAO <b>CONCRET</b> pour les <b>Nommage</b>.</li>
  * <li>
- * HERITE DU DAO ABSTRAIT AbstractDaoIdInsee.
+ * HERITE DU DAO ABSTRAIT AbstractDaoNommage.
  * </li>
  * <li>
  * Certaines méthodes (getOne(ID), ...) sont 
@@ -22,7 +23,7 @@ import levy.daniel.application.model.metier.personne.idinsee.impl.IdInsee;
  * </li>
  * <br/>
  * <li>
- * <img src="../../../../../../../../../../../../javadoc/images/implementation_DAO_IdInsee.png" 
+ * <img src="../../../../../../../../../../../../javadoc/images/.png" 
  * alt="implémentation des DAOs" border="1" align="center" />
  * </li>
  * </ul>
@@ -40,42 +41,43 @@ import levy.daniel.application.model.metier.personne.idinsee.impl.IdInsee;
  *
  * @author dan Lévy
  * @version 1.0
- * @since 26 déc. 2017
+ * @since 28 déc. 2017
  *
  */
-@Repository(value="DaoIdInsee")
-public class DaoIdInsee extends AbstractDaoIdInsee {
+@Repository(value="DaoNommage")
+public class DaoNommage extends AbstractDaoNommage {
 
 	// ************************ATTRIBUTS************************************/
 
 	/**
-	 * CLASSE_DAO_IDINSEE : String :<br/>
-	 * "Classe DaoIdInsee".<br/>
+	 * CLASSE_DAO_NOMMAGE : String :<br/>
+	 * "Classe DaoNommage".<br/>
 	 */
-	public static final String CLASSE_DAO_IDINSEE 
-		= "Classe DaoIdInsee";
+	public static final String CLASSE_DAO_NOMMAGE 
+		= "Classe DaoNommage";
 	
 	
 	/**
 	 * LOG : Log : 
 	 * Logger pour Log4j (utilisant commons-logging).
 	 */
-	private static final Log LOG = LogFactory.getLog(DaoIdInsee.class);
+	private static final Log LOG = LogFactory.getLog(DaoNommage.class);
+
 
 	// *************************METHODES************************************/
-	
+
 	
 	 /**
-	 * method CONSTRUCTEUR DaoIdInsee() :<br/>
+	 * method CONSTRUCTEUR DaoNommage() :<br/>
 	 * CONSTRUCTEUR D'ARITE NULLE.<br/>
 	 * <br/>
 	 */
-	public DaoIdInsee() {
+	public DaoNommage() {
 		super();
 	} // Fin de CONSTRUCTEUR D'ARITE NULLE.________________________________
 	
 	
-	
+
 	/**
 	 * {@inheritDoc}
 	 * <br/>
@@ -84,10 +86,10 @@ public class DaoIdInsee extends AbstractDaoIdInsee {
 	 * <br/>
 	 */
 	@Override
-	public IdInsee findById(
+	public INommage findById(
 			final Long pId) throws AbstractDaoException {
 		
-		IdInsee objetTrouve = null;
+		Nommage objetTrouve = null;
 		
 		/* retourne null si pId == null. */
 		if (pId == null) {
@@ -107,7 +109,7 @@ public class DaoIdInsee extends AbstractDaoIdInsee {
 		try {
 			
 			objetTrouve 
-				= this.entityManager.find(IdInsee.class, pId);
+				= this.entityManager.find(Nommage.class, pId);
 			
 		}
 		catch (Exception e) {
@@ -115,7 +117,7 @@ public class DaoIdInsee extends AbstractDaoIdInsee {
 			/* Gestion de la DAO Exception. */
 			this.gestionnaireException
 				.gererException(
-						CLASSE_DAO_IDINSEE
+						CLASSE_DAO_NOMMAGE
 						, "Méthode findById(ID)", e);
 			
 		}
@@ -123,7 +125,7 @@ public class DaoIdInsee extends AbstractDaoIdInsee {
 		return objetTrouve;
 				
 	} // Fin de findById(...)._____________________________________________
-	
+
 
 	
-} // FIN DE LA CLASSE DaoIdInsee.--------------------------------------------
+} // FIN DE LA CLASSE DaoNommage.--------------------------------------------

@@ -3,7 +3,8 @@
  * <p>
  * ce package contient toutes les classes qui modélisent 
  * un <b>IdNommage</b>, c'est à dire un couple
- * <b>[prenom - nom]</b> qui identifie une ou des <b>Personne</b>.
+ * <b>[nom - prenom]</b> qui identifie <i>une ou plusieurs</i> 
+ * <b>Personne</b>.
  * </p>
  * 
  * <br/>

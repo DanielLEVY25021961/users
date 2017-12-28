@@ -1,4 +1,4 @@
-package levy.daniel.application.model.dao.metier.personne.idinsee;
+package levy.daniel.application.model.dao.metier.personne.nommage;
 
 import java.util.List;
 
@@ -11,27 +11,28 @@ import org.apache.commons.logging.LogFactory;
 
 import levy.daniel.application.model.dao.AbstractDaoGenericJPASpring;
 import levy.daniel.application.model.dao.daoexceptions.AbstractDaoException;
-import levy.daniel.application.model.metier.personne.idinsee.IIdInsee;
+import levy.daniel.application.model.metier.personne.nommage.INommage;
+
 
 /**
- * class AbstractDaoIdInsee :<br/>
+ * class AbstractDaoNommage :<br/>
  * <ul>
  * <li>
  * DAO ABSTRAIT SPRING pour les 
- * <b>IIdInsee</b>.
+ * <b>INommage</b>.
  * </li>
  * <li>
  * Comporte l'implémentation des méthodes <b>spécifiques</b> aux 
- * IIdInsee.
+ * INommage.
  * </li>
- * <li>IMPLEMENTE L'INTERFACE IDaoIdInsee.</li>
+ * <li>IMPLEMENTE L'INTERFACE IDaoNommage.</li>
  * <li>
  * HERITE DE LA CLASSE ABSTRAITE 
- * AbstractDaoGenericJPASpring&lt;IIdInsee, Long&gt;.
+ * AbstractDaoGenericJPASpring&lt;INommage, Long&gt;.
  * </li>
  * <br/>
  * <li>
- * <img src="../../../../../../../../../../../javadoc/images/implementation_DAO_IdInsee.png" 
+ * <img src="../../../../../../../../../../../javadoc/images/.png" 
  * alt="implémentation des DAOs" border="1" align="center" />
  * </li>
  * </ul>
@@ -47,24 +48,24 @@ import levy.daniel.application.model.metier.personne.idinsee.IIdInsee;
  * <br/>
  *
  *
- * @author daniel.levy Lévy
+ * @author dan Lévy
  * @version 1.0
- * @since 26 déc. 2017
+ * @since 28 déc. 2017
  *
  */
-public abstract class AbstractDaoIdInsee 
-		extends AbstractDaoGenericJPASpring<IIdInsee, Long>
-				implements IDaoIdInsee {
+public abstract class AbstractDaoNommage 
+		extends AbstractDaoGenericJPASpring<INommage, Long> 
+										implements IDaoNommage {
 
 	// ************************ATTRIBUTS************************************/
 
 
 	/**
-	 * CLASSE_ABSTRACTDAO_IDINSEE : String :<br/>
-	 * "Classe AbstractDaoIdInsee".<br/>
+	 * CLASSE_ABSTRACTDAO_NOMMAGE : String :<br/>
+	 * "Classe AbstractDaoNommage".<br/>
 	 */
-	public static final String CLASSE_ABSTRACTDAO_IDINSEE 
-		= "Classe AbstractDaoIdInsee";
+	public static final String CLASSE_ABSTRACTDAO_NOMMAGE 
+		= "Classe AbstractDaoNommage";
 
 	/**
 	 * SAUT_LIGNE_JAVA : char :<br/>
@@ -75,29 +76,32 @@ public abstract class AbstractDaoIdInsee
 	
 	/**
 	 * SELECT_OBJET : String :<br/>
-	 * "select idInsee from 
-	 * AbstractIdInsee as idInsee ".<br/>
+	 * "select nommage from 
+	 * AbstractNommage as nommage ".<br/>
 	 */
 	public static final String SELECT_OBJET 
-		= "select idInsee from "
-				+ "AbstractIdInsee as idInsee ";
+		= "select nommage from "
+				+ "AbstractNommage as nommage ";
 
 
 	/**
 	 * LOG : Log : 
 	 * Logger pour Log4j (utilisant commons-logging).
 	 */
-	private static final Log LOG = LogFactory.getLog(AbstractDaoIdInsee.class);
+	private static final Log LOG 
+		= LogFactory.getLog(AbstractDaoNommage.class);
+
+
 
 	// *************************METHODES************************************/
 
 	
 	 /**
-	 * method CONSTRUCTEUR AbstractDaoIdInsee() :<br/>
+	 * method CONSTRUCTEUR AbstractDaoNommage() :<br/>
 	 * CONSTRUCTEUR D'ARITE NULLE.<br/>
 	 * <br/>
 	 */
-	public AbstractDaoIdInsee() {
+	public AbstractDaoNommage() {
 		super();
 	} // Fin de CONSTRUCTEUR D'ARITE NULLE.________________________________
 
@@ -107,9 +111,8 @@ public abstract class AbstractDaoIdInsee
 	 * {@inheritDoc}
 	 */
 	@Override
-	public final Long createReturnId(
-			final IIdInsee pObject) 
-						throws AbstractDaoException {
+	public Long createReturnId(
+			final INommage pObject) throws AbstractDaoException {
 		
 		/* retourne null si pObject == null. */
 		if (pObject == null) {
@@ -132,7 +135,7 @@ public abstract class AbstractDaoIdInsee
 		}
 		
 		/* Crée l'Objet en base ou jette une AbstractDaoException. */
-		final IIdInsee objetPersistant 
+		final INommage objetPersistant 
 			= this.create(pObject);
 		
 		/* retourne null si l'objet pObject n'a pu être créé en base. */
@@ -146,39 +149,40 @@ public abstract class AbstractDaoIdInsee
 	} // Fin de createReturnId(...)._______________________________________
 
 
-	
+
+
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
-	public final IIdInsee retrieve(
-			final IIdInsee pObject) 
-						throws AbstractDaoException {
+	public INommage retrieve(
+			final INommage pObject) throws AbstractDaoException {
 
 		/* return null si pObject == null. */
 		if (pObject == null) {
 			return null;
 		}
 		
-		IIdInsee objetResultat = null;
+		INommage objetResultat = null;
 		
 		/* REQUETE HQL PARMETREE. */
 		final String requeteString 
 			= SELECT_OBJET
-				+ "where idInsee.numeroInsee = :pNumeroInsee";
+				+ "where nommage.nom = :pNom and nommage.prenom = :pPrenom";
 		
 		/* Construction de la requête HQL. */
 		final Query requete 
 			= this.entityManager.createQuery(requeteString);
 		
 		/* Passage des paramètres de la requête HQL. */
-		requete.setParameter("pNumeroInsee", pObject.getNumeroInsee());
+		requete.setParameter("pNom", pObject.getNom());
+		requete.setParameter("pPrenom", pObject.getPrenom());
 		
 		try {
 			
 			/* Execution de la requete HQL. */
 			objetResultat 
-			= (IIdInsee) requete.getSingleResult();
+			= (INommage) requete.getSingleResult();
 			
 		}
 		catch (NoResultException noResultExc) {
@@ -197,8 +201,8 @@ public abstract class AbstractDaoIdInsee
 			/* Gestion de la DAO Exception. */
 			this.gestionnaireException
 				.gererException(
-						CLASSE_ABSTRACTDAO_IDINSEE
-						, "Méthode retrieve(IIdInsee pObject)", e);
+						CLASSE_ABSTRACTDAO_NOMMAGE
+						, "Méthode retrieve(INommage pObject)", e);
 		}
 				
 		return objetResultat;
@@ -211,47 +215,51 @@ public abstract class AbstractDaoIdInsee
 	 * {@inheritDoc}
 	 */
 	@Override
-	public final IIdInsee retrieveByIdMetier(
-			final IIdInsee pObjet) 
-								throws AbstractDaoException {
+	public INommage retrieveByIdMetier(
+			final INommage pObjet) throws AbstractDaoException {
 		return this.retrieve(pObjet);
 	} // Fin de retrieveByIdMetier(...).___________________________________
-	
-	
+
+
 
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
-	public final IIdInsee retrieveByNumeroInsee(
-			final String pNumeroInsee) 
-									throws AbstractDaoException {
-		
-		/* Retourne null si pNumeroInsee est blank. */
-		if (StringUtils.isBlank(pNumeroInsee)) {
+	public INommage retrieveByNomPrenom(
+			final String pNom
+				, final String pPrenom) throws AbstractDaoException {
+
+		/* return null si pNom est blank. */
+		if (StringUtils.isBlank(pNom)) {
 			return null;
 		}
-				
-		IIdInsee objetResultat = null;
+		
+		/* return null si pPrenom est blank. */
+		if (StringUtils.isBlank(pPrenom)) {
+			return null;
+		}
+		
+		INommage objetResultat = null;
 		
 		/* REQUETE HQL PARMETREE. */
 		final String requeteString 
 			= SELECT_OBJET
-				+ "where idInsee.numeroInsee = :pNumeroInsee";
+				+ "where nommage.nom = :pNom and nommage.prenom = :pPrenom";
 		
 		/* Construction de la requête HQL. */
 		final Query requete 
 			= this.entityManager.createQuery(requeteString);
 		
 		/* Passage des paramètres de la requête HQL. */
-		requete.setParameter("pNumeroInsee", pNumeroInsee);
+		requete.setParameter("pNom", pNom);
+		requete.setParameter("pPrenom", pPrenom);
 		
 		try {
 			
 			/* Execution de la requete HQL. */
-			/* Execution de la requete HQL. */
 			objetResultat 
-			= (IIdInsee) requete.getSingleResult();
+			= (INommage) requete.getSingleResult();
 			
 		}
 		catch (NoResultException noResultExc) {
@@ -270,35 +278,44 @@ public abstract class AbstractDaoIdInsee
 			/* Gestion de la DAO Exception. */
 			this.gestionnaireException
 				.gererException(
-						CLASSE_ABSTRACTDAO_IDINSEE
-						, "Méthode retrieveByNumeroInsee(...)", e);
+						CLASSE_ABSTRACTDAO_NOMMAGE
+						, "Méthode retrieveByNomPrenom("
+								+ "String pNom, String pPrenom", e);
 		}
-
+				
 		return objetResultat;
-		
+
 	} // Fin de retrieveByNomPrenom(...).__________________________________
-
-
 	
+
+
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
-	public final void deleteById(
-			final Long pId) 
-					throws AbstractDaoException {
+	public abstract INommage findById(Long pId) 
+				throws AbstractDaoException;
+
+
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void deleteById(
+			final Long pId) throws AbstractDaoException {
 		
 		/* ne fait rien si pId == null. */
 		if (pId == null) {
 			return;
 		}
 
-		IIdInsee objetPersistant = null;
+		INommage objetPersistant = null;
 
 		/* REQUETE HQL PARAMETREE. */
 		final String requeteString 
 		= SELECT_OBJET 
-		+ "where idInsee.id = :pId";
+		+ "where nommage.id = :pId";
 
 		/* Construction de la requête HQL. */
 		final Query requete 
@@ -310,7 +327,7 @@ public abstract class AbstractDaoIdInsee
 		try {
 			/* Execution de la requete HQL. */
 			objetPersistant 
-			= (IIdInsee) requete.getSingleResult();
+			= (INommage) requete.getSingleResult();
 		}
 		catch (NoResultException noResultExc) {
 			objetPersistant = null;
@@ -339,21 +356,20 @@ public abstract class AbstractDaoIdInsee
 
 			/* Gestion de la DAO Exception. */
 			this.gestionnaireException
-				.gererException(CLASSE_ABSTRACTDAO_IDINSEE
+				.gererException(CLASSE_ABSTRACTDAO_NOMMAGE
 						, "Méthode deleteById(Long pId)", e);
 		}
 		
 	} // Fin de deleteById(...).___________________________________________
 
-	
-	
+
+
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
-	public final boolean deleteByIdBoolean(
-			final Long pId) 
-						throws AbstractDaoException {
+	public boolean deleteByIdBoolean(
+			final Long pId) throws AbstractDaoException {
 		
 		/* retourne false si pId == null. */
 		if (pId == null) {
@@ -362,12 +378,12 @@ public abstract class AbstractDaoIdInsee
 		
 		boolean resultat = false;
 		
-		IIdInsee objetPersistant = null;
+		INommage objetPersistant = null;
 
 		/* REQUETE HQL PARAMETREE. */
 		final String requeteString 
 		= SELECT_OBJET 
-		+ "where idInsee.id = :pId";
+		+ "where nommage.id = :pId";
 
 		/* Construction de la requête HQL. */
 		final Query requete 
@@ -379,7 +395,7 @@ public abstract class AbstractDaoIdInsee
 		try {
 			/* Execution de la requete HQL. */
 			objetPersistant 
-			= (IIdInsee) requete.getSingleResult();
+			= (INommage) requete.getSingleResult();
 		}
 		catch (NoResultException noResultExc) {
 			objetPersistant = null;
@@ -409,7 +425,7 @@ public abstract class AbstractDaoIdInsee
 
 			/* Gestion de la DAO Exception. */
 			this.gestionnaireException
-				.gererException(CLASSE_ABSTRACTDAO_IDINSEE
+				.gererException(CLASSE_ABSTRACTDAO_NOMMAGE
 						, "Méthode deleteByIdBoolean(Long pId)", e);
 		}
 		
@@ -423,9 +439,8 @@ public abstract class AbstractDaoIdInsee
 	 * {@inheritDoc}
 	 */
 	@Override
-	public final boolean exists(
-			final IIdInsee pObject) 
-					throws AbstractDaoException {
+	public boolean exists(
+			final INommage pObject) throws AbstractDaoException {
 		
 		/* retourne false si pObject == null. */
 		if (pObject == null) {
@@ -433,25 +448,26 @@ public abstract class AbstractDaoIdInsee
 		}
 
 		boolean resultat = false;		
-		IIdInsee objetResultat = null;
+		INommage objetResultat = null;
 		
 		/* REQUETE HQL PARMETREE. */
 		final String requeteString 
 			= SELECT_OBJET
-				+ "where idInsee.numeroInsee = :pNumeroInsee";
+				+ "where nommage.nom = :pNom and nommage.prenom = :pPrenom";
 		
 		/* Construction de la requête HQL. */
 		final Query requete 
 			= this.entityManager.createQuery(requeteString);
 		
 		/* Passage des paramètres de la requête HQL. */
-		requete.setParameter("pNumeroInsee", pObject.getNumeroInsee());
+		requete.setParameter("pNom", pObject.getNom());
+		requete.setParameter("pPrenom", pObject.getPrenom());
 		
 		try {
 			
 			/* Execution de la requete HQL. */
 			objetResultat 
-			= (IIdInsee) requete.getSingleResult();
+			= (INommage) requete.getSingleResult();
 			
 			/* retourne true si l'objet existe en base. */
 			if (objetResultat != null) {
@@ -474,23 +490,22 @@ public abstract class AbstractDaoIdInsee
 			
 			/* Gestion de la DAO Exception. */
 			this.gestionnaireException
-				.gererException(CLASSE_ABSTRACTDAO_IDINSEE
-						, "Méthode exists(IIdInsee pObject)", e);
+				.gererException(CLASSE_ABSTRACTDAO_NOMMAGE
+						, "Méthode exists(INommage pObject)", e);
 		}
 				
 		return resultat;
 		
 	} // Fin de exists(...)._______________________________________________
-	
-	
+
+
 
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
-	public final boolean exists(
-			final Long pId) 
-					throws AbstractDaoException {
+	public boolean exists(
+			final Long pId) throws AbstractDaoException {
 		
 		/* retourne false si pId == null . */
 		if (pId == null) {
@@ -505,15 +520,15 @@ public abstract class AbstractDaoIdInsee
 		return false;
 		
 	} // Fin de exists(...)._______________________________________________
-	
+
 
 
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
-	public final String afficherListe(
-			final List<IIdInsee> pListe) {
+	public String afficherListe(
+			final List<INommage> pListe) {
 		
 		/* retourne null si pListe == null. */
 		if (pListe == null) {
@@ -522,7 +537,7 @@ public abstract class AbstractDaoIdInsee
 		
 		final StringBuilder stb = new StringBuilder();
 		
-		for (final IIdInsee objet : pListe) {
+		for (final INommage objet : pListe) {
 			stb.append(objet.toString());
 			stb.append(SAUT_LIGNE_JAVA);
 		}
@@ -536,17 +551,17 @@ public abstract class AbstractDaoIdInsee
 	/**
 	 * {@inheritDoc}
 	 * <br/>
-	 * this.<b>classObjetMetier</b> dans AbstractDaoIdInsee : 
-	 * <b>IIdInsee.class</b><br/>
+	 * this.<b>classObjetMetier</b> dans AbstractDaoNommage : 
+	 * <b>INommage.class</b><br/>
 	 * <br/>
 	 */
 	@Override
 	protected final void renseignerClassObjetMetier() {
 
-		this.setClassObjetMetier(IIdInsee.class);
+		this.setClassObjetMetier(INommage.class);
 
 	} // Fin de renseignerClassObjetMetier().______________________________
 
 
-	
-} // FIN DE LA CLASSE AbstractDaoIdInsee.------------------------------------
+
+} // FIN DE LA CLASSE AbstractDaoNommage.------------------------------------
