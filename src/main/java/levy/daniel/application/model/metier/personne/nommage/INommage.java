@@ -35,16 +35,14 @@ import levy.daniel.application.model.metier.IExportateurJTable;
  * <ul>
  * <p>
  * <span style="text-decoration: underline;">
- * Garantit que tout IIndInsee sait :
+ * Garantit que tout INommage sait :
  * </span>
  * </p>
- * <li>se <b>comparer</b> à un autre IIndInsee.</li>
+ * <li>se <b>comparer</b> à un autre INommage.</li>
  * <li>se <b>cloner</b>.</li>
  * <li>s'exporter sous forme <b>csv</b>.</li>
  * <li>s'exporter sous forme <b>JTable</b>.</li>
  * </ul>
- * 
-
  * 
  * <br/>
  *

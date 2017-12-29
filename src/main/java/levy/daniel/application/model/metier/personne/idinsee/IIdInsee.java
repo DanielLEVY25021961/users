@@ -33,10 +33,10 @@ import levy.daniel.application.model.metier.IExportateurJTable;
  * <ul>
  * <p>
  * <span style="text-decoration: underline;">
- * Garantit que tout IIndInsee sait :
+ * Garantit que tout IIdInsee sait :
  * </span>
  * </p>
- * <li>se <b>comparer</b> à un autre IIndInsee.</li>
+ * <li>se <b>comparer</b> à un autre IIdInsee.</li>
  * <li>se <b>cloner</b>.</li>
  * <li>s'exporter sous forme <b>csv</b>.</li>
  * <li>s'exporter sous forme <b>JTable</b>.</li>
@@ -45,7 +45,7 @@ import levy.daniel.application.model.metier.IExportateurJTable;
  * <ul>
  * <p>
  * <span style="text-decoration: underline;">
- * Garantit que tout IIndInsee possède :
+ * Garantit que tout IIdInsee possède à minima :
  * </span>
  * </p>
  * <li><b>id</b> pour la mise en base.</li>
@@ -56,7 +56,7 @@ import levy.daniel.application.model.metier.IExportateurJTable;
  * <span style="text-decoration: underline;">EGALITE METIER</span>
  * </p>
  * <ul>
- * <li>L'<b>égalité metier</b> d'un IIndInsee est vérifiée sur :</li>
+ * <li>L'<b>égalité metier</b> d'un IIdInsee est vérifiée sur :</li>
  * <ul>
  * <li><b>numeroInsee</b></li>
  * </ul>
