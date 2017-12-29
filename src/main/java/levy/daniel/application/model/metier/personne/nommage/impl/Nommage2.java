@@ -3,11 +3,9 @@ package levy.daniel.application.model.metier.personne.nommage.impl;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ForeignKey;
-import javax.persistence.Index;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Size;
 
 import org.apache.commons.logging.Log;
@@ -38,11 +36,7 @@ import levy.daniel.application.model.metier.personne.nommage.INommage;
  *
  */
 @Entity(name="Nommage2")
-@Table(name = "NOMMAGES2", schema = "PUBLIC", 
-uniqueConstraints=@UniqueConstraint(name="UNICITE_NOM_PRENOM_PRENOM2"
-, columnNames={"NOM", "PRENOM", "PRENOM2"})
-, indexes={@Index(name = "INDEX_NOM_PRENOM_PRENOM2"
-, columnList="NOM, PRENOM, PRENOM2")})
+@Table(name = "NOMMAGES2", schema = "PUBLIC")
 @PrimaryKeyJoinColumn(name = "ID_ABSTRACT_NOMMAGE"
 , foreignKey=@ForeignKey(name="FK_NOMMAGE2_ABSTRACTNOMMAGE"))
 public class Nommage2 extends AbstractNommage {

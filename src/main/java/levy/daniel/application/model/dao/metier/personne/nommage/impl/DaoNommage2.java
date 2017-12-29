@@ -1,5 +1,8 @@
 package levy.daniel.application.model.dao.metier.personne.nommage.impl;
 
+import javax.persistence.NoResultException;
+import javax.persistence.Query;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Repository;
@@ -128,6 +131,103 @@ public class DaoNommage2 extends AbstractDaoNommage {
 				
 	} // Fin de findById(...)._____________________________________________
 	
+
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public boolean exists(
+			final INommage pObject) throws AbstractDaoException {
+		
+		/* retourne false si pObject == null. */
+		if (pObject == null) {
+			return false;
+		}
+
+		/* retourne false si pObject n'est pas un Nommage2*/
+		if (!(pObject instanceof Nommage2)) {
+			return false;
+		}
+		
+		final Nommage2 nommage2 = (Nommage2) pObject;
+		
+		boolean resultat = false;		
+		INommage objetResultat = null;
+		
+		/* REQUETE HQL PARMETREE. */
+		final String requeteString 
+			= SELECT_OBJET
+				+ "where nommage.nom = :pNom and nommage.prenom = :pPrenom and nommage.prenom2 = :pPrenom2";
+		
+		/* Construction de la requête HQL. */
+		final Query requete 
+			= this.entityManager.createQuery(requeteString);
+		
+		/* Passage des paramètres de la requête HQL. */
+		requete.setParameter("pNom", nommage2.getNom());
+		requete.setParameter("pPrenom", nommage2.getPrenom());
+		requete.setParameter("pPrenom2", nommage2.getPrenom2());
+		
+		try {
+			
+			/* Execution de la requete HQL. */
+			objetResultat 
+			= (INommage) requete.getSingleResult();
+			
+			/* retourne true si l'objet existe en base. */
+			if (objetResultat != null) {
+				resultat = true;
+			}
+			
+		}
+		catch (NoResultException noResultExc) {
+			
+			/* retourne false si l'Objet métier n'existe pas en base. */
+			return false;
+			
+		}
+		catch (Exception e) {
+			
+			/* LOG. */
+			if (LOG.isDebugEnabled()) {
+				LOG.debug(e.getMessage(), e);
+			}
+			
+			/* Gestion de la DAO Exception. */
+			this.gestionnaireException
+				.gererException(CLASSE_ABSTRACTDAO_NOMMAGE
+						, "Méthode exists(INommage pObject)", e);
+		}
+				
+		return resultat;
+		
+	} // Fin de exists(...)._______________________________________________
+
+
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public boolean exists(
+			final Long pId) throws AbstractDaoException {
+		
+		/* retourne false si pId == null . */
+		if (pId == null) {
+			return false;
+		}
+		
+		/* retourne true si l'objet métier existe en base. */
+		if (this.findById(pId) != null) {
+			return true;
+		}
+		
+		return false;
+		
+	} // Fin de exists(...)._______________________________________________
+
+
 
 
 } // FIN DE LA CLASSE DaoNommage2.-------------------------------------------

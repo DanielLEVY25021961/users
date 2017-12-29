@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.ForeignKey;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -33,9 +32,7 @@ import levy.daniel.application.model.metier.personne.nommage.AbstractNommage;
  *
  */
 @Entity(name="Nommage")
-@Table(name = "NOMMAGES", schema = "PUBLIC"
-, uniqueConstraints=@UniqueConstraint(name="UNICITE_NOM_PRENOM"
-, columnNames={"NOM", "PRENOM"}))
+@Table(name = "NOMMAGES", schema = "PUBLIC")
 @PrimaryKeyJoinColumn(name = "ID_ABSTRACT_NOMMAGE"
 , foreignKey=@ForeignKey(name="FK_NOMMAGE_ABSTRACTNOMMAGE"))
 public class Nommage extends AbstractNommage {

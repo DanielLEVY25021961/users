@@ -15,8 +15,7 @@
  * <img src="../../../../../../../../../../javadoc/images/implementation_idinsee.png" 
  * alt="implémentation du IdInsee" border="1" align="center" />
  * </li>
- * </ul>
- 
+ * </ul> 
  * <br/>
  *
  * - Exemple d'utilisation :<br/>
