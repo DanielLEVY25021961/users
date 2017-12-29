@@ -17,7 +17,39 @@ import org.apache.commons.logging.LogFactory;
 
 /**
  * class AbstractNommage :<br/>
- * .<br/>
+ * <p>
+ * <span style="text-decoration: underline;">CONCEPT MODELISE</span>
+ * </p>
+ * <p>
+ * <b>CLASSE ABSTRAITE</b> qui modélise un un <i>concept</i> 
+ * de <b>Nommage</b>, c'est à dire un couple
+ * <b>[nom - prenom]</b> ou un triplet <b>[nom - prenom - prenom2]</b> 
+ * qui identifie <i>une ou plusieurs</i> <b>Personne</b>.<br/>
+ * <b>FACTORISE</b> les attributs et comportements 
+ * des <i>descendants concrets</i>.
+ * </p>
+ * 
+ * <ul>
+ * <p>
+ * <span style="text-decoration: underline;">
+ * IMPLEMENTE :
+ * </span>
+ * </p>
+ * <li><b>INommage</b>.</li>
+ * </ul>
+ * 
+ * <ul>
+ * <p>
+ * <span style="text-decoration: underline;">
+ * Garantit que tout INommage possède à minima :
+ * </span>
+ * </p>
+ * <li><b>id</b> pour la mise en base.</li>
+ * <li><b>nom</b>.</li>
+ * <li><b>prenom</b>.</li>
+ * </ul>
+ * 
+ * 
  * <br/>
  *
  * - Exemple d'utilisation :<br/>

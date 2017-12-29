@@ -6,9 +6,12 @@ import levy.daniel.application.model.metier.IExportateurCsv;
 import levy.daniel.application.model.metier.IExportateurJTable;
 
 /**
- * INTERFACE IIdInsee :<br/>
+ * INTERFACE <b>IIdInsee</b> :<br/>
  * <p>
- * Modélise un <b>Identifiant INSEE</b>, c'est à dire un 
+ * <span style="text-decoration: underline;">CONCEPT MODELISE</span>
+ * </p>
+ * <p>
+ * Modélise un <i>concept</i> d' <b>identifiant personnel</b>, c'est à dire un 
  * <b>identifiant unique d'une Personne</b>.
  * </p>
  * 
@@ -51,13 +54,13 @@ import levy.daniel.application.model.metier.IExportateurJTable;
  * <li><b>id</b> pour la mise en base.</li>
  * <li><b>numeroInsee</b>.</li>
  * </ul>
- * 
+ *
  * <p>
  * <span style="text-decoration: underline;">EGALITE METIER</span>
  * </p>
  * <ul>
  * <li>L'<b>égalité metier</b> d'un IIdInsee est vérifiée sur :</li>
- * <ul>
+  * <ul>
  * <li><b>numeroInsee</b></li>
  * </ul>
  * </ul>

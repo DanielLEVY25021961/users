@@ -7,10 +7,14 @@ import levy.daniel.application.model.metier.IExportateurJTable;
 
 
 /**
- * INTERFACE ICivilite :<br/>
+ * INTERFACE <b>ICivilite</b> :<br/>
  * <p>
- * Modélise un <b>Civilite</b>,  (MONSIEUR ou M., MADAME ou Mme, Mlle ...) 
- * associée de manière unique à une <b>Personne</b>.
+ * <span style="text-decoration: underline;">CONCEPT MODELISE</span>
+ * </p>
+ * <p>
+ * Modélise un <i>concept</i> de <b>Civilite</b>, 
+ * (MONSIEUR ou M., MADAME ou Mme, Mlle ...) 
+ * associé de manière unique à une <b>Personne</b>.
  * </p>
  * 
  * <ul>
@@ -34,14 +38,36 @@ import levy.daniel.application.model.metier.IExportateurJTable;
  * <ul>
  * <p>
  * <span style="text-decoration: underline;">
- * Garantit que tout IIndInsee sait :
+ * Garantit que tout ICivilite sait :
  * </span>
  * </p>
- * <li>se <b>comparer</b> à un autre IIndInsee.</li>
+ * <li>se <b>comparer</b> à un autre ICivilite.</li>
  * <li>se <b>cloner</b>.</li>
  * <li>s'exporter sous forme <b>csv</b>.</li>
  * <li>s'exporter sous forme <b>JTable</b>.</li>
  * </ul>
+ * 
+ * <ul>
+ * <p>
+ * <span style="text-decoration: underline;">
+ * Garantit que tout ICivilite possède à minima :
+ * </span>
+ * </p>
+ * <li><b>id</b> pour la mise en base.</li>
+ * <li><b>civiliteString</b>.</li>
+ * </ul>
+ * 
+ * <p>
+ * <span style="text-decoration: underline;">EGALITE METIER</span>
+ * </p>
+ * <ul>
+ * <li>L'<b>égalité metier</b> d'un ICivilite est vérifiée sur :</li>
+  * <ul>
+ * <li><b>civiliteString</b></li>
+ * </ul>
+ * </ul>
+ * 
+
  * 
  * <br/>
  *
@@ -64,5 +90,151 @@ public interface ICivilite
 	extends IExportateurJTable, IExportateurCsv
 			, Cloneable, Comparable<ICivilite>
 					, Serializable {
+	
+	
+	/**
+	 * method compareTo(
+	 * ICivilite pObject) :<br/>
+	 * <ol>
+	 * Comparaison de 2 ICivilite par rapport : <br/>
+	 * <li>au civiliteString.</li>
+	 * </ol>
+	 *
+	 * @param pObject : ICivilite.<br/>
+	 * 
+	 * @return : int : négatif si la présente instance 
+	 * est "avant" pObject.<br/>
+	 */
+	@Override
+	int compareTo(ICivilite pObject);
 
-}
+	
+		
+	/**
+	 * method clone() :<br/>
+	 * Clone un ICivilite.<br/>
+	 * <br/>
+	 *
+	 * @return ICivilite : clone.<br/>
+	 * 
+	 * @throws CloneNotSupportedException
+	 */
+	ICivilite clone() throws CloneNotSupportedException;
+	
+	
+
+	/**
+	 * {@inheritDoc}
+	 * <br/>
+	 * <b>en-tête csv pour un ICivilite</b> :<br/>
+	 * "id;civiliteString;".<br/>
+	 * <br/>
+	 */
+	@Override
+	String getEnTeteCsv();
+
+	
+	
+	/**
+	 * {@inheritDoc}
+	 * <br/>
+	 * <b>ligne csv pour un ICivilite</b> :<br/>
+	 * "id;civiliteString;".<br/>
+	 * <br/>
+	 */
+	@Override
+	String toStringCsv();
+
+	
+	
+	/**
+	 * {@inheritDoc}
+	 * <br/>
+	 * <b>en-tête Jtable pour un ICivilite</b> :<br/>
+	 * "id;civiliteString;".<br/>
+	 * <br/>
+	 */
+	@Override
+	String getEnTeteColonne(int pI);
+
+	
+	
+	/**
+	 * {@inheritDoc}
+	 * <br/>
+	 * <b>ligne Jtable pour un ICivilite</b> :<br/>
+	 * "id;civiliteString;".<br/>
+	 * <br/>
+	 */
+	@Override
+	Object getValeurColonne(int pI);
+	
+	
+
+	/**
+	 * method getId() :<br/>
+	 * Getter de l'ID en base.<br/>
+	 * <br/>
+	 *
+	 * @return id : Long.<br/>
+	 */
+	Long getId();
+
+	
+	
+	/**
+	* method setId(
+	* Long pId) :<br/>
+	* Setter de l'ID en base.<br/>
+	* <br/>
+	*
+	* @param pId : Long : valeur à passer à id.<br/>
+	*/
+	void setId(Long pId);
+	
+	
+	
+	/**
+	 * method getCiviliteString() :<br/>
+	 * <ul>
+	 * <li>Getter de civiliteString 
+	 * (MONSIEUR ou M., MADAME ou Mme, ...).</li>
+	 * <li>civiliteString ne peut prendre 
+	 * <i>que les valeurs</i> définies dans 
+	 * l'ENUMERATION <b>CivilitesEnum</b>.</li>
+	 * </ul>
+	 * <ul>
+	 * <li>"RG_CIVILITE_CIVILITESTRING_NOMENCLATURE_01 : 
+	 * la civilite (M., Mme, ...) du Personne doit respecter 
+	 * un ensemble fini de valeurs (nomenclature)".</li>
+	 * </ul>
+	 *
+	 * @return civiliteString : String.<br/>
+	 */
+	String getCiviliteString();
+	
+
+	
+	/**
+	 * method setCiviliteString(
+	 * String pCivilite) :<br/>
+	 * <ul>
+	 * <li>Setter de civiliteString 
+	 * (MONSIEUR ou M., MADAME ou Mme, ...).</li>
+	 * <li>civiliteString ne peut prendre 
+	 * <i>que les valeurs</i> définies dans 
+	 * l'ENUMERATION <b>CivilitesEnum</b>.</li>
+	 * </ul>
+	 * <ul>
+	 * <li>"RG_CIVILITE_CIVILITESTRING_NOMENCLATURE_01 : 
+	 * la civilite (M., Mme, ...) du Personne doit respecter 
+	 * un ensemble fini de valeurs (nomenclature)".</li>
+	 * </ul>
+	 *
+	 * @param pCivilite : String : valeur à passer à civiliteString.<br/>
+	 */
+	void setCiviliteString(String pCivilite);
+	
+
+
+} // FIN DE L'INTERFACE ICivilite.-------------------------------------------
