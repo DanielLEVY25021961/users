@@ -7,11 +7,11 @@ import levy.daniel.application.model.metier.IExportateurJTable;
 
 
 /**
- * INTERFACE INommage :<br/>
+ * INTERFACE <b>INommage</b> :<br/>
  * <p>
- * Modélise un <b>INommage</b>, c'est à dire un couple
- * <b>[nom - prenom]</b> qui identifie <i>une ou plusieurs</i> 
- * <b>Personne</b>.
+ * Modélise un un <i>concept</i> de <b>Nommage</b> avec un seul prenom
+ * , c'est à dire un couple <b>[nom - prenom]</b> qui identifie 
+ * <i>une ou plusieurs</i> <b>Personne</b>.
  * </p>
  * 
  * <ul>
@@ -43,6 +43,108 @@ import levy.daniel.application.model.metier.IExportateurJTable;
  * <li>s'exporter sous forme <b>csv</b>.</li>
  * <li>s'exporter sous forme <b>JTable</b>.</li>
  * </ul>
+ * 
+ * 
+ * <ul>
+ * <p>
+ * <span style="text-decoration: underline;">
+ * Garantit que tout INommage possède à minima :
+ * </span>
+ * </p>
+ * <li><b>id</b> pour la mise en base.</li>
+ * <li><b>nom</b>.</li>
+ * <li><b>prenom</b>.</li>
+ * </ul>
+ * 
+ * <p>
+ * <span style="text-decoration: underline;">EGALITE METIER</span>
+ * </p>
+ * <ul>
+ * <li>L'<b>égalité metier</b> d'un INommage est vérifiée sur :</li>
+  * <ul>
+ * <li><b>nom</b></li>
+ * <li><b>prenom</b></li>
+ * </ul>
+ * </ul>
+ * 
+ * <p>
+ * <span style="text-decoration: underline;">DIAGRAMME DE CLASSES D'IMPLEMENTATION</span>
+ * </p>
+ * <ul>
+ * <li>
+ * <img src="../../../../../../../../../../javadoc/images/classes_implementation_nommage.png" 
+ * alt="classes d'implémentation des Nommage" border="1" align="center" />
+ * </li>
+ * </ul>
+ * 
+ * <br/>
+ * <p>
+ * <span style="text-decoration: underline;">REGLES DE GESTION</span>
+ * </p>
+ * <ul>
+ * <li>
+ * Les <b>Règles de Gestion (RG)</b> applicables aux attributs 
+ * d'un INommage sont les suivantes :
+ * </li>
+ * <br/>
+ * <table border="1">
+ * <tr>
+ * <th>Attribut</th><th>Règle de Gestion</th>
+ * </tr>
+ * 
+ * <tr>
+ * <td rowspan="3">
+ * prenom
+ * </td>
+ * <td>
+ * "RG_NOMMAGE_PRENOM_RENSEIGNE_01 : 
+ * le prénom du Nommage doit être renseigné (obligatoire)"
+ * </td>
+ * </tr>
+ * <tr>
+ * <td>
+ * "RG_NOMMAGE_PRENOM_LITTERAL_02 : 
+ * le prénom du Nommage 
+ * ne doit contenir que des lettres ou des 
+ * caractères spéciaux '-', '_', ... (aucun chiffre)"
+ * </td>
+ * </tr>
+ * <tr>
+ * <td>
+ * "RG_NOMMAGE_PRENOM_LONGUEUR_03 : 
+ * le prénom du Nommage doit contenir 
+ * entre [1] et [30] lettres"
+ * </td>
+ * </tr>
+ * 
+ * <tr>
+ * <td rowspan="3">
+ * nom
+ * </td>
+ * <td>
+ * "RG_NOMMAGE_NOM_RENSEIGNE_04
+ *  : le nom du Nommage doit être renseigné (obligatoire)"
+ * </td>
+ * </tr>
+ * <tr>
+ * <td>
+ * "RG_NOMMAGE_NOM_LITTERAL_05
+ *  : le nom du Nommage 
+ *  ne doit contenir que des lettres ou des caractères spéciaux 
+ *  '-', '_', ... (aucun chiffre)"
+ * </td>
+ * </tr>
+ * <tr>
+ * <td>
+ * "RG_NOMMAGE_NOM_LONGUEUR_06
+ *  : le nom du Nommage doit contenir entre 
+ *  [1] et [50] lettres"
+ * </td>
+ * </tr>
+ * 
+ * </table>
+ * </ul>
+ * 
  * 
  * <br/>
  *

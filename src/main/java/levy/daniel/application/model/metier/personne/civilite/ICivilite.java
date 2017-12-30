@@ -67,7 +67,45 @@ import levy.daniel.application.model.metier.IExportateurJTable;
  * </ul>
  * </ul>
  * 
-
+ *  <p>
+ * <span style="text-decoration: underline;">DIAGRAMME DE CLASSES D'IMPLEMENTATION</span>
+ * </p>
+ * <ul>
+ * <li>
+ * <img src="../../../../../../../../../../javadoc/images/classes_implementation_civilite.png" 
+ * alt="classes d'implémentation des Civilite" border="1" align="center" />
+ * </li>
+ * </ul>
+ * 
+ * <br/>
+ * <p>
+ * <span style="text-decoration: underline;">REGLES DE GESTION</span>
+ * </p>
+ * <ul>
+ * <li>
+ * Les <b>Règles de Gestion (RG)</b> applicables aux attributs 
+ * d'un ICivilite sont les suivantes :
+ * </li>
+ * <br/>
+ * <table border="1">
+ * <tr>
+ * <th>Attribut</th><th>Règle de Gestion</th>
+ * </tr>
+ * 
+ * <tr>
+ * <td rowspan="1">
+ * civiliteString
+ * </td>
+ * <td>
+ * "RG_CIVILITE_CIVILITESTRING_NOMENCLATURE_01 : 
+ * la civilite (M., Mme, ...) du Personne doit respecter 
+ * un ensemble fini de valeurs (nomenclature)"
+ * </td>
+ * </tr>
+ * 
+ * </table>
+ * </ul>
+ * 
  * 
  * <br/>
  *

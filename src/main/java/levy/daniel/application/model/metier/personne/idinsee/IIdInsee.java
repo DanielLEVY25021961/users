@@ -66,17 +66,12 @@ import levy.daniel.application.model.metier.IExportateurJTable;
  * </ul>
  * 
  * <p>
- * <span style="text-decoration: underline;">
- * INTERFACES ET HERITAGE
- * </span>
+ * <span style="text-decoration: underline;">DIAGRAMME DE CLASSES D'IMPLEMENTATION</span>
  * </p>
  * <ul>
- * <li>l'objet IdInsee hérite de la classe abstraite AbstractIdInsee 
- * qui implémente l'INTERFACE IIdInsee : </li>
- * <br/>
  * <li>
- * <img src="../../../../../../../../../../javadoc/images/implementation_idinsee.png" 
- * alt="implémentation du UserSimple" border="1" align="center" />
+ * <img src="../../../../../../../../../../javadoc/images/classes_implementation_idInsee.png" 
+ * alt="classes d'implémentation des IdInsee" border="1" align="center" />
  * </li>
  * </ul>
  *
@@ -87,7 +82,7 @@ import levy.daniel.application.model.metier.IExportateurJTable;
  * <ul>
  * <li>
  * Les <b>Règles de Gestion (RG)</b> applicables aux attributs 
- * d'un UserSimple sont les suivantes :
+ * d'un IIdInsee sont les suivantes :
  * </li>
  * <br/>
  * 
