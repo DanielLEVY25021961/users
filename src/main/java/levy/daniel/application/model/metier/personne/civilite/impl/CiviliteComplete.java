@@ -1,5 +1,8 @@
 package levy.daniel.application.model.metier.personne.civilite.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.ForeignKey;
 import javax.persistence.PrimaryKeyJoinColumn;
@@ -11,22 +14,22 @@ import org.apache.commons.logging.LogFactory;
 import levy.daniel.application.model.metier.personne.civilite.AbstractCivilite;
 
 /**
- * class CiviliteComplete :<br/>
+ * class <b>CiviliteComplete</b> :<br/>
  * <ul>
- * <li>Classe modélisant une <b>CiviliteComplete</b> (M., Mme, ...) 
- * d'un UserSimple.</li>
+ * <li>Classe CONCRETE modélisant une <b>CiviliteComplete</b> 
+ * (MONSIEUR, MADAME, MADEMOISELLE).</li>
  * <li>La civilité ne peut prendre <i>que les valeurs</i> définies dans 
  * l'ENUMERATION <b>CivilitesEnum</b>.</li>
- * <li>"RG_USERSIMPLE_CIVILITE_NOMENCLATURE_01 : 
- * la civilite (M., Mme, ...) du UserSimple doit respecter 
+ * <li>"RG_CIVILITECOMPLETE_CIVILITESTRING_NOMENCLATURE_01 : 
+ * la civilite (MONSIEUR, MADAME, ...) doit respecter 
  * un ensemble fini de valeurs (nomenclature)".</li>
  * </ul>
  * 
  *
  * - Exemple d'utilisation :<br/>
  * <code>//Instanciation d'un CiviliteComplete en lui passant la String 
- * associée à l'instance M de l'énumération.</code><br/>
- * <code>CiviliteComplete CIVILITE_M = new 
+ * associée à l'instance MONSIEUR de l'énumération.</code><br/>
+ * <code>CiviliteComplete CIVILITE_MONSIEUR = new 
  * CiviliteComplete(CivilitesEnum.MONSIEUR.toString());</code><br/>
  *<br/>
  * 
@@ -81,7 +84,18 @@ public class CiviliteComplete extends AbstractCivilite {
 	 */
 	public static final CiviliteComplete MADEMOISELLE 
 		= new CiviliteComplete(CivilitesEnum.MADEMOISELLE.toString());
+	
 
+	/**
+	 * valeursPossibles : List&lt;String&gt; :<br/>
+	 * <ul>
+	 * <li>Liste des valeurs possibles pour civiliteString 
+	 * fournie par CivilitesEnum.</li>
+	 * <li>MONSIEUR, MADAME, MADEMOISELLE.</li>
+	 * </ul>
+	 */
+	private static List<String> valeursPossibles;
+	
 	
 	/**
 	 * LOG : Log : 
@@ -181,5 +195,39 @@ public class CiviliteComplete extends AbstractCivilite {
 	} // Fin de toString().________________________________________________
 
 
+		
+	/**
+	 * method getValeursPossibles() :<br/>
+	 * <ul>
+	 * <li>retourne la Liste des valeurs possibles pour civiliteString 
+	 * fournie par CivilitesEnum.</li>
+	 * <li>MONSIEUR, MADAME, MADEMOISELLE.</li>
+	 * </ul>
+	 *
+	 * @return : List&lt;String&gt; : valeursPossibles.<br/>
+	 */
+	public static final List<String> getValeursPossibles() {
+		
+		synchronized (CiviliteComplete.class) {
+			
+			if (valeursPossibles == null) {
+				
+				valeursPossibles = new ArrayList<String>();
+				
+				final CivilitesEnum[] valeurs = CivilitesEnum.values();
+				
+				for (int i = 0; i < valeurs.length; i ++) {
+					valeursPossibles.add(valeurs[i].toString());
+				}
+				
+			}
+					
+			return valeursPossibles;
+			
+		} // Fin de synchronized._________________________________
+				
+	} // Fin de getValeursPossibles()._____________________________________
+	
+	
 	
 } // FIN DE LA CLASSE CiviliteComplete.--------------------------------------

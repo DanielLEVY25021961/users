@@ -17,12 +17,12 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 /**
- * class <b>AbstractIdInsee</b> :<br/>
+ * CLASSE ABSTRAITE <b>AbstractIdInsee</b> :<br/>
  * <p>
  * <span style="text-decoration: underline;">CONCEPT MODELISE</span>
  * </p>
  * <p>
- * <b>CLASSE ABSTRAITE</b> qui modélise un <b>IdInsee</b>, c'est à dire un 
+ * modélise un <b>IdInsee</b>, c'est à dire un 
  * <b>identifiant INSEE</b> qui identifie de manière 
  * unique une Personne.<br/>
  * <b>FACTORISE</b> les attributs et comportements 
@@ -87,7 +87,7 @@ import org.apache.commons.logging.LogFactory;
  * <br/>
  * <li>
  * <img src="../../../../../../../../../../javadoc/images/implementation_idinsee_entities.png" 
- * alt="implémentation du UserSimple" border="1" align="center" />
+ * alt="implémentation des entities de AbstractIdInsee" border="1" align="center" />
  * </li>
  * </ul>
  * 
@@ -101,7 +101,7 @@ import org.apache.commons.logging.LogFactory;
  * <br/>
  * <li>
  * <img src="../../../../../../../../../../javadoc/images/tables-abstract_ids_insee-ids_insee.png" 
- * alt="implémentation du UserSimple" border="1" align="center" />
+ * alt="implémentation des tables de AbstractIdInsee" border="1" align="center" />
  * </li>
  * </ul>
  * 
@@ -112,7 +112,7 @@ import org.apache.commons.logging.LogFactory;
  * <ul>
  * <li>
  * Les <b>Règles de Gestion (RG)</b> applicables aux attributs 
- * d'un UserSimple sont les suivantes :
+ * d'un AbstractIdInsee sont les suivantes :
  * </li>
  * <br/>
  * 

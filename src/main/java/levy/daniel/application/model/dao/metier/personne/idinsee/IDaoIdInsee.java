@@ -5,7 +5,7 @@ import levy.daniel.application.model.dao.daoexceptions.AbstractDaoException;
 import levy.daniel.application.model.metier.personne.idinsee.IIdInsee;
 
 /**
- * INTERFACE IDaoIdInsee :<br/>
+ * INTERFACE <b>IDaoIdInsee</b> :<br/>
  * <ul>
  * <li>Interface des DAOs pour les <b>IIdInsee</b>.</li>
  * <li>
@@ -21,8 +21,8 @@ import levy.daniel.application.model.metier.personne.idinsee.IIdInsee;
  * </li>
  * <br/>
  * <li>
- * <img src="../../../../../../../../../../../javadoc/images/implementation_DAO_IdInsee.png" 
- * alt="implémentation des DAOs" border="1" align="center" />
+ * <img src="../../../../../../../../../../../javadoc/images/implementation_DAO_IIdInsee.png" 
+ * alt="implémentation des DAOs IIdInsee" border="1" align="center" />
  * </li>
  * </ul>
  * <br/>

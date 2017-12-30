@@ -1,5 +1,8 @@
 package levy.daniel.application.model.metier.personne.civilite.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.ForeignKey;
 import javax.persistence.PrimaryKeyJoinColumn;
@@ -11,23 +14,23 @@ import org.apache.commons.logging.LogFactory;
 import levy.daniel.application.model.metier.personne.civilite.AbstractCivilite;
 
 /**
- * class CiviliteAbregee :<br/>
+ * class <b>CiviliteAbregee</b> :<br/>
  * <ul>
- * <li>Classe modélisant une <b>CiviliteAbregee</b> (M., Mme, ...) 
- * d'un UserSimple.</li>
+ * <li>Classe CONCRETE modélisant une <b>CiviliteAbregee</b> 
+ * (M., Mme, ...).</li>
  * <li>La civilité ne peut prendre <i>que les valeurs</i> définies dans 
  * l'ENUMERATION <b>CivilitesEnum</b>.</li>
- * <li>"RG_USERSIMPLE_CIVILITE_NOMENCLATURE_01 : 
- * la civilite (M., Mme, ...) du UserSimple doit respecter 
+ * <li>"RG_CIVILITEABREGEE_CIVILITESTRING_NOMENCLATURE_01 : 
+ * la civilite (M., Mme, ...) doit respecter 
  * un ensemble fini de valeurs (nomenclature)".</li>
  * </ul>
  * 
  *
  * - Exemple d'utilisation :<br/>
  * <code>//Instanciation d'un CiviliteAbregee en lui passant la String 
- * associée à l'instance M de l'énumération.</code><br/>
+ * associée à l'abréviation de l'instance MONSIEUR de l'énumération.</code><br/>
  * <code>CiviliteAbregee CIVILITE_M = new 
- * CiviliteAbregee(CivilitesEnum.MONSIEUR.toString());</code><br/>
+ * CiviliteAbregee(CivilitesEnum.MONSIEUR.getAbreviationEnum());</code><br/>
  *<br/>
  * 
  * - Mots-clé :<br/>
@@ -82,6 +85,17 @@ public class CiviliteAbregee extends AbstractCivilite {
 	public static final CiviliteAbregee MLLE 
 		= new CiviliteAbregee(CivilitesEnum.MADEMOISELLE.getAbreviationEnum());
 
+
+	/**
+	 * valeursPossibles : List&lt;String&gt; :<br/>
+	 * <ul>
+	 * <li>Liste des valeurs possibles pour civiliteString 
+	 * fournie par CivilitesEnum.</li>
+	 * <li>M., Mme, Mlle.</li>
+	 * </ul>
+	 */
+	private static List<String> valeursPossibles;
+	
 	
 	/**
 	 * LOG : Log : 
@@ -180,6 +194,40 @@ public class CiviliteAbregee extends AbstractCivilite {
 		
 	} // Fin de toString().________________________________________________
 
+
+	
+	/**
+	 * method getValeursPossibles() :<br/>
+	 * <ul>
+	 * <li>retourne la Liste des valeurs possibles pour civiliteString 
+	 * fournie par CivilitesEnum.</li>
+	 * <li>M., Mme, Mlle.</li>
+	 * </ul>
+	 *
+	 * @return : List&lt;String&gt; : valeursPossibles.<br/>
+	 */
+	public static final List<String> getValeursPossibles() {
+		
+		synchronized (CiviliteComplete.class) {
+			
+			if (valeursPossibles == null) {
+				
+				valeursPossibles = new ArrayList<String>();
+				
+				final CivilitesEnum[] valeurs = CivilitesEnum.values();
+				
+				for (int i = 0; i < valeurs.length; i ++) {
+					valeursPossibles.add(valeurs[i].getAbreviationEnum());
+				}
+				
+			}
+					
+			return valeursPossibles;
+			
+		} // Fin de synchronized._________________________________
+				
+	} // Fin de getValeursPossibles()._____________________________________
+	
 
 	
 } // FIN DE LA CLASSE CiviliteAbregee.---------------------------------------

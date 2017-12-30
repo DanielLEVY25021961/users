@@ -73,7 +73,7 @@ import levy.daniel.application.model.metier.IExportateurJTable;
  * <ul>
  * <li>
  * <img src="../../../../../../../../../../javadoc/images/classes_implementation_nommage.png" 
- * alt="classes d'implémentation des Nommage" border="1" align="center" />
+ * alt="classes d'implémentation des INommage" border="1" align="center" />
  * </li>
  * </ul>
  * 

@@ -73,7 +73,7 @@ import levy.daniel.application.model.metier.IExportateurJTable;
  * <ul>
  * <li>
  * <img src="../../../../../../../../../../javadoc/images/classes_implementation_civilite.png" 
- * alt="classes d'implémentation des Civilite" border="1" align="center" />
+ * alt="classes d'implémentation des ICivilite" border="1" align="center" />
  * </li>
  * </ul>
  * 
@@ -98,7 +98,8 @@ import levy.daniel.application.model.metier.IExportateurJTable;
  * </td>
  * <td>
  * "RG_CIVILITE_CIVILITESTRING_NOMENCLATURE_01 : 
- * la civilite (M., Mme, ...) du Personne doit respecter 
+ * la civilite (MONSIEUR ou M., MADAME ou Mme, ...) 
+ * du Personne doit respecter 
  * un ensemble fini de valeurs (nomenclature)"
  * </td>
  * </tr>
@@ -243,7 +244,8 @@ public interface ICivilite
 	 * </ul>
 	 * <ul>
 	 * <li>"RG_CIVILITE_CIVILITESTRING_NOMENCLATURE_01 : 
-	 * la civilite (M., Mme, ...) du Personne doit respecter 
+	 * la civilite (MONSIEUR ou M., MADAME ou Mme, ...) 
+	 * doit respecter 
 	 * un ensemble fini de valeurs (nomenclature)".</li>
 	 * </ul>
 	 *

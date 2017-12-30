@@ -16,12 +16,12 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 /**
- * class AbstractNommage :<br/>
+ * CLASSE ABSTRAITE <b>AbstractNommage</b> :<br/>
  * <p>
  * <span style="text-decoration: underline;">CONCEPT MODELISE</span>
  * </p>
  * <p>
- * <b>CLASSE ABSTRAITE</b> qui modélise un un <i>concept</i> 
+ * modélise un un <i>concept</i> 
  * de <b>Nommage</b>, c'est à dire un couple
  * <b>[nom - prenom]</b> ou un triplet <b>[nom - prenom - prenom2]</b> 
  * qui identifie <i>une ou plusieurs</i> <b>Personne</b>.<br/>
@@ -49,6 +49,127 @@ import org.apache.commons.logging.LogFactory;
  * <li><b>prenom</b>.</li>
  * </ul>
  * 
+ *  <p>
+ * <span style="text-decoration: underline;">EGALITE METIER</span>
+ * </p>
+ * <ul>
+ * <li>L'<b>égalité metier</b> d'un INommage est vérifiée sur :</li>
+  * <ul>
+ * <li><b>nom</b></li>
+ * <li><b>prenom</b></li>
+ * </ul>
+ * </ul>
+ * 
+ * <p>
+ * <span style="text-decoration: underline;">DIAGRAMME DE CLASSES D'IMPLEMENTATION</span>
+ * </p>
+ * <ul>
+ * <li>
+ * <img src="../../../../../../../../../../javadoc/images/classes_implementation_nommage.png" 
+ * alt="classes d'implémentation des AbstractNommage" border="1" align="center" />
+ * </li>
+ * </ul>
+ * 
+ * <p>
+ * <span style="text-decoration: underline;">
+ * ENTITIES JPA
+ * </span>
+ * </p>
+ * <ul>
+ * <li>la classe abstraite AbstractNommage 
+ * est transformée en <b>Entity JPA</b> au moyen de 
+ * <b>javax.persistence annotations</b>.</li>
+ * <li>La <b>stratégie de jointure des tables</b> entre la classe abstraite 
+ * et ses descendants concrets est <b>InheritanceType.JOINED</b>.</li>
+ * <br/>
+ * <li>
+ * <img src="../../../../../../../../../../javadoc/images/implementation_nommage_entities.png" 
+ * alt="implémentation des entities de AbstractNommage" border="1" align="center" />
+ * </li>
+ * </ul>
+ * 
+ * <p>
+ * <span style="text-decoration: underline;">
+ * TABLES
+ * </span>
+ * </p>
+ * <ul>
+ * <li>Les <b>tables en base</b> résultantes des entities JPA sont :</li>
+ * <br/>
+ * <li>
+ * <img src="../../../../../../../../../../javadoc/images/tables-abstract_nommages_nommages.png" 
+ * alt="implémentation des tables de AbstractNommage" border="1" align="center" />
+ * </li>
+ * </ul>
+ * 
+ * 
+ * <br/>
+ * <p>
+ * <span style="text-decoration: underline;">REGLES DE GESTION</span>
+ * </p>
+ * <ul>
+ * <li>
+ * Les <b>Règles de Gestion (RG)</b> applicables aux attributs 
+ * d'un INommage sont les suivantes :
+ * </li>
+ * <br/>
+ * <table border="1">
+ * <tr>
+ * <th>Attribut</th><th>Règle de Gestion</th>
+ * </tr>
+ * 
+ * <tr>
+ * <td rowspan="3">
+ * prenom
+ * </td>
+ * <td>
+ * "RG_NOMMAGE_PRENOM_RENSEIGNE_01 : 
+ * le prénom du Nommage doit être renseigné (obligatoire)"
+ * </td>
+ * </tr>
+ * <tr>
+ * <td>
+ * "RG_NOMMAGE_PRENOM_LITTERAL_02 : 
+ * le prénom du Nommage 
+ * ne doit contenir que des lettres ou des 
+ * caractères spéciaux '-', '_', ... (aucun chiffre)"
+ * </td>
+ * </tr>
+ * <tr>
+ * <td>
+ * "RG_NOMMAGE_PRENOM_LONGUEUR_03 : 
+ * le prénom du Nommage doit contenir 
+ * entre [1] et [30] lettres"
+ * </td>
+ * </tr>
+ * 
+ * <tr>
+ * <td rowspan="3">
+ * nom
+ * </td>
+ * <td>
+ * "RG_NOMMAGE_NOM_RENSEIGNE_04
+ *  : le nom du Nommage doit être renseigné (obligatoire)"
+ * </td>
+ * </tr>
+ * <tr>
+ * <td>
+ * "RG_NOMMAGE_NOM_LITTERAL_05
+ *  : le nom du Nommage 
+ *  ne doit contenir que des lettres ou des caractères spéciaux 
+ *  '-', '_', ... (aucun chiffre)"
+ * </td>
+ * </tr>
+ * <tr>
+ * <td>
+ * "RG_NOMMAGE_NOM_LONGUEUR_06
+ *  : le nom du Nommage doit contenir entre 
+ *  [1] et [50] lettres"
+ * </td>
+ * </tr>
+ * 
+ * </table>
+ * </ul>
  * 
  * <br/>
  *
