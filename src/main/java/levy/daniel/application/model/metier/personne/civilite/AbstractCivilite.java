@@ -20,7 +20,7 @@ import org.apache.commons.logging.LogFactory;
  * <span style="text-decoration: underline;">CONCEPT MODELISE</span>
  * </p>
  * <p>
- * Modélise un <i>concept</i> de <b>Civilite</b>, 
+ * <b>AbstractCivilite</b> Modélise un <i>concept</i> de <b>Civilite</b>, 
  * (MONSIEUR ou M., MADAME ou Mme, Mlle ...) 
  * associé de manière unique à une <b>Personne</b>.<br/>
  * <b>FACTORISE</b> les attributs et comportements 

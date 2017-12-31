@@ -14,7 +14,20 @@ import org.apache.commons.logging.LogFactory;
 import levy.daniel.application.model.metier.personne.civilite.AbstractCivilite;
 
 /**
- * class <b>CiviliteAbregee</b> :<br/>
+ * CLASSE CONCRETE <b>CiviliteAbregee</b> :<br/>
+ * <p>
+ * <span style="text-decoration: underline;">CONCEPT MODELISE</span>
+ * </p>
+ * <p>
+ * <b>CiviliteAbregee</b> Modélise un <i>concept</i> de <b>Civilite</b>, 
+ * (M., Mme, Mlle ...) dans lequel la civilité est <i>abrégée</i>
+ * associé de manière unique à une <b>Personne</b>.
+ * </p>
+ * 
+ * 
+ * <p>
+ * <span style="text-decoration: underline;">DESCRIPTION DE CiviliteAbregee</span>
+ * </p>
  * <ul>
  * <li>Classe CONCRETE modélisant une <b>CiviliteAbregee</b> 
  * (M., Mme, ...).</li>
@@ -24,6 +37,8 @@ import levy.daniel.application.model.metier.personne.civilite.AbstractCivilite;
  * la civilite (M., Mme, ...) doit respecter 
  * un ensemble fini de valeurs (nomenclature)".</li>
  * </ul>
+ * 
+ * <br/>
  * 
  *
  * - Exemple d'utilisation :<br/>

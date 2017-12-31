@@ -12,7 +12,7 @@ import levy.daniel.application.model.metier.IExportateurJTable;
  * <span style="text-decoration: underline;">CONCEPT MODELISE</span>
  * </p>
  * <p>
- * Modélise un <i>concept</i> de <b>Civilite</b>, 
+ * <b>ICivilite</b> Modélise un <i>concept</i> de <b>Civilite</b>, 
  * (MONSIEUR ou M., MADAME ou Mme, Mlle ...) 
  * associé de manière unique à une <b>Personne</b>.
  * </p>

@@ -14,7 +14,21 @@ import org.apache.commons.logging.LogFactory;
 import levy.daniel.application.model.metier.personne.civilite.AbstractCivilite;
 
 /**
- * class <b>CiviliteComplete</b> :<br/>
+ * CLASSE CONCRETE <b>CiviliteComplete</b> :<br/>
+ * <p>
+ * <span style="text-decoration: underline;">CONCEPT MODELISE</span>
+ * </p>
+ * <p>
+ * <b>CiviliteComplete</b> Modélise un <i>concept</i> de <b>Civilite</b>, 
+ * (MONSIEUR, MADAME, MADEMOISELLE ...) dans lequel la civilité 
+ * est <i>intégrale</i>
+ * associé de manière unique à une <b>Personne</b>.
+ * </p>
+ * 
+ * <p>
+ * <span style="text-decoration: underline;">DESCRIPTION DE CiviliteComplete</span>
+ * </p>
+ * <ul>
  * <ul>
  * <li>Classe CONCRETE modélisant une <b>CiviliteComplete</b> 
  * (MONSIEUR, MADAME, MADEMOISELLE).</li>
@@ -24,6 +38,8 @@ import levy.daniel.application.model.metier.personne.civilite.AbstractCivilite;
  * la civilite (MONSIEUR, MADAME, ...) doit respecter 
  * un ensemble fini de valeurs (nomenclature)".</li>
  * </ul>
+ * 
+ * <br/>
  * 
  *
  * - Exemple d'utilisation :<br/>
