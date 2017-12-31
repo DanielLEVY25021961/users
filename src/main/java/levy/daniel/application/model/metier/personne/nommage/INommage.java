@@ -9,7 +9,7 @@ import levy.daniel.application.model.metier.IExportateurJTable;
 /**
  * INTERFACE <b>INommage</b> :<br/>
  * <p>
- * Modélise un un <i>concept</i> de <b>Nommage</b> avec un seul prenom
+ * <b>INommage</b> modélise un un <i>concept</i> de <b>Nommage</b> avec un seul prenom
  * , c'est à dire un couple <b>[nom - prenom]</b> qui identifie 
  * <i>une ou plusieurs</i> <b>Personne</b>.
  * </p>

@@ -7,6 +7,19 @@ import levy.daniel.application.model.metier.personne.nommage.INommage;
 
 /**
  * INTERFACE <b>IDaoNommage</b> :<br/>
+ * <p>
+ * <span style="text-decoration: underline;">CONCEPT 
+ * CONCERNE PAR CE DAO</span>
+ * </p>
+ * <p>
+ * <b>INommage</b> modélise un un <i>concept</i> de <b>Nommage</b> avec un seul prenom
+ * , c'est à dire un couple <b>[nom - prenom]</b> qui identifie 
+ * <i>une ou plusieurs</i> <b>Personne</b>.
+ * </p>
+ * 
+ * <p>
+ * <span style="text-decoration: underline;">DESCRIPTION DE IDaoNommage</span>
+ * </p>
  * <ul>
  * <li>Interface des DAOs pour les <b>INommage</b>.</li>
  * <li>
@@ -20,12 +33,18 @@ import levy.daniel.application.model.metier.personne.nommage.INommage;
  * Définit en particulier la méthode de <b>recherche 
  * par identifiant métier</b>.
  * </li>
- * <br/>
+ * </ul>
+ * 
+ * <p>
+ * <span style="text-decoration: underline;">IMPLEMENTATION DES IDaoNommage</span>
+ * </p>
+ * <ul>
  * <li>
- * <img src="../../../../../../../../../../../javadoc/images/.png" 
+ * <img src="../../../../../../../../../../../javadoc/images/implementation_DAO_INommage.png" 
  * alt="implémentation des DAOs nommage" border="1" align="center" />
  * </li>
  * </ul>
+ * 
  * <br/>
  *
  * - Exemple d'utilisation :<br/>

@@ -15,7 +15,21 @@ import levy.daniel.application.model.metier.personne.nommage.INommage;
 
 
 /**
- * class AbstractDaoNommage :<br/>
+ * CLASSE ABSTRAITE <b>AbstractDaoNommage</b> :<br/>
+ * <p>
+ * <span style="text-decoration: underline;">CONCEPT 
+ * CONCERNE PAR CE DAO</span>
+ * </p>
+ * <p>
+ * <b>INommage</b> modélise un un <i>concept</i> de <b>Nommage</b> avec un seul prenom
+ * , c'est à dire un couple <b>[nom - prenom]</b> qui identifie 
+ * <i>une ou plusieurs</i> <b>Personne</b>.
+ * </p>
+ * 
+ * <p>
+ * <span style="text-decoration: underline;">DESCRIPTION DE 
+ * AbstractDaoNommage</span>
+ * </p>
  * <ul>
  * <li>
  * DAO ABSTRAIT SPRING pour les 
@@ -30,12 +44,23 @@ import levy.daniel.application.model.metier.personne.nommage.INommage;
  * HERITE DE LA CLASSE ABSTRAITE 
  * AbstractDaoGenericJPASpring&lt;INommage, Long&gt;.
  * </li>
- * <br/>
  * <li>
- * <img src="../../../../../../../../../../../javadoc/images/.png" 
- * alt="implémentation des DAOs" border="1" align="center" />
+ * <b>FACTORISE</b> les attributs et comportements 
+ * des <i>descendants concrets</i>.
  * </li>
  * </ul>
+ * 
+ *  
+ * <p>
+ * <span style="text-decoration: underline;">IMPLEMENTATION DES AbstractDaoNommage</span>
+ * </p>
+ * <ul>
+ * <li>
+ * <img src="../../../../../../../../../../../javadoc/images/implementation_DAO_INommage.png" 
+ * alt="implémentation des DAOs nommage" border="1" align="center" />
+ * </li>
+ * </ul>
+ * 
  * <br/>
  *
  * - Exemple d'utilisation :<br/>

@@ -12,8 +12,16 @@ import levy.daniel.application.model.metier.personne.nommage.AbstractNommage;
 
 
 /**
- * class Nommage :<br/>
- * .<br/>
+ * CLASSE CONCRETE <b>Nommage</b> :<br/>
+ * <p>
+ * <span style="text-decoration: underline;">CONCEPT MODELISE</span>
+ * </p>
+ * <p>
+ * <b>Nommage</b> modélise un un <i>concept</i> 
+ * de <b>Nommage</b> avec nom et un seul prenom, c'est à dire un couple
+ * <b>[nom - prenom]</b>  qui identifie <i>une ou plusieurs</i> <b>Personne</b>.<br/>
+ * </p>
+ * 
  * <br/>
  *
  * - Exemple d'utilisation :<br/>

@@ -14,7 +14,22 @@ import levy.daniel.application.model.metier.personne.nommage.impl.Nommage2;
 
 
 /**
- * class DaoNommage2 :<br/>
+ * CLASSE CONCRETE <b>DaoNommage2</b> :<br/>
+ * <p>
+ * <span style="text-decoration: underline;">CONCEPT 
+ * CONCERNE PAR CE DAO</span>
+ * </p>
+ * <p>
+ * <b>Nommage2</b> modélise un un <i>concept</i> 
+ * de <b>Nommage</b> avec nom, un prenom et un deuxième prenom, 
+ * c'est à dire un triplet <b>[nom - prenom - prenom2]</b>  
+ * qui identifie <i>une ou plusieurs</i> <b>Personne</b>.<br/>
+ * </p>
+ * 
+ * <p>
+ * <span style="text-decoration: underline;">DESCRIPTION DE 
+ * DaoNommage</span>
+ * </p>
  * <ul>
  * <li>DAO <b>CONCRET</b> pour les <b>Nommage2</b>.</li>
  * <li>
@@ -24,12 +39,28 @@ import levy.daniel.application.model.metier.personne.nommage.impl.Nommage2;
  * Certaines méthodes (getOne(ID), ...) sont 
  * <b>compatibles SPRING DATA</b>.
  * </li>
- * <br/>
+ * </ul>
+ * 
+ * <p>
+ * <span style="text-decoration: underline;">IMPLEMENTATION DES DaoNommage2</span>
+ * </p>
+ * <ul>
  * <li>
- * <img src="../../../../../../../../../../../../javadoc/images/.png" 
- * alt="implémentation des DAOs" border="1" align="center" />
+ * <img src="../../../../../../../../../../../../javadoc/images/implementation_DAO_INommage.png" 
+ * alt="implémentation des DAOs nommage" border="1" align="center" />
  * </li>
  * </ul>
+ * 
+ * <p>
+ * <span style="text-decoration: underline;">UTILISATION DES DaoNommage2</span>
+ * </p>
+ * <ul>
+ * <li>
+ * <img src="../../../../../../../../../../../../javadoc/images/utilisation_daoNommage.png" 
+ * alt="utilisation des DAOs DaoNommage2" border="1" align="center" />
+ * </li>
+ * </ul>
+ * 
  * <br/>
  *
  * - Exemple d'utilisation :<br/>

@@ -22,7 +22,7 @@ import org.apache.commons.logging.LogFactory;
  * <span style="text-decoration: underline;">CONCEPT MODELISE</span>
  * </p>
  * <p>
- * modélise un <b>IdInsee</b>, c'est à dire un 
+ * <b>AbstractIdInsee</b> modélise un <b>IdInsee</b>, c'est à dire un 
  * <b>identifiant INSEE</b> qui identifie de manière 
  * unique une Personne.<br/>
  * <b>FACTORISE</b> les attributs et comportements 

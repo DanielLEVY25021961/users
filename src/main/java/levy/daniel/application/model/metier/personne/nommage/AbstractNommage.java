@@ -21,7 +21,7 @@ import org.apache.commons.logging.LogFactory;
  * <span style="text-decoration: underline;">CONCEPT MODELISE</span>
  * </p>
  * <p>
- * modélise un un <i>concept</i> 
+ * <b>AbstractNommage</b> modélise un un <i>concept</i> 
  * de <b>Nommage</b>, c'est à dire un couple
  * <b>[nom - prenom]</b> ou un triplet <b>[nom - prenom - prenom2]</b> 
  * qui identifie <i>une ou plusieurs</i> <b>Personne</b>.<br/>

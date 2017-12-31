@@ -11,7 +11,7 @@ import levy.daniel.application.model.metier.IExportateurJTable;
  * <span style="text-decoration: underline;">CONCEPT MODELISE</span>
  * </p>
  * <p>
- * Modélise un <i>concept</i> d' <b>identifiant personnel</b>, c'est à dire un 
+ * <b>IIdInsee</b> modélise un <i>concept</i> d' <b>identifiant personnel</b>, c'est à dire un 
  * <b>identifiant unique d'une Personne</b>.
  * </p>
  * 

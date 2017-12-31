@@ -14,11 +14,24 @@ import levy.daniel.application.model.dao.daoexceptions.AbstractDaoException;
 import levy.daniel.application.model.metier.personne.idinsee.IIdInsee;
 
 /**
- * class AbstractDaoIdInsee :<br/>
+ * CLASSE ABSTRAITE <b>AbstractDaoIdInsee</b> :
+ * <p>
+ * <span style="text-decoration: underline;">CONCEPT 
+ * CONCERNE PAR CE DAO</span>
+ * </p>
+ * <p>
+ * <b>IIdInsee</b> modélise un <i>concept</i> d' <b>identifiant 
+ * personnel</b>, c'est à dire un <b>identifiant unique 
+ * d'une Personne</b>.
+ * </p>
+ * 
+ * <p>
+ * <span style="text-decoration: underline;">DESCRIPTION DE 
+ * AbstractDaoIdInsee</span>
+ * </p>
  * <ul>
  * <li>
- * DAO ABSTRAIT SPRING pour les 
- * <b>IIdInsee</b>.
+ * DAO ABSTRAIT SPRING pour les <b>IIdInsee</b>.
  * </li>
  * <li>
  * Comporte l'implémentation des méthodes <b>spécifiques</b> aux 
@@ -29,12 +42,23 @@ import levy.daniel.application.model.metier.personne.idinsee.IIdInsee;
  * HERITE DE LA CLASSE ABSTRAITE 
  * AbstractDaoGenericJPASpring&lt;IIdInsee, Long&gt;.
  * </li>
- * <br/>
  * <li>
- * <img src="../../../../../../../../../../../javadoc/images/implementation_DAO_IdInsee.png" 
- * alt="implémentation des DAOs" border="1" align="center" />
+ * <b>FACTORISE</b> les attributs et comportements 
+ * des <i>descendants concrets</i>.
  * </li>
  * </ul>
+ * 
+ * 
+ * <p>
+ * <span style="text-decoration: underline;">IMPLEMENTATION DES AbstractDaoIdInsee</span>
+ * </p>
+ * <ul>
+ * <li>
+ * <img src="../../../../../../../../../../../javadoc/images/implementation_DAO_IIdInsee.png" 
+ * alt="implémentation des DAOs IIdInsee" border="1" align="center" />
+ * </li>
+ * </ul>
+ * 
  * <br/>
  *
  * - Exemple d'utilisation :<br/>

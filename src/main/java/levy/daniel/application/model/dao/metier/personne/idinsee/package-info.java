@@ -1,6 +1,18 @@
 /**
  * class package-info :<br/>
- * .<br/>
+ * <p>
+ * <span style="text-decoration: underline;">CONTENU 
+ * DU PACKAGE</span>
+ * </p>
+ * <p>
+ * Ce package contient toutes les classes nécessaires à la PERSISTANCE des IIdInsee.
+ * </p>
+ * <p>
+ * <b>IIdInsee</b> modélise un <i>concept</i> d' <b>identifiant 
+ * personnel</b>, c'est à dire un <b>identifiant unique 
+ * d'une Personne</b>.
+ * </p>
+ * 
  * <br/>
  *
  * - Exemple d'utilisation :<br/>

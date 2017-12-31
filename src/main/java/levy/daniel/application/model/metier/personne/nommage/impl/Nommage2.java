@@ -16,8 +16,17 @@ import levy.daniel.application.model.metier.personne.nommage.INommage;
 
 
 /**
- * class Nommage2 :<br/>
- * .<br/>
+ * CLASSE CONCRETE <b>Nommage2</b> :<br/>
+ * <p>
+ * <span style="text-decoration: underline;">CONCEPT MODELISE</span>
+ * </p>
+ * <p>
+ * <b>Nommage2</b> modélise un un <i>concept</i> 
+ * de <b>Nommage</b> avec nom, un prenom et un deuxième prenom, 
+ * c'est à dire un triplet <b>[nom - prenom - prenom2]</b>  
+ * qui identifie <i>une ou plusieurs</i> <b>Personne</b>.<br/>
+ * </p>
+ * 
  * <br/>
  *
  * - Exemple d'utilisation :<br/>
