@@ -38,6 +38,103 @@ import levy.daniel.application.model.metier.personne.civilite.AbstractCivilite;
  * un ensemble fini de valeurs (nomenclature)".</li>
  * </ul>
  * 
+ * <ul>
+ * <li>Implémentation <b>CONCRETE</b> de ICivilite.</li>
+ * <li>HERITE de AbstractCivilite.</li>
+ * </ul>
+ * 
+ * <p>
+ * <span style="text-decoration: underline;">ATTRIBUTS</span>
+ * </p>
+ * <ul>
+ * <li>Les <b>attributs</b> d'un CiviliteAbregee sont : </li>
+ * <ul>
+ * <li><b>id</b> pour la mise en base.</li>
+ * <li><b>civiliteString</b>.</li>
+ * </ul>
+ * </ul>
+ * 
+ * <p>
+ * <span style="text-decoration: underline;">EGALITE METIER</span>
+ * </p>
+ * <ul>
+ * <li>L'<b>égalité metier</b> d'un CiviliteAbregee est vérifiée sur :</li>
+  * <ul>
+ * <li><b>civiliteString</b></li>
+ * </ul>
+ * </ul>
+ * 
+ * <p>
+ * <span style="text-decoration: underline;">DIAGRAMME DE CLASSES D'IMPLEMENTATION</span>
+ * </p>
+ * <ul>
+ * <li>
+ * <img src="../../../../../../../../../../../javadoc/images/classes_implementation_civilite.png" 
+ * alt="classes d'implémentation des AbstractCivilite" border="1" align="center" />
+ * </li>
+ * </ul>
+ * 
+ * <p>
+ * <span style="text-decoration: underline;">
+ * ENTITIES JPA
+ * </span>
+ * </p>
+ * <ul>
+ * <li>la classe concrète CiviliteAbregee 
+ * est transformée en <b>Entity JPA</b> au moyen de 
+ * <b>javax.persistence annotations</b>.</li>
+ * <li>La <b>stratégie de jointure des tables</b> entre la classe abstraite 
+ * et ses descendants concrets est <b>InheritanceType.JOINED</b>.</li>
+ * <br/>
+ * <li>
+ * <img src="../../../../../../../../../../../javadoc/images/implementation_civilite_entities.png" 
+ * alt="implémentation des entities de AbstractCivilite" border="1" align="center" />
+ * </li>
+ * </ul>
+ * 
+ * <p>
+ * <span style="text-decoration: underline;">
+ * TABLES
+ * </span>
+ * </p>
+ * <ul>
+ * <li>Les <b>tables en base</b> résultantes des entities JPA sont :</li>
+ * <br/>
+ * <li>
+ * <img src="../../../../../../../../../../../javadoc/images/tables-abstract_civilites_civilites.png" 
+ * alt="implémentation des tables de AbstractCivilite" border="1" align="center" />
+ * </li>
+ * </ul>
+ * 
+ * <br/>
+ * <p>
+ * <span style="text-decoration: underline;">REGLES DE GESTION</span>
+ * </p>
+ * <ul>
+ * <li>
+ * Les <b>Règles de Gestion (RG)</b> applicables aux attributs 
+ * d'un CiviliteAbregee sont les suivantes :
+ * </li>
+ * <br/>
+ * <table border="1">
+ * <tr>
+ * <th>Attribut</th><th>Règle de Gestion</th>
+ * </tr>
+ * 
+ * <tr>
+ * <td rowspan="1">
+ * civiliteString
+ * </td>
+ * <td>
+ * "RG_CIVILITEABREGEE_CIVILITESTRING_NOMENCLATURE_01 : 
+ * la civilite (M., Mme, ...) doit respecter 
+ * un ensemble fini de valeurs (nomenclature)"
+ * </td>
+ * </tr>
+ * 
+ * </table>
+ * </ul>
+ * 
  * <br/>
  * 
  *

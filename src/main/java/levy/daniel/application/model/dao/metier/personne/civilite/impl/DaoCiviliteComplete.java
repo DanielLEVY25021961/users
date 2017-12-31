@@ -2,6 +2,7 @@ package levy.daniel.application.model.dao.metier.personne.civilite.impl;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.stereotype.Repository;
 
 import levy.daniel.application.model.dao.daoexceptions.AbstractDaoException;
 import levy.daniel.application.model.dao.metier.personne.civilite.AbstractDaoCivilite;
@@ -73,6 +74,7 @@ import levy.daniel.application.model.metier.personne.civilite.impl.CiviliteCompl
  * @since 31 déc. 2017
  *
  */
+@Repository(value="DaoCiviliteComplete")
 public class DaoCiviliteComplete extends AbstractDaoCivilite {
 
 	// ************************ATTRIBUTS************************************/
@@ -84,6 +86,14 @@ public class DaoCiviliteComplete extends AbstractDaoCivilite {
 	public static final String CLASSE_DAO_CIVILITE_COMPLETE 
 		= "Classe DaoCiviliteComplete";
 	
+	
+	/**
+	 * SELECT_OBJET : String :<br/>
+	 * "select civilite from CiviliteComplete as civilite ".<br/>
+	 */
+	public static final String SELECT_OBJET 
+		= "select civilite from CiviliteComplete as civilite ";
+
 	
 	/**
 	 * LOG : Log : 
@@ -113,7 +123,7 @@ public class DaoCiviliteComplete extends AbstractDaoCivilite {
 	 * <br/>
 	 */
 	@Override
-	public CiviliteComplete findById(
+	public final CiviliteComplete findById(
 			final Long pId) throws AbstractDaoException {
 		
 		CiviliteComplete objetTrouve = null;
@@ -154,5 +164,92 @@ public class DaoCiviliteComplete extends AbstractDaoCivilite {
 	} // Fin de findById(...)._____________________________________________
 	
 
+
+//	/**
+//	 * {@inheritDoc}
+//	 */
+//	@Override
+//	public final boolean exists(
+//			final ICivilite pObject) throws AbstractDaoException {
+//		
+//		/* retourne false si pObject == null. */
+//		if (pObject == null) {
+//			return false;
+//		}
+//
+//		boolean resultat = false;		
+//		ICivilite objetResultat = null;
+//		
+//		/* REQUETE HQL PARMETREE. */
+//		final String requeteString 
+//			= SELECT_OBJET
+//				+ "where civilite.civiliteString = :pCiviliteString";
+//		
+//		/* Construction de la requête HQL. */
+//		final Query requete 
+//			= this.entityManager.createQuery(requeteString);
+//		
+//		/* Passage des paramètres de la requête HQL. */
+//		requete.setParameter("pCiviliteString", pObject.getCiviliteString());
+//		
+//		try {
+//			
+//			/* Execution de la requete HQL. */
+//			objetResultat 
+//			= (ICivilite) requete.getSingleResult();
+//			
+//			/* retourne true si l'objet existe en base. */
+//			if (objetResultat != null) {
+//				resultat = true;
+//			}
+//			
+//		}
+//		catch (NoResultException noResultExc) {
+//			
+//			/* retourne false si l'Objet métier n'existe pas en base. */
+//			return false;
+//			
+//		}
+//		catch (Exception e) {
+//			
+//			/* LOG. */
+//			if (LOG.isDebugEnabled()) {
+//				LOG.debug(e.getMessage(), e);
+//			}
+//			
+//			/* Gestion de la DAO Exception. */
+//			this.gestionnaireException
+//				.gererException(CLASSE_ABSTRACTDAO_CIVILITE
+//						, "Méthode exists(ICivilite pObject)", e);
+//		}
+//				
+//		return resultat;
+//		
+//	} // Fin de exists(...)._______________________________________________
+//	
+//	
+//
+//	/**
+//	 * {@inheritDoc}
+//	 */
+//	@Override
+//	public final boolean exists(
+//			final Long pId) throws AbstractDaoException {
+//		
+//		/* retourne false si pId == null . */
+//		if (pId == null) {
+//			return false;
+//		}
+//		
+//		/* retourne true si l'objet métier existe en base. */
+//		if (this.findById(pId) != null) {
+//			return true;
+//		}
+//		
+//		return false;
+//		
+//	} // Fin de exists(...)._______________________________________________
+	
+	
 	
 } // FIN DE LA CLASSE DaoCiviliteAbregee.------------------------------------

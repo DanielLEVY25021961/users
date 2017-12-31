@@ -56,7 +56,7 @@ import org.apache.commons.logging.LogFactory;
  * </ul>
  * </ul>
  * 
- *  <p>
+ * <p>
  * <span style="text-decoration: underline;">DIAGRAMME DE CLASSES D'IMPLEMENTATION</span>
  * </p>
  * <ul>

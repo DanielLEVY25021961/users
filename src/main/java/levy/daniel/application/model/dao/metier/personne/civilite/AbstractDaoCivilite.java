@@ -177,7 +177,7 @@ public abstract class AbstractDaoCivilite
 	 * {@inheritDoc}
 	 */
 	@Override
-	public final ICivilite retrieve(
+	public ICivilite retrieve(
 			final ICivilite pObject) throws AbstractDaoException {
 
 		/* return null si pObject == null. */
@@ -247,7 +247,7 @@ public abstract class AbstractDaoCivilite
 	 * {@inheritDoc}
 	 */
 	@Override
-	public final ICivilite retrieveByCiviliteString(
+	public ICivilite retrieveByCiviliteString(
 			final String pCiviliteString) throws AbstractDaoException {
 		
 		/* Retourne null si pCiviliteString est blank. */
@@ -320,7 +320,7 @@ public abstract class AbstractDaoCivilite
 		/* REQUETE HQL PARAMETREE. */
 		final String requeteString 
 		= SELECT_OBJET 
-		+ "where idInsee.id = :pId";
+		+ "where civilite.id = :pId";
 
 		/* Construction de la requête HQL. */
 		final Query requete 
@@ -444,7 +444,7 @@ public abstract class AbstractDaoCivilite
 	 * {@inheritDoc}
 	 */
 	@Override
-	public final boolean exists(
+	public boolean exists(
 			final ICivilite pObject) throws AbstractDaoException {
 		
 		/* retourne false si pObject == null. */
@@ -508,7 +508,7 @@ public abstract class AbstractDaoCivilite
 	 * {@inheritDoc}
 	 */
 	@Override
-	public final boolean exists(
+	public boolean exists(
 			final Long pId) throws AbstractDaoException {
 		
 		/* retourne false si pId == null . */
