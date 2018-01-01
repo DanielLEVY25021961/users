@@ -1,7 +1,10 @@
 D:\Donnees\eclipse\eclipseworkspace_neon\users\src\test\java\levy\daniel\application\apptechnic\configurationmanagers\gestionnairesrg\LigneRGTest.java
+D:\Donnees\eclipse\eclipseworkspace_neon\users\src\test\java\levy\daniel\application\model\metier\personne\civilite\impl\CiviliteCompleteTest.java
 D:\Donnees\eclipse\eclipseworkspace_neon\users\src\test\java\levy\daniel\application\model\dao\metier\usersimple\impl\DaoUserSimpleTest.java
 D:\Donnees\eclipse\eclipseworkspace_neon\users\src\test\java\levy\daniel\application\apptechnic\configurationmanagers\ConfigurationBundlesManagerTest.java
 D:\Donnees\eclipse\eclipseworkspace_neon\users\src\test\java\levy\daniel\application\apptechnic\configurationmanagers\gestionnairesrg\ComparatorRGTest.java
+D:\Donnees\eclipse\eclipseworkspace_neon\users\src\test\java\levy\daniel\application\model\metier\personne\civilite\impl\CiviliteAbregeeTest.java
+D:\Donnees\eclipse\eclipseworkspace_neon\users\src\test\java\levy\daniel\application\model\dao\metier\personne\nommage\impl\DaoNommage2Test.java
 D:\Donnees\eclipse\eclipseworkspace_neon\users\src\test\java\levy\daniel\application\model\metier\usersimple\UserSimpleTest.java
 D:\Donnees\eclipse\eclipseworkspace_neon\users\src\test\java\levy\daniel\application\model\dao\metier\usersimple\impl\DaoCiviliteTest.java
 D:\Donnees\eclipse\eclipseworkspace_neon\users\src\test\java\levy\daniel\application\apptechnic\configurationmanagers\gestionnairesrg\GestionnaireRGTest.java
@@ -9,8 +12,13 @@ D:\Donnees\eclipse\eclipseworkspace_neon\users\src\test\java\levy\daniel\applica
 D:\Donnees\eclipse\eclipseworkspace_neon\users\src\test\java\levy\daniel\application\model\dao\metier\usersimple\impl\DaoProfilSimpleTest.java
 D:\Donnees\eclipse\eclipseworkspace_neon\users\src\test\java\levy\daniel\application\model\metier\usersimple\impl\CiviliteTest.java
 D:\Donnees\eclipse\eclipseworkspace_neon\users\src\test\java\levy\daniel\application\model\metier\usersimple\impl\ProfilSimpleTest.java
+D:\Donnees\eclipse\eclipseworkspace_neon\users\src\test\java\levy\daniel\application\model\dao\metier\personne\civilite\impl\DaoCiviliteAbregeeTest.java
 D:\Donnees\eclipse\eclipseworkspace_neon\users\src\test\java\levy\daniel\application\apptechnic\exceptions\technical\impl\BundleManquantExceptionTest.java
 D:\Donnees\eclipse\eclipseworkspace_neon\users\src\test\java\levy\daniel\application\ConfigurationApplicationManagerTest.java
 D:\Donnees\eclipse\eclipseworkspace_neon\users\src\test\java\levy\daniel\application\apptechnic\configurationmanagers\LocaleManagerTest.java
 D:\Donnees\eclipse\eclipseworkspace_neon\users\src\test\java\levy\daniel\application\model\dao\metier\personne\idinsee\impl\DaoIdInseeTest.java
 D:\Donnees\eclipse\eclipseworkspace_neon\users\src\test\java\levy\daniel\application\model\metier\personne\idinsee\impl\IdInseeTest.java
+D:\Donnees\eclipse\eclipseworkspace_neon\users\src\test\java\levy\daniel\application\model\dao\metier\personne\nommage\impl\DaoNommageTest.java
+D:\Donnees\eclipse\eclipseworkspace_neon\users\src\test\java\levy\daniel\application\model\metier\personne\nommage\impl\Nommage2Test.java
+D:\Donnees\eclipse\eclipseworkspace_neon\users\src\test\java\levy\daniel\application\model\dao\metier\personne\civilite\impl\DaoCiviliteCompleteTest.java
+D:\Donnees\eclipse\eclipseworkspace_neon\users\src\test\java\levy\daniel\application\model\metier\personne\nommage\impl\NommageTest.java

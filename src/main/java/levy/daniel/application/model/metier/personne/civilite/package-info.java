@@ -1,7 +1,7 @@
 /**
  * class package-info :<br/>
  * <p>
- * <span style="text-decoration: underline;">CONCEPT MODELISE</span>
+ * <span style="text-decoration: underline;">CONTENU DU PACKAGE</span>
  * </p>
  * <p>
  * ce package contient toutes les classes qui modélisent 
