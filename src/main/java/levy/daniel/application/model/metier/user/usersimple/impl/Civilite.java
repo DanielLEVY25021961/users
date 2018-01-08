@@ -18,7 +18,7 @@ import levy.daniel.application.model.metier.IExportateurCsv;
 import levy.daniel.application.model.metier.IExportateurJTable;
 
 /**
- * class Civilite :<br/>
+ * CLASSE <b>Civilite</b> :<br/>
  * <ul>
  * <li>Classe modélisant une <b>Civilite</b> (M., Mme, ...) 
  * d'un UserSimple.</li>
