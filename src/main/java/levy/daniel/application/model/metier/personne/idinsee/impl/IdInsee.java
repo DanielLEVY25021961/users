@@ -39,7 +39,7 @@ import levy.daniel.application.model.metier.personne.idinsee.AbstractIdInsee;
  * </p>
  * <ul>
  * <li>
- * <img src="../../../../../../../../../../../javadoc/images/implementation_idinsee.png" 
+ * <img src="../../../../../../../../../../../javadoc/images/classes_implementation_idInsee.png" 
  * alt="implémentation du IdInsee" border="1" align="center" />
  * </li>
  * </ul>

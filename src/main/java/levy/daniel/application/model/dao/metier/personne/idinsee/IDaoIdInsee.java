@@ -5,7 +5,20 @@ import levy.daniel.application.model.dao.daoexceptions.AbstractDaoException;
 import levy.daniel.application.model.metier.personne.idinsee.IIdInsee;
 
 /**
- * INTERFACE IDaoIdInsee :<br/>
+ * INTERFACE <b>IDaoIdInsee</b> :<br/>
+ * <p>
+ * <span style="text-decoration: underline;">CONCEPT 
+ * CONCERNE PAR CE DAO</span>
+ * </p>
+ * <p>
+ * <b>IIdInsee</b> modélise un <i>concept</i> d' <b>identifiant 
+ * personnel</b>, c'est à dire un <b>identifiant unique 
+ * d'une Personne</b>.
+ * </p>
+ * 
+ * <p>
+ * <span style="text-decoration: underline;">DESCRIPTION DE IDaoIdInsee</span>
+ * </p>
  * <ul>
  * <li>Interface des DAOs pour les <b>IIdInsee</b>.</li>
  * <li>
@@ -19,12 +32,18 @@ import levy.daniel.application.model.metier.personne.idinsee.IIdInsee;
  * Définit en particulier la méthode de <b>recherche 
  * par identifiant métier</b>.
  * </li>
- * <br/>
+ * </ul>
+ * 
+ * <p>
+ * <span style="text-decoration: underline;">IMPLEMENTATION DES IDaoIdInsee</span>
+ * </p>
+ * <ul>
  * <li>
- * <img src="../../../../../../../../../../javadoc/images/implementation_DaoIdInsee.png" 
- * alt="implémentation des DAOs" border="1" align="center" />
+ * <img src="../../../../../../../../../../../javadoc/images/implementation_DAO_IIdInsee.png" 
+ * alt="implémentation des DAOs IIdInsee" border="1" align="center" />
  * </li>
  * </ul>
+ * 
  * <br/>
  *
  * - Exemple d'utilisation :<br/>

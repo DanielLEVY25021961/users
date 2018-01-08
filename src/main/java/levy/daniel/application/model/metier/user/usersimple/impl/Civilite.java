@@ -19,6 +19,9 @@ import levy.daniel.application.model.metier.IExportateurJTable;
 
 /**
  * class Civilite :<br/>
+ * <p>
+ * <span style="text-decoration: underline;">CONCEPT MODELISE</span>
+ * </p>
  * <ul>
  * <li>Classe modélisant une <b>Civilite</b> (M., Mme, ...) 
  * d'un UserSimple.</li>

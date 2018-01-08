@@ -84,7 +84,7 @@ import levy.daniel.application.model.metier.user.usersimple.impl.ProfilSimple;
  * <li>l'objet UserSimple implémente l'INTERFACE IUserSimple : </li>
  * <br/>
  * <li>
- * <img src="../../../../../../../../../javadoc/images/implementation_UserSimple.png" 
+ * <img src="../../../../../../../../../../javadoc/images/implementation_UserSimple.png" 
  * alt="implémentation du UserSimple" border="1" align="center" />
  * </li>
  *

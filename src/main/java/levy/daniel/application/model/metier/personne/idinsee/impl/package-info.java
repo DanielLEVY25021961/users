@@ -1,6 +1,7 @@
 /**
  * class package-info :<br/>
- * .<br/>
+ * Ce package contient toutes les classes <b>concrètes</b> de IIdInsee 
+ * (Identifiant unique d'une personne).<br/>
  * <br/>
  *
  * - Exemple d'utilisation :<br/>

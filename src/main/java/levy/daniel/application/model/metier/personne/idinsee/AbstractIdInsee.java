@@ -17,8 +17,130 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 /**
- * class AbstractIdInsee :<br/>
- * .<br/>
+ * CLASSE ABSTRAITE <b>AbstractIdInsee</b> :<br/>
+ * <p>
+ * <span style="text-decoration: underline;">CONCEPT MODELISE</span>
+ * </p>
+ * <p>
+ * <b>AbstractIdInsee</b> modélise un <b>IdInsee</b>, c'est à dire un 
+ * <b>identifiant INSEE</b> qui identifie de manière 
+ * unique une Personne.<br/>
+ * <b>FACTORISE</b> les attributs et comportements 
+ * des <i>descendants concrets</i>.
+ * </p>
+ * 
+ * <ul>
+ * <p>
+ * <span style="text-decoration: underline;">
+ * IMPLEMENTE :
+ * </span>
+ * </p>
+ * <li><b>IIdInsee</b>.</li>
+ * </ul>
+ * 
+ * <ul>
+ * <p>
+ * <span style="text-decoration: underline;">
+ * Garantit que tout IIdInsee possède à minima :
+ * </span>
+ * </p>
+ * <li><b>id</b> pour la mise en base.</li>
+ * <li><b>numeroInsee</b>.</li>
+ * </ul>
+ * 
+ * <p>
+ * <span style="text-decoration: underline;">EGALITE METIER</span>
+ * </p>
+ * <ul>
+ * <li>L'<b>égalité metier</b> d'un IIdInsee est vérifiée sur :</li>
+ * <ul>
+ * <li><b>numeroInsee</b></li>
+ * </ul>
+ * </ul>
+ * 
+ * <p>
+ * <span style="text-decoration: underline;">
+ * INTERFACES ET HERITAGE
+ * </span>
+ * </p>
+ * <ul>
+ * <li>l'objet IdInsee hérite de la classe abstraite AbstractIdInsee 
+ * qui implémente l'INTERFACE IIdInsee : </li>
+ * <br/>
+ * <li>
+ * <img src="../../../../../../../../../../javadoc/images/classes_implementation_idInsee.png" 
+ * alt="implémentation du IdInsee" border="1" align="center" />
+ * </li>
+ * </ul>
+ * 
+ * <p>
+ * <span style="text-decoration: underline;">
+ * ENTITIES JPA
+ * </span>
+ * </p>
+ * <ul>
+ * <li>la classe abstraite AbstractIdInsee 
+ * est transformée en <b>Entity JPA</b> au moyen de 
+ * <b>javax.persistence annotations</b>.</li>
+ * <li>La <b>stratégie de jointure des tables</b> entre la classe abstraite 
+ * et ses descendants concrets est <b>InheritanceType.JOINED</b>.</li>
+ * <br/>
+ * <li>
+ * <img src="../../../../../../../../../../javadoc/images/implementation_idinsee_entities.png" 
+ * alt="implémentation des entities de AbstractIdInsee" border="1" align="center" />
+ * </li>
+ * </ul>
+ * 
+ * <p>
+ * <span style="text-decoration: underline;">
+ * TABLES
+ * </span>
+ * </p>
+ * <ul>
+ * <li>Les <b>tables en base</b> résultantes des entities JPA sont :</li>
+ * <br/>
+ * <li>
+ * <img src="../../../../../../../../../../javadoc/images/tables-abstract_ids_insee-ids_insee.png" 
+ * alt="implémentation des tables de AbstractIdInsee" border="1" align="center" />
+ * </li>
+ * </ul>
+ * 
+ * <br/>
+ * <p>
+ * <span style="text-decoration: underline;">REGLES DE GESTION</span>
+ * </p>
+ * <ul>
+ * <li>
+ * Les <b>Règles de Gestion (RG)</b> applicables aux attributs 
+ * d'un AbstractIdInsee sont les suivantes :
+ * </li>
+ * <br/>
+ * 
+ * <table border="1">
+ * 
+ * <tr>
+ * <th>Attribut</th><th>Règle de Gestion</th>
+ * </tr>
+ * 
+ * <tr>
+ * <td rowspan="2">
+ * numeroInsee
+ * </td>
+ * <td>
+ * "RG_IDINSEE_NUMEROINSEE_RENSEIGNE_01 : le numeroInsee 
+ * du IdInsee doit être renseigné (obligatoire)"
+ * </td>
+ * </tr>
+ * <tr>
+ * <td>
+ * "RG_IDINSEE_NUMEROINSEE_LONGUEUR_02 : le numeroInsee du IdInsee
+ *  doit contenir entre [5] et [30] caractères"
+ *  </td>
+ * </tr>
+ * 
+ * </table>
+ * </ul>
+ * <br/>
  * <br/>
  *
  * - Exemple d'utilisation :<br/>
@@ -85,6 +207,12 @@ public abstract class AbstractIdInsee implements IIdInsee {
 	/**
 	 * numeroInsee : String :<br/>
 	 * Identifiant INSEE d'une Personne.<br/>
+	 * <ul>
+	 * <li>"RG_IDINSEE_NUMEROINSEE_RENSEIGNE_01 : le numeroInsee 
+	 * du IdInsee doit être renseigné (obligatoire)".</li>
+	 * <li>"RG_IDINSEE_NUMEROINSEE_LONGUEUR_02 : le numeroInsee du IdInsee
+	 *  doit contenir entre [5] et [30] caractères".</li>
+	 * </ul>
 	 */
 	private String numeroInsee;
 	
@@ -432,7 +560,7 @@ public abstract class AbstractIdInsee implements IIdInsee {
 	 * {@inheritDoc}
 	 */
 	@Column(name = "NUMEROINSEE"
-			, unique = true, nullable = false
+			, unique = false, nullable = false
 			, updatable = true, insertable = true)
 	@Size(min = 5, max = 30)
 	@Override
