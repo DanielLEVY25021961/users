@@ -285,6 +285,29 @@ public class DaoCivilite
 	} // Fin de retrieveByCivilite(...).___________________________________
 
 	
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public final List<Civilite> findAllSousClasse() 
+							throws AbstractDaoException {
+		return this.findAll();
+	} // Fin de findAllSousClasse() .______________________________________
+
+
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public final List<Civilite> findAllMaxSousClasse(
+			final Long pMax) 
+								throws AbstractDaoException {
+		return this.findAllMax(pMax);
+	} // Fin de findAllMaxSousClasse(...)._________________________________
+
+
 	
 	/**
 	 * {@inheritDoc}
@@ -427,6 +450,28 @@ public class DaoCivilite
 	 * {@inheritDoc}
 	 */
 	@Override
+	public final void deleteAllSousClasse() 
+				throws AbstractDaoException {
+		this.deleteAll();
+	} // Fin de deleteAllSousClasse()._____________________________________
+
+
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public final boolean deleteAllBooleanSousClasse() 
+						throws AbstractDaoException {
+		return this.deleteAllBoolean();
+	} // Fin de deleteAllBooleanSousClasse().______________________________
+	
+
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
 	public final boolean exists(
 			final Civilite pObject) throws AbstractDaoException {
 		
@@ -510,6 +555,16 @@ public class DaoCivilite
 	
 	
 
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public final Long countSousClasse() throws AbstractDaoException {
+		return this.count();
+	} // Fin de countSousClasse()._________________________________________
+
+
+	
 	/**
 	 * {@inheritDoc}
 	 */

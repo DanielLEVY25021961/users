@@ -18,7 +18,14 @@ import levy.daniel.application.model.metier.IExportateurCsv;
 import levy.daniel.application.model.metier.IExportateurJTable;
 
 /**
+<<<<<<< HEAD
  * CLASSE <b>Civilite</b> :<br/>
+=======
+ * class Civilite :<br/>
+ * <p>
+ * <span style="text-decoration: underline;">CONCEPT MODELISE</span>
+ * </p>
+>>>>>>> branch 'master' of https://github.com/DanielLEVY25021961/users.git
  * <ul>
  * <li>Classe modélisant une <b>Civilite</b> (M., Mme, ...) 
  * d'un UserSimple.</li>

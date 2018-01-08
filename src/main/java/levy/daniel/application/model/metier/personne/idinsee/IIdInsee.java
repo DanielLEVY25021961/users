@@ -6,9 +6,12 @@ import levy.daniel.application.model.metier.IExportateurCsv;
 import levy.daniel.application.model.metier.IExportateurJTable;
 
 /**
- * INTERFACE IIdInsee :<br/>
+ * INTERFACE <b>IIdInsee</b> :<br/>
  * <p>
- * Modélise un <b>Identifiant INSEE</b>, c'est à dire un 
+ * <span style="text-decoration: underline;">CONCEPT MODELISE</span>
+ * </p>
+ * <p>
+ * <b>IIdInsee</b> modélise un <i>concept</i> d' <b>identifiant personnel</b>, c'est à dire un 
  * <b>identifiant unique d'une Personne</b>.
  * </p>
  * 
@@ -33,10 +36,10 @@ import levy.daniel.application.model.metier.IExportateurJTable;
  * <ul>
  * <p>
  * <span style="text-decoration: underline;">
- * Garantit que tout IIndInsee sait :
+ * Garantit que tout IIdInsee sait :
  * </span>
  * </p>
- * <li>se <b>comparer</b> à un autre IIndInsee.</li>
+ * <li>se <b>comparer</b> à un autre IIdInsee.</li>
  * <li>se <b>cloner</b>.</li>
  * <li>s'exporter sous forme <b>csv</b>.</li>
  * <li>s'exporter sous forme <b>JTable</b>.</li>
@@ -45,35 +48,30 @@ import levy.daniel.application.model.metier.IExportateurJTable;
  * <ul>
  * <p>
  * <span style="text-decoration: underline;">
- * Garantit que tout IIndInsee possède :
+ * Garantit que tout IIdInsee possède à minima :
  * </span>
  * </p>
  * <li><b>id</b> pour la mise en base.</li>
  * <li><b>numeroInsee</b>.</li>
  * </ul>
- * 
+ *
  * <p>
  * <span style="text-decoration: underline;">EGALITE METIER</span>
  * </p>
  * <ul>
- * <li>L'<b>égalité metier</b> d'un IIndInsee est vérifiée sur :</li>
- * <ul>
+ * <li>L'<b>égalité metier</b> d'un IIdInsee est vérifiée sur :</li>
+  * <ul>
  * <li><b>numeroInsee</b></li>
  * </ul>
  * </ul>
  * 
  * <p>
- * <span style="text-decoration: underline;">
- * INTERFACES ET HERITAGE
- * </span>
+ * <span style="text-decoration: underline;">DIAGRAMME DE CLASSES D'IMPLEMENTATION</span>
  * </p>
  * <ul>
- * <li>l'objet IdInsee hérite de la classe abstraite AbstractIdInsee 
- * qui implémente l'INTERFACE IIdInsee : </li>
- * <br/>
  * <li>
- * <img src="../../../../../../../../../../javadoc/images/implementation_idinsee.png" 
- * alt="implémentation du UserSimple" border="1" align="center" />
+ * <img src="../../../../../../../../../../javadoc/images/classes_implementation_idInsee.png" 
+ * alt="classes d'implémentation des IdInsee" border="1" align="center" />
  * </li>
  * </ul>
  *
@@ -84,7 +82,7 @@ import levy.daniel.application.model.metier.IExportateurJTable;
  * <ul>
  * <li>
  * Les <b>Règles de Gestion (RG)</b> applicables aux attributs 
- * d'un UserSimple sont les suivantes :
+ * d'un IIdInsee sont les suivantes :
  * </li>
  * <br/>
  * 

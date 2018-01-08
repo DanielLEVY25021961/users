@@ -17,12 +17,16 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 /**
- * class AbstractIdInsee :<br/>
+ * CLASSE ABSTRAITE <b>AbstractIdInsee</b> :<br/>
  * <p>
- * <b>CLASSE ABSTRAITE</b> qui modélise un <b>IdInsee</b>, c'est à dire un 
+ * <span style="text-decoration: underline;">CONCEPT MODELISE</span>
+ * </p>
+ * <p>
+ * <b>AbstractIdInsee</b> modélise un <b>IdInsee</b>, c'est à dire un 
  * <b>identifiant INSEE</b> qui identifie de manière 
  * unique une Personne.<br/>
- * <b>FACTORISE</b> les attributs et comportements des descendants concrets.
+ * <b>FACTORISE</b> les attributs et comportements 
+ * des <i>descendants concrets</i>.
  * </p>
  * 
  * <ul>
@@ -37,7 +41,7 @@ import org.apache.commons.logging.LogFactory;
  * <ul>
  * <p>
  * <span style="text-decoration: underline;">
- * Garantit que tout IIndInsee possède :
+ * Garantit que tout IIdInsee possède à minima :
  * </span>
  * </p>
  * <li><b>id</b> pour la mise en base.</li>
@@ -48,7 +52,7 @@ import org.apache.commons.logging.LogFactory;
  * <span style="text-decoration: underline;">EGALITE METIER</span>
  * </p>
  * <ul>
- * <li>L'<b>égalité metier</b> d'un IIndInsee est vérifiée sur :</li>
+ * <li>L'<b>égalité metier</b> d'un IIdInsee est vérifiée sur :</li>
  * <ul>
  * <li><b>numeroInsee</b></li>
  * </ul>
@@ -64,8 +68,8 @@ import org.apache.commons.logging.LogFactory;
  * qui implémente l'INTERFACE IIdInsee : </li>
  * <br/>
  * <li>
- * <img src="../../../../../../../../../../javadoc/images/implementation_idinsee.png" 
- * alt="implémentation du UserSimple" border="1" align="center" />
+ * <img src="../../../../../../../../../../javadoc/images/classes_implementation_idInsee.png" 
+ * alt="implémentation du IdInsee" border="1" align="center" />
  * </li>
  * </ul>
  * 
@@ -78,12 +82,12 @@ import org.apache.commons.logging.LogFactory;
  * <li>la classe abstraite AbstractIdInsee 
  * est transformée en <b>Entity JPA</b> au moyen de 
  * <b>javax.persistence annotations</b>.</li>
- * <li>La <b>stratégie de jointuredes tables</b> entre la classe abstraite 
+ * <li>La <b>stratégie de jointure des tables</b> entre la classe abstraite 
  * et ses descendants concrets est <b>InheritanceType.JOINED</b>.</li>
  * <br/>
  * <li>
  * <img src="../../../../../../../../../../javadoc/images/implementation_idinsee_entities.png" 
- * alt="implémentation du UserSimple" border="1" align="center" />
+ * alt="implémentation des entities de AbstractIdInsee" border="1" align="center" />
  * </li>
  * </ul>
  * 
@@ -97,7 +101,7 @@ import org.apache.commons.logging.LogFactory;
  * <br/>
  * <li>
  * <img src="../../../../../../../../../../javadoc/images/tables-abstract_ids_insee-ids_insee.png" 
- * alt="implémentation du UserSimple" border="1" align="center" />
+ * alt="implémentation des tables de AbstractIdInsee" border="1" align="center" />
  * </li>
  * </ul>
  * 
@@ -108,7 +112,7 @@ import org.apache.commons.logging.LogFactory;
  * <ul>
  * <li>
  * Les <b>Règles de Gestion (RG)</b> applicables aux attributs 
- * d'un UserSimple sont les suivantes :
+ * d'un AbstractIdInsee sont les suivantes :
  * </li>
  * <br/>
  * 

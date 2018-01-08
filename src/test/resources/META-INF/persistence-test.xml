@@ -56,6 +56,12 @@
 		<class>levy.daniel.application.model.metier.user.usersimple.impl.ProfilSimple</class>
 		<class>levy.daniel.application.model.metier.personne.idinsee.AbstractIdInsee</class>
 		<class>levy.daniel.application.model.metier.personne.idinsee.impl.IdInsee</class>
+		<class>levy.daniel.application.model.metier.personne.nommage.AbstractNommage</class>
+		<class>levy.daniel.application.model.metier.personne.nommage.impl.Nommage</class>
+		<class>levy.daniel.application.model.metier.personne.nommage.impl.Nommage2</class>
+		<class>levy.daniel.application.model.metier.personne.civilite.AbstractCivilite</class>
+		<class>levy.daniel.application.model.metier.personne.civilite.impl.CiviliteComplete</class>
+		<class>levy.daniel.application.model.metier.personne.civilite.impl.CiviliteAbregee</class>
 
 		
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>

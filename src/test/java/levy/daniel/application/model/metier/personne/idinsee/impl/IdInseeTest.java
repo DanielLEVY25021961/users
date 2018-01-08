@@ -63,6 +63,71 @@ public class IdInseeTest {
 	public static final String TIRETS 
 	= "--------------------------------------------------------";
 
+
+	/**
+	 * TEST_EQUALS : String :<br/>
+	 * "testEquals()".<br/>
+	 */
+	public static final String TEST_EQUALS 
+		= "testEquals()";
+	
+	
+	/**
+	 * TEST_COMPARETO : String :<br/>
+	 * "testCompareTo()".<br/>
+	 */
+	public static final String TEST_COMPARETO 
+		= "testCompareTo()";
+
+	
+	/**
+	 * TEST_CLONE : String :<br/>
+	 * "testClone()".<br/>
+	 */
+	public static final String TEST_CLONE 
+		= "testClone()";
+
+	
+	/**
+	 * TEST_TOSTRING : String :<br/>
+	 * "testToString()".<br/>
+	 */
+	public static final String TEST_TOSTRING 
+		= "testToString()";
+	
+	
+	/**
+	 * TEST_GETENTETECSV : String :<br/>
+	 * "testgetEnTeteCsv()".<br/>
+	 */
+	public static final String TEST_GETENTETECSV 
+		= "testgetEnTeteCsv()";
+	
+	
+	/**
+	 * TEST_TOSTRINGCSV : String :<br/>
+	 * "testToStringCsv()".<br/>
+	 */
+	public static final String TEST_TOSTRINGCSV 
+		= "testToStringCsv()";
+	
+	
+	/**
+	 * TEST_GETENTETECOLONNE : String :<br/>
+	 * "testGetEnTeteColonne()".<br/>
+	 */
+	public static final String TEST_GETENTETECOLONNE 
+		= "testGetEnTeteColonne()";
+	
+	
+	/**
+	 * TEST_GETVALEURCOLONNE : String :<br/>
+	 * "testGetValeurColonne()".<br/>
+	 */
+	public static final String TEST_GETVALEURCOLONNE 
+		= "testGetValeurColonne()";
+	
+
 	
 
 	/**
@@ -166,7 +231,7 @@ public class IdInseeTest {
 
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testEquals()");
+			System.out.println(TEST_EQUALS);
 			System.out.println("OBJETNULL1 : " 
 					+ objetNull1.toString());
 			System.out.println("OBJETNULL2 : " 
@@ -191,7 +256,7 @@ public class IdInseeTest {
 
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testEquals()");
+			System.out.println(TEST_EQUALS);
 			System.out.println("OBJET1AVECNULL : " 
 					+ objet1AvecNull.toString());
 			System.out.println("OBJET2AVECNULL : " 
@@ -211,7 +276,7 @@ public class IdInseeTest {
 		
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testEquals()");
+			System.out.println(TEST_EQUALS);
 			System.out.println("OBJET1 : " 
 					+ objet1.toString());
 			System.out.println("OBJET2 : " 
@@ -238,7 +303,7 @@ public class IdInseeTest {
 
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testEquals()");
+			System.out.println(TEST_EQUALS);
 			System.out.println("OBJETDIFF1 : " 
 					+ objetDiff1.toString());
 			System.out.println("OBJETDIFF2 : " 
@@ -308,7 +373,7 @@ public class IdInseeTest {
 		
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testCompareTo()");
+			System.out.println(TEST_COMPARETO);
 			System.out.println("COMPARETO() DE LA MEME INSTANCE : " 
 					+ compareMemeInstance);
 		}
@@ -321,7 +386,7 @@ public class IdInseeTest {
 
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testCompareTo()");
+			System.out.println(TEST_COMPARETO);
 			System.out.println("COMPARETO(null)  : " 
 					+ compareToNull);
 		}
@@ -337,7 +402,7 @@ public class IdInseeTest {
 		
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testCompareTo()");
+			System.out.println(TEST_COMPARETO);
 			System.out.println("COMPARETO(equalsInstance)  : " 
 					+ compareToEquals);
 		}
@@ -354,7 +419,7 @@ public class IdInseeTest {
 		
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testCompareTo()");
+			System.out.println(TEST_COMPARETO);
 			System.out.println("COMPARETO(equalsInstanceNull)  : " 
 					+ compareToEqualsNull);
 		}
@@ -368,7 +433,7 @@ public class IdInseeTest {
 
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testCompareTo()");
+			System.out.println(TEST_COMPARETO);
 			System.out.println("COMPARETO(existant)  : " 
 					+ compare);
 		}
@@ -416,7 +481,7 @@ public class IdInseeTest {
 		
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testClone()");
+			System.out.println(TEST_CLONE);
 			System.out.println("objetNull1 : " 
 					+ objetNull1.toString());
 			System.out.println("objetNullClone1 : " 
@@ -435,7 +500,7 @@ public class IdInseeTest {
 		
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testClone()");
+			System.out.println(TEST_CLONE);
 			System.out.println("objet1 : " 
 					+ objet1.toString());
 			System.out.println("objetClone1 : " 
@@ -471,7 +536,7 @@ public class IdInseeTest {
 
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testToString()");
+			System.out.println(TEST_TOSTRING);
 			System.out.println(objetNull.toString());
 		}
 		
@@ -482,7 +547,7 @@ public class IdInseeTest {
 		
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testToString()");
+			System.out.println(TEST_TOSTRING);
 			System.out.println(objet1.toString());
 		}
 		
@@ -519,7 +584,7 @@ public class IdInseeTest {
 		
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testgetEnTeteCsv()");
+			System.out.println(TEST_GETENTETECSV);
 			System.out.println(entete);
 		}
 		
@@ -559,7 +624,7 @@ public class IdInseeTest {
 
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testToStringCsv()");
+			System.out.println(TEST_TOSTRINGCSV);
 			System.out.println(ligneCsvNull);
 		}
 
@@ -573,7 +638,7 @@ public class IdInseeTest {
 		
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testToStringCsv()");
+			System.out.println(TEST_TOSTRINGCSV);
 			System.out.println(ligneCsv);
 		}
 		
@@ -622,7 +687,7 @@ public class IdInseeTest {
 
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testGetEnTeteColonne()");
+			System.out.println(TEST_GETENTETECOLONNE);
 			System.out.println("entete0 : " + entete0);
 			System.out.println("enteteNull0 : " + enteteNull0);
 			
@@ -673,7 +738,7 @@ public class IdInseeTest {
 
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
-			System.out.println("testGetValeurColonne()");
+			System.out.println(TEST_GETVALEURCOLONNE);
 			System.out.println("valeurNull0 : " + valeurNull0);
 			System.out.println("valeurNull1 : " + valeurNull1);			
 		}
@@ -689,7 +754,7 @@ public class IdInseeTest {
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {	
 			System.out.println();
-			System.out.println("testGetValeurColonne()");
+			System.out.println(TEST_GETVALEURCOLONNE);
 			System.out.println("valeur0 : " + valeur0);
 			System.out.println("valeur1 : " + valeur1);			
 		}

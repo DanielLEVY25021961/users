@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: levy.daniel.application.model.dao.metier.usersimple.impl.DaoProfilSimpleTest
 -------------------------------------------------------------------------------
-Tests run: 29, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.63 s - in levy.daniel.application.model.dao.metier.usersimple.impl.DaoProfilSimpleTest
+Tests run: 29, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.302 s - in levy.daniel.application.model.dao.metier.usersimple.impl.DaoProfilSimpleTest
