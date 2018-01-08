@@ -1,11 +1,14 @@
 package levy.daniel.application.model.dao.metier.usersimple.impl;
 
+import java.util.List;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Repository;
 
 import levy.daniel.application.model.dao.daoexceptions.AbstractDaoException;
 import levy.daniel.application.model.dao.metier.usersimple.AbstractDaoUserSimple;
+import levy.daniel.application.model.metier.user.usersimple.IUserSimple;
 import levy.daniel.application.model.metier.user.usersimple.impl.UserSimple;
 
 
@@ -86,7 +89,7 @@ public class DaoUserSimple extends AbstractDaoUserSimple {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public UserSimple findById(
+	public final UserSimple findById(
 			final Long pId) throws AbstractDaoException {
 		
 		UserSimple objetTrouve = null;
@@ -127,6 +130,61 @@ public class DaoUserSimple extends AbstractDaoUserSimple {
 		return objetTrouve;
 				
 	} // Fin de findById(...)._____________________________________________
+
+
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public final List<IUserSimple> findAllSousClasse() 
+			throws AbstractDaoException {
+		return findAll();
+	} // Fin de findAllSousClasse()._______________________________________
+
+
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public final List<IUserSimple> findAllMaxSousClasse(
+			final Long pMax) throws AbstractDaoException {
+		return this.findAllMax(pMax);
+	} // Fin de findAllMaxSousClasse(...)._________________________________
+
+
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public final void deleteAllSousClasse() 
+			throws AbstractDaoException {
+		this.deleteAll();
+	} // Fin de deleteAllSousClasse()._____________________________________
+
+
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public final boolean deleteAllBooleanSousClasse() 
+			throws AbstractDaoException {
+		return this.deleteAllBoolean();
+	} // Fin de deleteAllBooleanSousClasse().______________________________
+
+
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public final Long countSousClasse() 
+			throws AbstractDaoException {
+		return this.count();
+	} // Fin de countSousClasse()._________________________________________
 	
 
 		

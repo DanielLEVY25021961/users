@@ -282,9 +282,31 @@ public class DaoProfilSimple
 				
 		return objetResultat;
 				
-	} // Fin de retrieveByProfilSimple(...).___________________________________
+	} // Fin de retrieveByProfilSimple(...)._______________________________
 
 	
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public final List<ProfilSimple> findAllSousClasse() 
+								throws AbstractDaoException {
+		return this.findAll();
+	} // Fin de findAllSousClasse()._______________________________________
+
+
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public final List<ProfilSimple> findAllMaxSousClasse(
+			final Long pMax) throws AbstractDaoException {
+		return this.findAllMax(pMax);
+	} // Fin de findAllMaxSousClasse(...)._________________________________
+
+
 	
 	/**
 	 * {@inheritDoc}
@@ -427,6 +449,28 @@ public class DaoProfilSimple
 	 * {@inheritDoc}
 	 */
 	@Override
+	public final void deleteAllSousClasse() 
+			throws AbstractDaoException {
+		this.deleteAll();
+	} // Fin de deleteAllSousClasse()._____________________________________
+
+
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public final boolean deleteAllBooleanSousClasse() 
+				throws AbstractDaoException {
+		return this.deleteAllBoolean();
+	} // Fin de deleteAllBooleanSousClasse().______________________________
+
+
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
 	public final boolean exists(
 			final ProfilSimple pObject) throws AbstractDaoException {
 		
@@ -514,6 +558,17 @@ public class DaoProfilSimple
 	 * {@inheritDoc}
 	 */
 	@Override
+	public final Long countSousClasse() 
+			throws AbstractDaoException {
+		return this.count();
+	} // Fin de countSousClasse()._________________________________________
+
+
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
 	public final String afficherListe(
 			final List<ProfilSimple> pListe) {
 		
@@ -546,6 +601,9 @@ public class DaoProfilSimple
 	protected final void renseignerClassObjetMetier() {
 		this.setClassObjetMetier(ProfilSimple.class);		
 	} // Fin de renseignerClassObjetMetier().______________________________
+
+
+
 
 	
 	

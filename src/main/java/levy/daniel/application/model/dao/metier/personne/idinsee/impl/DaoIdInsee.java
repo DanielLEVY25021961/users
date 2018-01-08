@@ -1,11 +1,14 @@
 package levy.daniel.application.model.dao.metier.personne.idinsee.impl;
 
+import java.util.List;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Repository;
 
 import levy.daniel.application.model.dao.daoexceptions.AbstractDaoException;
 import levy.daniel.application.model.dao.metier.personne.idinsee.AbstractDaoIdInsee;
+import levy.daniel.application.model.metier.personne.idinsee.IIdInsee;
 import levy.daniel.application.model.metier.personne.idinsee.impl.IdInsee;
 
 
@@ -153,6 +156,62 @@ public class DaoIdInsee extends AbstractDaoIdInsee {
 		return objetTrouve;
 				
 	} // Fin de findById(...)._____________________________________________
+
+
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public final List<IIdInsee> findAllSousClasse() 
+					throws AbstractDaoException {
+		return this.findAll();
+	} // Fin de findAllSousClasse()._______________________________________
+
+
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public final List<IIdInsee> findAllMaxSousClasse(
+			final Long pMax) 
+								throws AbstractDaoException {
+		return this.findAllMax(pMax);
+	} // Fin de findAllMaxSousClasse(...)._________________________________
+
+
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public final void deleteAllSousClasse() 
+				throws AbstractDaoException {
+		this.deleteAll();		
+	} // Fin de deleteAllSousClasse()._____________________________________
+
+
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public final boolean deleteAllBooleanSousClasse() 
+					throws AbstractDaoException {
+		return this.deleteAllBoolean();
+	} // Fin de deleteAllBooleanSousClasse().______________________________
+
+
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public final Long countSousClasse() 
+				throws AbstractDaoException {
+		return this.count();
+	} // Fin de countSousClasse()._________________________________________
 	
 
 	

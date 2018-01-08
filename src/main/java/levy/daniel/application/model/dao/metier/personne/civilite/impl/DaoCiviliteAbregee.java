@@ -1,11 +1,16 @@
 package levy.daniel.application.model.dao.metier.personne.civilite.impl;
 
+import java.util.List;
+
+import javax.persistence.Query;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Repository;
 
 import levy.daniel.application.model.dao.daoexceptions.AbstractDaoException;
 import levy.daniel.application.model.dao.metier.personne.civilite.AbstractDaoCivilite;
+import levy.daniel.application.model.metier.personne.civilite.ICivilite;
 import levy.daniel.application.model.metier.personne.civilite.impl.CiviliteAbregee;
 
 /**
@@ -114,7 +119,6 @@ public class DaoCiviliteAbregee extends AbstractDaoCivilite {
 	} // Fin de CONSTRUCTEUR D'ARITE NULLE.________________________________
 	
 
-
 	
 	/**
 	 * {@inheritDoc}
@@ -166,91 +170,361 @@ public class DaoCiviliteAbregee extends AbstractDaoCivilite {
 	
 
 	
-//	/**
-//	 * {@inheritDoc}
-//	 */
-//	@Override
-//	public final boolean exists(
-//			final ICivilite pObject) throws AbstractDaoException {
-//		
-//		/* retourne false si pObject == null. */
-//		if (pObject == null) {
-//			return false;
-//		}
-//
-//		boolean resultat = false;		
-//		ICivilite objetResultat = null;
-//		
-//		/* REQUETE HQL PARMETREE. */
-//		final String requeteString 
-//			= SELECT_OBJET
-//				+ "where civilite.civiliteString = :pCiviliteString";
-//		
-//		/* Construction de la requête HQL. */
-//		final Query requete 
-//			= this.entityManager.createQuery(requeteString);
-//		
-//		/* Passage des paramètres de la requête HQL. */
-//		requete.setParameter("pCiviliteString", pObject.getCiviliteString());
-//		
-//		try {
-//			
-//			/* Execution de la requete HQL. */
-//			objetResultat 
-//			= (ICivilite) requete.getSingleResult();
-//			
-//			/* retourne true si l'objet existe en base. */
-//			if (objetResultat != null) {
-//				resultat = true;
-//			}
-//			
-//		}
-//		catch (NoResultException noResultExc) {
-//			
-//			/* retourne false si l'Objet métier n'existe pas en base. */
-//			return false;
-//			
-//		}
-//		catch (Exception e) {
-//			
-//			/* LOG. */
-//			if (LOG.isDebugEnabled()) {
-//				LOG.debug(e.getMessage(), e);
-//			}
-//			
-//			/* Gestion de la DAO Exception. */
-//			this.gestionnaireException
-//				.gererException(CLASSE_ABSTRACTDAO_CIVILITE
-//						, "Méthode exists(ICivilite pObject)", e);
-//		}
-//				
-//		return resultat;
-//		
-//	} // Fin de exists(...)._______________________________________________
-//	
-//	
-//
-//	/**
-//	 * {@inheritDoc}
-//	 */
-//	@Override
-//	public final boolean exists(
-//			final Long pId) throws AbstractDaoException {
-//		
-//		/* retourne false si pId == null . */
-//		if (pId == null) {
-//			return false;
-//		}
-//		
-//		/* retourne true si l'objet métier existe en base. */
-//		if (this.findById(pId) != null) {
-//			return true;
-//		}
-//		
-//		return false;
-//		
-//	} // Fin de exists(...)._______________________________________________
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public final List<ICivilite> findAllSousClasse() 
+				throws AbstractDaoException {
+		return this.findAllCiviliteAbregee();
+	} // Fin de findAllSousClasse()._______________________________________
+
 	
 	
+	/**
+	 * method findAllCiviliteAbregee() :<br/>
+	 * <ul>
+	 * <li>Retourne la liste de tous les objets métier 
+	 * de Type CiviliteAbregee
+	 * présents en base.</li>
+	 * </ul>
+	 *
+	 * @return List&lt;ICivilite&gt; : 
+	 * liste de tous les objets métier de Type CiviliteAbregee 
+	 * présents en base.<br/>
+	 * 
+	 * @throws AbstractDaoException
+	 */
+	private List<ICivilite> findAllCiviliteAbregee() 
+			throws AbstractDaoException {
+		
+		/* Cas où this.entityManager == null. */
+		if (this.entityManager == null) {
+						
+			/* LOG. */
+			if (LOG.isFatalEnabled()) {
+				LOG.fatal(MESSAGE_ENTITYMANAGER_NULL);
+			}
+			return null;
+		}
+		
+		/* Création de la requête HQL sous forme de String. */
+		final String requeteString 
+			= "from CiviliteAbregee";
+		
+		List<ICivilite> resultat = null;
+		
+		try {
+			
+			/* Crée la requête javax.persistence.Query. */
+			final Query query 
+				= this.entityManager.createQuery(requeteString);
+			
+			/* Exécute la javax.persistence.Query. */
+			resultat = query.getResultList();
+
+		}
+		catch (Exception e) {
+			
+			/* LOG. */
+			if (LOG.isDebugEnabled()) {
+				LOG.debug(e.getMessage(), e);
+			}
+			
+			/* Gestion de la DAO Exception. */
+			this.gestionnaireException
+				.gererException(
+						CLASSE_DAO_CIVILITE_ABREGEE
+						, "Méthode findAllCiviliteAbregee()", e);
+			
+		}
+		
+		/* Retourne la liste résultat. */
+		return resultat;
+		
+	} // Fin de findAllCiviliteAbregee().__________________________________
+	
+
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public final List<ICivilite> findAllMaxSousClasse(
+			final Long pMax) 
+			throws AbstractDaoException {
+		return this.findAllMaxCiviliteAbregee(pMax);
+	} // Fin de findAllMaxSousClasse(...)._________________________________
+	
+	
+
+	/**
+	 * method findAllMaxCiviliteAbregee(
+	 * Long pMax) :<br/>
+	 * <ul>
+	 * <li>Retourne la liste des pMax premiers Objets métier 
+	 * de Type CiviliteAbregee présents en base 
+	 * et retournés par findAllCiviliteAbregee().</li>
+	 * <li>Le champ de tri des Objets métier semble être l'ID.</li>
+	 * </ul>
+	 * retourne null si pMax == null.<br/>
+	 * retourne null si pMax < 1L.<br/>
+	 * <br/>
+	 * 
+	 * @param pMax : Long : Nombre maximal d'objets métier 
+	 * à remonter de la base.<br/>
+	 * 
+	 * @return List&lt;ICivilite&gt; :
+	 * liste des pMax premiers objets métier 
+	 * de Type CiviliteAbregee présents en base.<br/>
+	 *  
+	 * @throws AbstractDaoException
+	 */
+	private List<ICivilite> findAllMaxCiviliteAbregee(
+			final Long pMax) throws AbstractDaoException {
+		
+		/* retourne null si pMax == null. */
+		if (pMax == null) {
+			return null;
+		}
+		
+		/* retourne null si pMax < 1L. */
+		if (pMax < 1L) {
+			return null;
+		}
+		
+		
+		/* Cas où this.entityManager == null. */
+		if (this.entityManager == null) {
+						
+			/* LOG. */
+			if (LOG.isFatalEnabled()) {
+				LOG.fatal(MESSAGE_ENTITYMANAGER_NULL);
+			}
+			return null;
+		}
+		
+		/* Création de la requête HQL sous forme de String. */
+		final String requeteString 
+			= "from CiviliteAbregee";
+		
+		List<ICivilite> resultat = null;
+		
+		try {
+			
+			/* Crée la requête javax.persistence.Query. */
+			final Query query 
+				= this.entityManager.createQuery(requeteString)
+					.setFirstResult(0).setMaxResults(pMax.intValue());
+			
+			/* Exécute la javax.persistence.Query. */
+			resultat = query.getResultList();
+
+		}
+		catch (Exception e) {
+			
+			/* LOG. */
+			if (LOG.isDebugEnabled()) {
+				LOG.debug(e.getMessage(), e);
+			}
+						
+			/* Gestion de la DAO Exception. */
+			this.gestionnaireException
+				.gererException(CLASSE_DAO_CIVILITE_ABREGEE
+						, "Méthode findAllMaxCiviliteAbregee(Long pMax)", e);
+			
+		}
+		
+		/* Retourne la liste résultat. */
+		return resultat;
+				
+	} // Fin de findAllMaxCiviliteAbregee(...).___________________________
+	
+
+		
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public final void deleteAllSousClasse() throws AbstractDaoException {
+		this.deleteAllCiviliteAbregee();
+	} // Fin de deleteAllSousClasse()._____________________________________
+
+
+	
+	/**
+	 * method deleteAllCiviliteAbregee() :<br/>
+	 * <ul>
+	 * <li>Détruit en base toutes les instances 
+	 * d'Objets métier de Type CiviliteAbregee.</li>
+	 * </ul>
+	 *
+	 * @throws AbstractDaoException
+	 */
+	private void deleteAllCiviliteAbregee() 
+							throws AbstractDaoException {
+		
+		/* Cas où this.entityManager == null. */
+		if (this.entityManager == null) {
+						
+			/* LOG. */
+			if (LOG.isFatalEnabled()) {
+				LOG.fatal(MESSAGE_ENTITYMANAGER_NULL);
+			}
+			return;
+		}
+
+		
+		/* Création de la requête HQL sous forme de String. */
+		final String requeteString 
+			= "delete from CiviliteAbregee";
+		
+		try {
+			
+			/* Crée la requête javax.persistence.Query. */
+			final Query query 
+				= this.entityManager.createQuery(requeteString);
+			
+			/* EXECUTION DE LA REQUETE. */
+			query.executeUpdate();
+			
+		}
+		catch (Exception e) {
+			
+			/* LOG. */
+			if (LOG.isDebugEnabled()) {
+				LOG.debug(e.getMessage(), e);
+			}
+			
+			/* Gestion de la DAO Exception. */
+			this.gestionnaireException
+				.gererException(
+						CLASSE_DAO_CIVILITE_ABREGEE
+						, "Méthode deleteAllCiviliteAbregee()", e);
+			
+		}
+		
+	} // Fin de deleteAllCiviliteAbregee()._______________________________
+	
+
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public final boolean deleteAllBooleanSousClasse() 
+			throws AbstractDaoException {
+		return this.deleteAllBooleanCiviliteAbregee();
+	} // Fin de deleteAllBooleanSousClasse().______________________________
+
+
+	
+	/**
+	 * method deleteAllBooleanCiviliteAbregee() :<br/>
+	 * <ul>
+	 * <li>Détruit en base tous les enregistrements 
+	 * d'Objets métier de Type CiviliteAbregee.</li>
+	 * <li>Retourne true si la destruction a bien été effectuée.</li>
+	 * </ul>
+	 * 
+	 * @return boolean : true si tous les enregistrements 
+	 * ont été détruits en base.<br/>
+	 * 
+	 * @throws AbstractDaoException
+	 */
+	private boolean deleteAllBooleanCiviliteAbregee() 
+									throws AbstractDaoException {
+		
+		/* Cas où this.entityManager == null. */
+		if (this.entityManager == null) {
+						
+			/* LOG. */
+			if (LOG.isFatalEnabled()) {
+				LOG.fatal(MESSAGE_ENTITYMANAGER_NULL);
+			}
+			return false;
+		}
+	
+		
+		boolean resultat = false;
+		
+		/* Création de la requête HQL sous forme de String. */
+		final String requeteString 
+			= "delete from CiviliteAbregee";
+		
+		try {
+			
+			/* Crée la requête javax.persistence.Query. */
+			final Query query 
+				= this.entityManager.createQuery(requeteString);
+			
+			/* EXECUTION DE LA REQUETE. */
+			query.executeUpdate();
+			
+			resultat = true;
+			
+		}
+		catch (Exception e) {
+			
+			/* LOG. */
+			if (LOG.isDebugEnabled()) {
+				LOG.debug(e.getMessage(), e);
+			}
+			
+			/* Gestion de la DAO Exception. */
+			this.gestionnaireException
+				.gererException(
+						CLASSE_DAO_CIVILITE_ABREGEE
+						, "Méthode deleteAllBooleanCiviliteAbregee()", e);
+			
+		}
+		
+		return resultat;
+		
+	} // Fin de deleteAllBooleanCiviliteAbregee().________________________
+	
+
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public Long countSousClasse() throws AbstractDaoException {
+		return this.countCiviliteAbregee();
+	} // Fin de countSousClasse()._________________________________________
+	
+
+	
+	/**
+	 * method countCiviliteAbregee() :<br/>
+	 * <ul>
+	 * <li>Retourne le nombre d'Objets metier 
+	 * de type CiviliteAbregee présents en base.</li>
+	 * </ul>
+	 *
+	 * @return : Long : 
+	 * le nombre d'Objets metier de type CiviliteAbregee 
+	 * présents en base.<br/>
+	 *
+	 * @throws AbstractDaoException
+	 */
+	private Long countCiviliteAbregee() 
+						throws AbstractDaoException {
+		
+		/* Récupère la liste d'Objets métier de Type CiviliteAbregee. */
+		final List<ICivilite> listObjects 
+			= this.findAllCiviliteAbregee();
+		
+		if (listObjects != null) {
+			
+			/* Retourne la taille de la liste. */
+			return Long.valueOf(listObjects.size()) ;
+		}
+		
+		return 0L;
+		
+	} // Fin de countCiviliteAbregee().____________________________________
+	
+
 	
 } // FIN DE LA CLASSE DaoCiviliteAbregee.------------------------------------

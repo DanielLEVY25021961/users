@@ -335,12 +335,44 @@ public interface IDaoGenericJPASpring<T, ID extends Serializable> {
 	
 	
 	/**
+	 * method findAllSousClasse() :<br/>
+	 * <ul>
+	 * <li>Retourne la liste de tous les objets métier 
+	 * de type SOUS-CLASSE du type paramétré T présents en base.</li>
+	 * <li>A DEFINIR DANS CHAQUE DAO CONCRET.</li>
+	 * </ul>
+	 * 
+	 * <ul>
+	 * Par exemple :
+	 * <li>
+	 * findAllSousClasse() = findAllCiviliteComplete() pour 
+	 * les <b>CiviliteComplete</b> implémentant <b>ICivilite</b> 
+	 * dans le <b>DaoCiviliteComplete</b>.
+	 * </li>
+	 * <li>
+	 * findAllSousClasse() = findAllCiviliteAbregee() pour 
+	 * les <b>CiviliteAbregee</b> implémentant <b>ICivilite</b> 
+	 * dans le <b>DaoCiviliteAbregee</b>.
+	 * </li>
+	 * </ul>
+	 *
+	 * @return : List&lt;T&gt; : 
+	 * liste de tous les objets métier de type SOUS-CLASSE 
+	 * du type paramétré T présents en base.<br/>
+	 * 
+	 * @throws AbstractDaoException 
+	 */
+	List<T> findAllSousClasse() throws AbstractDaoException;
+	
+	
+	
+	/**
 	 * method findAll(
 	 * Long pMax) :<br/>
 	 * <ul>
 	 * <li>Retourne la liste des pMax premiers Objets métier 
 	 * de Type paramétré T présents en base 
-	 * et retournés par listAll().</li>
+	 * et retournés par findAll().</li>
 	 * <li>Le champ de tri des Objets métier semble être l'ID.</li>
 	 * <li>Inclut dans la liste les sous-classes S de T 
 	 * (strategy=InheritanceType.JOINED) avec la visibilité (Typé) T.</li>
@@ -359,6 +391,34 @@ public interface IDaoGenericJPASpring<T, ID extends Serializable> {
 	 * @throws AbstractDaoException 
 	 */
 	List<T> findAllMax(Long pMax) throws AbstractDaoException;
+	
+	
+	
+	/**
+	 * method findAllMaxSousClasse(
+	 * Long pMax) :<br/>
+	 * <ul>
+	 * <li>Retourne la liste des pMax premiers Objets métier 
+	 * de type SOUS-CLASSE du type paramétré T présents en base 
+	 * et retournés par findAllSousClasse().</li>
+	 * <li>Le champ de tri des Objets métier semble être l'ID.</li>
+	 * </ul>
+	 * retourne null si pMax == null.<br/>
+	 * retourne null si pMax < 1L.<br/>
+	 * <br/>
+	 * 
+	 * @param pMax : Long : Nombre maximal d'objets métier 
+	 * à remonter de la base.<br/>
+	 *
+	 * @return : List&lt;T&gt; : 
+	 * liste des pMax premiers objets métier 
+	 * de Type SOUS-CLASSE du type paramétré T présents en base.<br/>
+	 * 
+	 * @throws AbstractDaoException 
+	 */
+	List<T> findAllMaxSousClasse(Long pMax) throws AbstractDaoException;
+	
+
 	
 	
 
@@ -527,6 +587,19 @@ public interface IDaoGenericJPASpring<T, ID extends Serializable> {
 	 */
 	void deleteAll() throws AbstractDaoException;
 	
+
+	
+	/**
+	 * method deleteAllSousClasse() :<br/>
+	 * <ul>
+	 * <li>Détruit en base toutes les instances 
+	 * d'Objets métier de Type SOUS-CLASSE du type paramétré T.</li>
+	 * </ul>
+	 * 
+	 * @throws AbstractDaoException 
+	 */
+	void deleteAllSousClasse() throws AbstractDaoException;
+	
 	
 	
 	/**
@@ -546,7 +619,23 @@ public interface IDaoGenericJPASpring<T, ID extends Serializable> {
 	 */
 	boolean deleteAllBoolean() throws AbstractDaoException;
 	
+
 	
+	/**
+	 * method deleteAllBooleanSousClasse() :<br/>
+	 * <ul>
+	 * <li>Détruit en base tous les enregistrements 
+	 * d'Objets métier de Type SOUS-CLASSE du type paramétré T.</li>
+	 * <li>Retourne true si la destruction a bien été effectuée.</li>
+	 * </ul>
+	 * @return boolean : true si tous les enregistrements 
+	 * ont été détruits en base.<br/>
+	 * 
+	 * @throws AbstractDaoException 
+	 */
+	boolean deleteAllBooleanSousClasse() throws AbstractDaoException;
+
+
 	
 	/**
 	 * method delete(
@@ -641,6 +730,39 @@ public interface IDaoGenericJPASpring<T, ID extends Serializable> {
 	 * @throws AbstractDaoException 
 	 */
 	Long count() throws AbstractDaoException;
+
+	
+	
+	/**
+	 * method countSousClasse() :<br/>
+	 * <ul>
+	 * <li>Retourne le nombre d'Objets metier 
+	 * de type SOUS-CLASSE du type paramétré T présents en base.</li>
+	 * <li>A DEFINIR DANS CHAQUE DAO CONCRET.</li>
+	 * </ul>
+	 * 
+	 * <ul>
+	 * Par exemple :
+	 * <li>
+	 * countSousClasse() = countCiviliteComplete() pour 
+	 * les <b>CiviliteComplete</b> implémentant <b>ICivilite</b> 
+	 * dans le <b>DaoCiviliteComplete</b>.
+	 * </li>
+	 * <li>
+	 * countSousClasse() = countCiviliteAbregee() pour 
+	 * les <b>CiviliteAbregee</b> implémentant <b>ICivilite</b> 
+	 * dans le <b>DaoCiviliteAbregee</b>.
+	 * </li>
+	 * </ul>
+	 * 
+	 *
+	 * @return : Long : 
+	 * le nombre d'Objets metier de type SOUS-CLASSE du type 
+	 * paramétré T présents en base.<br/>
+	 * 
+	 * @throws AbstractDaoException 
+	 */
+	Long countSousClasse() throws AbstractDaoException;
 	
 
 	 

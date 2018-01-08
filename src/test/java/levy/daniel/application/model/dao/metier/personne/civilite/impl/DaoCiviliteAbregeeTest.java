@@ -2511,7 +2511,7 @@ public class DaoCiviliteAbregeeTest {
 		
 		/* *********************************************** */
 		/* ********************* FINDALL ***************** */
-		lotPersistant = this.daoCiviliteAbregee.findAll();
+		lotPersistant = this.daoCiviliteAbregee.findAllSousClasse();
 		
 		/* AFFICHAGE A LA CONSOLE. */
 		if (AFFICHAGE_GENERAL && affichage) {
@@ -3561,10 +3561,57 @@ public class DaoCiviliteAbregeeTest {
 
 	
 	/**
+	 * method testRemplirTable(
+	 * ) :<br/>
+	 * <ul>
+	 * <li>.</li>
+	 * <li>.</li>
+	 * </ul>
+	 *
+	 * @throws AbstractDaoException :  :  .<br/>
+	 */
+	@Commit
+	@Transactional
+	@Test
+	public void testRemplirTable() throws AbstractDaoException {
+		
+		
+		// **********************************
+		// AFFICHAGE DANS LE TEST ou NON
+		final boolean affichage = true;
+		// **********************************
+
+		/* daoCiviliteAbregee NON INJECTE. */
+		if (this.daoCiviliteAbregee == null) {
+			
+			/* AFFICHAGE A LA CONSOLE. */
+			if (AFFICHAGE_GENERAL && affichage) {
+				System.out.println(TEST_DELETEBYID_INEXISTANT);
+				this.afficherDAONonInstancie();
+			}			
+			return;
+		} // Fin de daoCiviliteAbregee NON INJECTE._______________
+
+		
+		/* Vide la table. */
+		this.viderTable();
+
+		/* remplit de la table. */
+		this.remplirTable(affichage);
+
+		
+	}
+
+	
+	
+	/**
 	 * method remplirTable(
 	 * boolean pAffichage) :<br/>
-	 * Remplit la table CIVILITES avec 3 enregistrements.<br/>
-	 * <br/>
+	 * <ul>
+	 * Remplit la table CIVILITES avec 6 enregistrements.<br/>
+	 * <li>3 enregistrements CiviliteAbregee</li>
+	 * <li>3 enregistrements CiviliteComplete</li>
+	 * </ul>>
 	 * 
 	 * @param pAffichage : boolean.<br/>
 	 * 
@@ -3584,6 +3631,12 @@ public class DaoCiviliteAbregeeTest {
 			= new CiviliteAbregee(CivilitesEnum.MADAME.getAbreviationEnum());
 		final ICivilite objet3 
 			= new CiviliteAbregee(CivilitesEnum.MADEMOISELLE.getAbreviationEnum());
+		final ICivilite objet4 
+		= new CiviliteComplete(CivilitesEnum.MONSIEUR.toString());
+		final ICivilite objet5 
+			= new CiviliteComplete(CivilitesEnum.MADAME.toString());
+		final ICivilite objet6 
+			= new CiviliteComplete(CivilitesEnum.MADEMOISELLE.toString());
 		
 		/* Constitution d'un lot d'objets. */
 		final List<ICivilite> lot = new ArrayList<ICivilite>();
@@ -3591,6 +3644,9 @@ public class DaoCiviliteAbregeeTest {
 		lot.add(objet1);
 		lot.add(objet2);
 		lot.add(objet3);
+		lot.add(objet4);
+		lot.add(objet5);
+		lot.add(objet6);
 		
 		/* Compte du nombre d'Objets initialement en base. */
 		nombreObjetsinitial = this.daoCiviliteAbregee.count();
@@ -3604,6 +3660,9 @@ public class DaoCiviliteAbregeeTest {
 			System.out.println(OBJET1_NON_PERSISTANT + objet1.toString());
 			System.out.println("OBJET2 NON PERSISTANT : " + objet2.toString());
 			System.out.println("OBJET3 NON PERSISTANT : " + objet3.toString());
+			System.out.println("OBJET4 NON PERSISTANT : " + objet4.toString());
+			System.out.println("OBJET5 NON PERSISTANT : " + objet5.toString());
+			System.out.println("OBJET6 NON PERSISTANT : " + objet6.toString());
 			System.out.println(TIRETS);
 			System.out.println();
 		}
@@ -3615,7 +3674,7 @@ public class DaoCiviliteAbregeeTest {
 			lotPersistant = (List<ICivilite>) this.daoCiviliteAbregee.save(lot);
 			/* *********************************************** */
 			
-			nombreObjetsFinal = this.daoCiviliteAbregee.count();
+			nombreObjetsFinal = this.daoCiviliteAbregee.countSousClasse();
 			
 			/* garantit que save(Lot pObjects) 
 			 * insère des objets en base.*/
@@ -3643,7 +3702,7 @@ public class DaoCiviliteAbregeeTest {
 
 		}
 
-		final Long nbeObjetsFinal = this.daoCiviliteAbregee.count();
+		final Long nbeObjetsFinal = this.daoCiviliteAbregee.countSousClasse();
 		
 		assertEquals("La table doit être contenir 3 enregistements : "
 				, Long.valueOf(3L), nbeObjetsFinal);

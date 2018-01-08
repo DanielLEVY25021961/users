@@ -1,5 +1,7 @@
 package levy.daniel.application.model.dao.metier.personne.nommage.impl;
 
+import java.util.List;
+
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
 
@@ -122,7 +124,7 @@ public class DaoNommage2 extends AbstractDaoNommage {
 	 * <br/>
 	 */
 	@Override
-	public INommage findById(
+	public final INommage findById(
 			final Long pId) throws AbstractDaoException {
 		
 		Nommage2 objetTrouve = null;
@@ -168,7 +170,323 @@ public class DaoNommage2 extends AbstractDaoNommage {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public boolean exists(
+	public final List<INommage> findAllSousClasse() 
+			throws AbstractDaoException {
+		return this.findAllNommage2();
+	} // Fin de findAllSousClasse()._______________________________________
+
+
+	
+	/**
+	 * method findAllNommage2() :<br/>
+	 * <ul>
+	 * <li>Retourne la liste de tous les objets métier 
+	 * de Type Nommage2
+	 * présents en base.</li>
+	 * </ul>
+	 *
+	 * @return List&lt;INommage&gt; : 
+	 * liste de tous les objets métier de Type Nommage2 
+	 * présents en base.<br/>
+	 * 
+	 * @throws AbstractDaoException
+	 */
+	private List<INommage> findAllNommage2() 
+			throws AbstractDaoException {
+		
+		/* Cas où this.entityManager == null. */
+		if (this.entityManager == null) {
+						
+			/* LOG. */
+			if (LOG.isFatalEnabled()) {
+				LOG.fatal(MESSAGE_ENTITYMANAGER_NULL);
+			}
+			return null;
+		}
+		
+		/* Création de la requête HQL sous forme de String. */
+		final String requeteString 
+			= "from Nommage2";
+		
+		List<INommage> resultat = null;
+		
+		try {
+			
+			/* Crée la requête javax.persistence.Query. */
+			final Query query 
+				= this.entityManager.createQuery(requeteString);
+			
+			/* Exécute la javax.persistence.Query. */
+			resultat = query.getResultList();
+
+		}
+		catch (Exception e) {
+			
+			/* LOG. */
+			if (LOG.isDebugEnabled()) {
+				LOG.debug(e.getMessage(), e);
+			}
+			
+			/* Gestion de la DAO Exception. */
+			this.gestionnaireException
+				.gererException(
+						CLASSE_DAO_NOMMAGE2
+						, "Méthode findAllNommage2()", e);
+			
+		}
+		
+		/* Retourne la liste résultat. */
+		return resultat;
+		
+	} // Fin de findAllNommage2()._________________________________________
+	
+
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public final List<INommage> findAllMaxSousClasse(
+			final Long pMax) 
+					throws AbstractDaoException {
+		return this.findAllMaxNommage2(pMax);
+	} // Fin de findAllMaxSousClasse(...)._________________________________
+
+
+
+	/**
+	 * method findAllMaxNommage2(
+	 * Long pMax) :<br/>
+	 * <ul>
+	 * <li>Retourne la liste des pMax premiers Objets métier 
+	 * de Type Nommage2 présents en base 
+	 * et retournés par findAllNommage2().</li>
+	 * <li>Le champ de tri des Objets métier semble être l'ID.</li>
+	 * </ul>
+	 * retourne null si pMax == null.<br/>
+	 * retourne null si pMax < 1L.<br/>
+	 * <br/>
+	 * 
+	 * @param pMax : Long : Nombre maximal d'objets métier 
+	 * à remonter de la base.<br/>
+	 * 
+	 * @return List&lt;INommage&gt; :
+	 * liste des pMax premiers objets métier 
+	 * de Type Nommage2 présents en base.<br/>
+	 *  
+	 * @throws AbstractDaoException
+	 */
+	private List<INommage> findAllMaxNommage2(
+			final Long pMax) throws AbstractDaoException {
+		
+		/* retourne null si pMax == null. */
+		if (pMax == null) {
+			return null;
+		}
+		
+		/* retourne null si pMax < 1L. */
+		if (pMax < 1L) {
+			return null;
+		}
+		
+		
+		/* Cas où this.entityManager == null. */
+		if (this.entityManager == null) {
+						
+			/* LOG. */
+			if (LOG.isFatalEnabled()) {
+				LOG.fatal(MESSAGE_ENTITYMANAGER_NULL);
+			}
+			return null;
+		}
+		
+		/* Création de la requête HQL sous forme de String. */
+		final String requeteString 
+			= "from Nommage2";
+		
+		List<INommage> resultat = null;
+		
+		try {
+			
+			/* Crée la requête javax.persistence.Query. */
+			final Query query 
+				= this.entityManager.createQuery(requeteString)
+					.setFirstResult(0).setMaxResults(pMax.intValue());
+			
+			/* Exécute la javax.persistence.Query. */
+			resultat = query.getResultList();
+
+		}
+		catch (Exception e) {
+			
+			/* LOG. */
+			if (LOG.isDebugEnabled()) {
+				LOG.debug(e.getMessage(), e);
+			}
+						
+			/* Gestion de la DAO Exception. */
+			this.gestionnaireException
+				.gererException(CLASSE_DAO_NOMMAGE2
+						, "Méthode findAllMaxNommage2(Long pMax)", e);
+			
+		}
+		
+		/* Retourne la liste résultat. */
+		return resultat;
+				
+	} // Fin de findAllMaxNommage2(...).___________________________________
+	
+
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public final void deleteAllSousClasse() 
+			throws AbstractDaoException {
+		this.deleteAllNommage2();		
+	} // Fin de deleteAllSousClasse()._____________________________________
+
+
+		
+	/**
+	 * method deleteAllNommage2() :<br/>
+	 * <ul>
+	 * <li>Détruit en base toutes les instances 
+	 * d'Objets métier de Type Nommage2.</li>
+	 * </ul>
+	 *
+	 * @throws AbstractDaoException
+	 */
+	private void deleteAllNommage2() 
+							throws AbstractDaoException {
+		
+		/* Cas où this.entityManager == null. */
+		if (this.entityManager == null) {
+						
+			/* LOG. */
+			if (LOG.isFatalEnabled()) {
+				LOG.fatal(MESSAGE_ENTITYMANAGER_NULL);
+			}
+			return;
+		}
+
+		
+		/* Création de la requête HQL sous forme de String. */
+		final String requeteString 
+			= "delete from Nommage2";
+		
+		try {
+			
+			/* Crée la requête javax.persistence.Query. */
+			final Query query 
+				= this.entityManager.createQuery(requeteString);
+			
+			/* EXECUTION DE LA REQUETE. */
+			query.executeUpdate();
+			
+		}
+		catch (Exception e) {
+			
+			/* LOG. */
+			if (LOG.isDebugEnabled()) {
+				LOG.debug(e.getMessage(), e);
+			}
+			
+			/* Gestion de la DAO Exception. */
+			this.gestionnaireException
+				.gererException(
+						CLASSE_DAO_NOMMAGE2
+						, "Méthode deleteAllNommage2()", e);
+			
+		}
+		
+	} // Fin de deleteAllNommage2()._______________________________________
+
+	
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public final boolean deleteAllBooleanSousClasse() 
+			throws AbstractDaoException {
+		return this.deleteAllBooleanNommage2();
+	} // Fin de deleteAllBooleanSousClasse().______________________________
+
+
+	
+	/**
+	 * method deleteAllBooleanNommage2() :<br/>
+	 * <ul>
+	 * <li>Détruit en base tous les enregistrements 
+	 * d'Objets métier de Type Nommage2.</li>
+	 * <li>Retourne true si la destruction a bien été effectuée.</li>
+	 * </ul>
+	 * 
+	 * @return boolean : true si tous les enregistrements 
+	 * ont été détruits en base.<br/>
+	 * 
+	 * @throws AbstractDaoException
+	 */
+	private boolean deleteAllBooleanNommage2() 
+									throws AbstractDaoException {
+		
+		/* Cas où this.entityManager == null. */
+		if (this.entityManager == null) {
+						
+			/* LOG. */
+			if (LOG.isFatalEnabled()) {
+				LOG.fatal(MESSAGE_ENTITYMANAGER_NULL);
+			}
+			return false;
+		}
+	
+		
+		boolean resultat = false;
+		
+		/* Création de la requête HQL sous forme de String. */
+		final String requeteString 
+			= "delete from Nommage2";
+		
+		try {
+			
+			/* Crée la requête javax.persistence.Query. */
+			final Query query 
+				= this.entityManager.createQuery(requeteString);
+			
+			/* EXECUTION DE LA REQUETE. */
+			query.executeUpdate();
+			
+			resultat = true;
+			
+		}
+		catch (Exception e) {
+			
+			/* LOG. */
+			if (LOG.isDebugEnabled()) {
+				LOG.debug(e.getMessage(), e);
+			}
+			
+			/* Gestion de la DAO Exception. */
+			this.gestionnaireException
+				.gererException(
+						CLASSE_DAO_NOMMAGE2
+						, "Méthode deleteAllBooleanNommage2()", e);
+			
+		}
+		
+		return resultat;
+		
+	} // Fin de deleteAllBooleanNommage2().________________________________
+	
+
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public final boolean exists(
 			final INommage pObject) throws AbstractDaoException {
 		
 		/* retourne false si pObject == null. */
@@ -241,7 +559,7 @@ public class DaoNommage2 extends AbstractDaoNommage {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public boolean exists(
+	public final boolean exists(
 			final Long pId) throws AbstractDaoException {
 		
 		/* retourne false si pId == null . */
@@ -259,6 +577,48 @@ public class DaoNommage2 extends AbstractDaoNommage {
 	} // Fin de exists(...)._______________________________________________
 
 
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public final Long countSousClasse() 
+			throws AbstractDaoException {
+		return this.countNommage2();
+	} // Fin de countSousClasse()._________________________________________
+
+
+		
+	/**
+	 * method countNommage2() :<br/>
+	 * <ul>
+	 * <li>Retourne le nombre d'Objets metier 
+	 * de type Nommage2 présents en base.</li>
+	 * </ul>
+	 *
+	 * @return : Long : 
+	 * le nombre d'Objets metier de type Nommage2 
+	 * présents en base.<br/>
+	 *
+	 * @throws AbstractDaoException
+	 */
+	private Long countNommage2() 
+						throws AbstractDaoException {
+		
+		/* Récupère la liste d'Objets métier de Type Nommage. */
+		final List<INommage> listObjects 
+			= this.findAllNommage2();
+		
+		if (listObjects != null) {
+			
+			/* Retourne la taille de la liste. */
+			return Long.valueOf(listObjects.size()) ;
+		}
+		
+		return 0L;
+		
+	} // Fin de countNommage2().___________________________________________
+	
 
 
 } // FIN DE LA CLASSE DaoNommage2.-------------------------------------------

@@ -1,11 +1,16 @@
 package levy.daniel.application.model.dao.metier.personne.civilite.impl;
 
+import java.util.List;
+
+import javax.persistence.Query;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Repository;
 
 import levy.daniel.application.model.dao.daoexceptions.AbstractDaoException;
 import levy.daniel.application.model.dao.metier.personne.civilite.AbstractDaoCivilite;
+import levy.daniel.application.model.metier.personne.civilite.ICivilite;
 import levy.daniel.application.model.metier.personne.civilite.impl.CiviliteComplete;
 
 /**
@@ -115,6 +120,7 @@ public class DaoCiviliteComplete extends AbstractDaoCivilite {
 	
 
 	
+	
 	/**
 	 * {@inheritDoc}
 	 * <br/>
@@ -164,91 +170,361 @@ public class DaoCiviliteComplete extends AbstractDaoCivilite {
 	} // Fin de findById(...)._____________________________________________
 	
 
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public final List<ICivilite> findAllSousClasse() 
+				throws AbstractDaoException {
+		return this.findAllCiviliteComplete();
+	} // Fin de findAllSousClasse()._______________________________________
+	
+	
+	
+	/**
+	 * method findAllCiviliteComplete() :<br/>
+	 * <ul>
+	 * <li>Retourne la liste de tous les objets métier 
+	 * de Type CiviliteComplete
+	 * présents en base.</li>
+	 * </ul>
+	 *
+	 * @return List&lt;ICivilite&gt; : 
+	 * liste de tous les objets métier de Type CiviliteComplete 
+	 * présents en base.<br/>
+	 * 
+	 * @throws AbstractDaoException
+	 */
+	private List<ICivilite> findAllCiviliteComplete() 
+			throws AbstractDaoException {
+		
+		/* Cas où this.entityManager == null. */
+		if (this.entityManager == null) {
+						
+			/* LOG. */
+			if (LOG.isFatalEnabled()) {
+				LOG.fatal(MESSAGE_ENTITYMANAGER_NULL);
+			}
+			return null;
+		}
+		
+		/* Création de la requête HQL sous forme de String. */
+		final String requeteString 
+			= "from CiviliteComplete";
+		
+		List<ICivilite> resultat = null;
+		
+		try {
+			
+			/* Crée la requête javax.persistence.Query. */
+			final Query query 
+				= this.entityManager.createQuery(requeteString);
+			
+			/* Exécute la javax.persistence.Query. */
+			resultat = query.getResultList();
 
-//	/**
-//	 * {@inheritDoc}
-//	 */
-//	@Override
-//	public final boolean exists(
-//			final ICivilite pObject) throws AbstractDaoException {
-//		
-//		/* retourne false si pObject == null. */
-//		if (pObject == null) {
-//			return false;
-//		}
-//
-//		boolean resultat = false;		
-//		ICivilite objetResultat = null;
-//		
-//		/* REQUETE HQL PARMETREE. */
-//		final String requeteString 
-//			= SELECT_OBJET
-//				+ "where civilite.civiliteString = :pCiviliteString";
-//		
-//		/* Construction de la requête HQL. */
-//		final Query requete 
-//			= this.entityManager.createQuery(requeteString);
-//		
-//		/* Passage des paramètres de la requête HQL. */
-//		requete.setParameter("pCiviliteString", pObject.getCiviliteString());
-//		
-//		try {
-//			
-//			/* Execution de la requete HQL. */
-//			objetResultat 
-//			= (ICivilite) requete.getSingleResult();
-//			
-//			/* retourne true si l'objet existe en base. */
-//			if (objetResultat != null) {
-//				resultat = true;
-//			}
-//			
-//		}
-//		catch (NoResultException noResultExc) {
-//			
-//			/* retourne false si l'Objet métier n'existe pas en base. */
-//			return false;
-//			
-//		}
-//		catch (Exception e) {
-//			
-//			/* LOG. */
-//			if (LOG.isDebugEnabled()) {
-//				LOG.debug(e.getMessage(), e);
-//			}
-//			
-//			/* Gestion de la DAO Exception. */
-//			this.gestionnaireException
-//				.gererException(CLASSE_ABSTRACTDAO_CIVILITE
-//						, "Méthode exists(ICivilite pObject)", e);
-//		}
-//				
-//		return resultat;
-//		
-//	} // Fin de exists(...)._______________________________________________
-//	
-//	
-//
-//	/**
-//	 * {@inheritDoc}
-//	 */
-//	@Override
-//	public final boolean exists(
-//			final Long pId) throws AbstractDaoException {
-//		
-//		/* retourne false si pId == null . */
-//		if (pId == null) {
-//			return false;
-//		}
-//		
-//		/* retourne true si l'objet métier existe en base. */
-//		if (this.findById(pId) != null) {
-//			return true;
-//		}
-//		
-//		return false;
-//		
-//	} // Fin de exists(...)._______________________________________________
+		}
+		catch (Exception e) {
+			
+			/* LOG. */
+			if (LOG.isDebugEnabled()) {
+				LOG.debug(e.getMessage(), e);
+			}
+			
+			/* Gestion de la DAO Exception. */
+			this.gestionnaireException
+				.gererException(
+						CLASSE_DAO_CIVILITE_COMPLETE
+						, "Méthode findallCiviliteComplete()", e);
+			
+		}
+		
+		/* Retourne la liste résultat. */
+		return resultat;
+		
+	} // Fin de findAllCiviliteComplete()._________________________________
+
+
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public final List<ICivilite> findAllMaxSousClasse(
+			final Long pMax) 
+			throws AbstractDaoException {
+		return this.findAllMaxCiviliteComplete(pMax);
+	} // Fin de findAllMaxSousClasse(...)._________________________________
+	
+	
+	
+	/**
+	 * method findAllMaxCiviliteComplete(
+	 * Long pMax) :<br/>
+	 * <ul>
+	 * <li>Retourne la liste des pMax premiers Objets métier 
+	 * de Type CiviliteComplete présents en base 
+	 * et retournés par findAllCiviliteComplete().</li>
+	 * <li>Le champ de tri des Objets métier semble être l'ID.</li>
+	 * </ul>
+	 * retourne null si pMax == null.<br/>
+	 * retourne null si pMax < 1L.<br/>
+	 * <br/>
+	 * 
+	 * @param pMax : Long : Nombre maximal d'objets métier 
+	 * à remonter de la base.<br/>
+	 * 
+	 * @return List&lt;ICivilite&gt; :
+	 * liste des pMax premiers objets métier 
+	 * de Type CiviliteComplete présents en base.<br/>
+	 *  
+	 * @throws AbstractDaoException
+	 */
+	private List<ICivilite> findAllMaxCiviliteComplete(
+			final Long pMax) throws AbstractDaoException {
+		
+		/* retourne null si pMax == null. */
+		if (pMax == null) {
+			return null;
+		}
+		
+		/* retourne null si pMax < 1L. */
+		if (pMax < 1L) {
+			return null;
+		}
+		
+		
+		/* Cas où this.entityManager == null. */
+		if (this.entityManager == null) {
+						
+			/* LOG. */
+			if (LOG.isFatalEnabled()) {
+				LOG.fatal(MESSAGE_ENTITYMANAGER_NULL);
+			}
+			return null;
+		}
+		
+		/* Création de la requête HQL sous forme de String. */
+		final String requeteString 
+			= "from CiviliteComplete";
+		
+		List<ICivilite> resultat = null;
+		
+		try {
+			
+			/* Crée la requête javax.persistence.Query. */
+			final Query query 
+				= this.entityManager.createQuery(requeteString)
+					.setFirstResult(0).setMaxResults(pMax.intValue());
+			
+			/* Exécute la javax.persistence.Query. */
+			resultat = query.getResultList();
+
+		}
+		catch (Exception e) {
+			
+			/* LOG. */
+			if (LOG.isDebugEnabled()) {
+				LOG.debug(e.getMessage(), e);
+			}
+						
+			/* Gestion de la DAO Exception. */
+			this.gestionnaireException
+				.gererException(CLASSE_DAO_CIVILITE_COMPLETE
+						, "Méthode findAllMaxCiviliteComplete(Long pMax)", e);
+			
+		}
+		
+		/* Retourne la liste résultat. */
+		return resultat;
+				
+	} // Fin de findAllMaxCiviliteComplete(...).___________________________
+	
+
+		
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public final void deleteAllSousClasse() throws AbstractDaoException {
+		this.deleteAllCiviliteComplete();
+	} // Fin de deleteAllSousClasse()._____________________________________
+	
+	
+
+	/**
+	 * method deleteAllCiviliteComplete() :<br/>
+	 * <ul>
+	 * <li>Détruit en base toutes les instances 
+	 * d'Objets métier de Type CiviliteComplete.</li>
+	 * </ul>
+	 *
+	 * @throws AbstractDaoException
+	 */
+	private void deleteAllCiviliteComplete() 
+								throws AbstractDaoException {
+		
+		/* Cas où this.entityManager == null. */
+		if (this.entityManager == null) {
+						
+			/* LOG. */
+			if (LOG.isFatalEnabled()) {
+				LOG.fatal(MESSAGE_ENTITYMANAGER_NULL);
+			}
+			return;
+		}
+
+		
+		/* Création de la requête HQL sous forme de String. */
+		final String requeteString 
+			= "delete from CiviliteComplete";
+		
+		try {
+			
+			/* Crée la requête javax.persistence.Query. */
+			final Query query 
+				= this.entityManager.createQuery(requeteString);
+			
+			/* EXECUTION DE LA REQUETE. */
+			query.executeUpdate();
+			
+		}
+		catch (Exception e) {
+			
+			/* LOG. */
+			if (LOG.isDebugEnabled()) {
+				LOG.debug(e.getMessage(), e);
+			}
+			
+			/* Gestion de la DAO Exception. */
+			this.gestionnaireException
+				.gererException(
+						CLASSE_DAO_CIVILITE_COMPLETE
+						, "Méthode deleteAllCiviliteComplete()", e);
+			
+		}
+		
+	} // Fin de deleteAllCiviliteComplete()._______________________________
+	
+
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public final boolean deleteAllBooleanSousClasse() 
+			throws AbstractDaoException {
+		return this.deleteAllBooleanCiviliteComplete();
+	} // Fin de deleteAllBooleanSousClasse().______________________________
+
+
+	
+	/**
+	 * method deleteAllBooleanCiviliteComplete() :<br/>
+	 * <ul>
+	 * <li>Détruit en base tous les enregistrements 
+	 * d'Objets métier de Type CiviliteComplete.</li>
+	 * <li>Retourne true si la destruction a bien été effectuée.</li>
+	 * </ul>
+	 * 
+	 * @return boolean : true si tous les enregistrements 
+	 * ont été détruits en base.<br/>
+	 * 
+	 * @throws AbstractDaoException
+	 */
+	private boolean deleteAllBooleanCiviliteComplete() 
+									throws AbstractDaoException {
+		
+		/* Cas où this.entityManager == null. */
+		if (this.entityManager == null) {
+						
+			/* LOG. */
+			if (LOG.isFatalEnabled()) {
+				LOG.fatal(MESSAGE_ENTITYMANAGER_NULL);
+			}
+			return false;
+		}
+
+		
+		boolean resultat = false;
+		
+		/* Création de la requête HQL sous forme de String. */
+		final String requeteString 
+			= "delete from CiviliteComplete";
+		
+		try {
+			
+			/* Crée la requête javax.persistence.Query. */
+			final Query query 
+				= this.entityManager.createQuery(requeteString);
+			
+			/* EXECUTION DE LA REQUETE. */
+			query.executeUpdate();
+			
+			resultat = true;
+			
+		}
+		catch (Exception e) {
+			
+			/* LOG. */
+			if (LOG.isDebugEnabled()) {
+				LOG.debug(e.getMessage(), e);
+			}
+			
+			/* Gestion de la DAO Exception. */
+			this.gestionnaireException
+				.gererException(
+						CLASSE_DAO_CIVILITE_COMPLETE
+						, "Méthode deleteAllBooleanCiviliteComplete()", e);
+			
+		}
+		
+		return resultat;
+		
+	} // Fin de deleteAllBooleanCiviliteComplete().________________________
+	
+
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public final Long countSousClasse() throws AbstractDaoException {
+		return this.countCiviliteComplete();
+	} // Fin de countSousClasse()._________________________________________
+	
+	
+	
+	/**
+	 * method countCiviliteComplete() :<br/>
+	 * <ul>
+	 * <li>Retourne le nombre d'Objets metier 
+	 * de type CiviliteComplete présents en base.</li>
+	 * </ul>
+	 *
+	 * @return : Long : 
+	 * le nombre d'Objets metier de type CiviliteComplete 
+	 * présents en base.<br/>
+	 *
+	 * @throws AbstractDaoException
+	 */
+	private Long countCiviliteComplete() 
+						throws AbstractDaoException {
+		
+		/* Récupère la liste d'Objets métier de Type CiviliteComplete. */
+		final List<ICivilite> listObjects 
+			= this.findAllCiviliteComplete();
+		
+		if (listObjects != null) {
+			
+			/* Retourne la taille de la liste. */
+			return Long.valueOf(listObjects.size()) ;
+		}
+		
+		return 0L;
+		
+	} // Fin de countCiviliteComplete().___________________________________
 	
 	
 	

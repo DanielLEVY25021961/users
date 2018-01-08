@@ -563,7 +563,7 @@ public abstract class AbstractDaoGenericJPASpring<T, ID extends Serializable>
 	 * {@inheritDoc}
 	 */
 	@Override
-	public final List<T> findAll() throws AbstractDaoException {
+	public List<T> findAll() throws AbstractDaoException {
 		
 		/* Cas où this.entityManager == null. */
 		if (this.entityManager == null) {
@@ -1004,7 +1004,7 @@ public abstract class AbstractDaoGenericJPASpring<T, ID extends Serializable>
 		}
 		
 		
-		/* Itération uniquement sur la l iste des Objets persistants. */
+		/* Itération uniquement sur la liste des Objets persistants. */
 		final Iterator<? extends T> ite = listePersistants.iterator();
 		
 		try {
