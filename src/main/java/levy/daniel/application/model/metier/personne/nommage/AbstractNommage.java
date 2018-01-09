@@ -637,7 +637,6 @@ public abstract class AbstractNommage implements INommage {
 
 
 	
-
 	/**
 	 * {@inheritDoc}
 	 */
