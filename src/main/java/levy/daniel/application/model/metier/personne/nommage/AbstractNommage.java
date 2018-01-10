@@ -355,6 +355,7 @@ public abstract class AbstractNommage implements INommage {
 				+ ((this.nom == null) ? 0 : this.nom.hashCode());
 		result = prime * result 
 				+ ((this.prenom == null) ? 0 : this.prenom.hashCode());
+		
 		return result;
 		
 	} // Fin de hashCode().________________________________________________
