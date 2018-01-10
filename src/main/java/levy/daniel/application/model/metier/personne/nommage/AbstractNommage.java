@@ -283,7 +283,6 @@ public abstract class AbstractNommage implements INommage {
 	 /**
 	 * method CONSTRUCTEUR AbstractNommage() :<br/>
 	 * CONSTRUCTEUR D'ARITE NULLE.<br/>
-	 * <br/>
 	 */
 	public AbstractNommage() {
 		this(null, null, null);
