@@ -364,6 +364,13 @@ public abstract class AbstractNommage implements INommage {
 
 	/**
 	 * {@inheritDoc}
+	 * <br/>
+	 * <ul>
+	 * <b>equals(...) pour un AbstractNommage</b> sur :
+	 * <li>nom.</li>
+	 * <li>prenom.</li>
+	 * </ul>
+	 * <br/>
 	 */
 	@Override
 	public boolean equals(
@@ -382,6 +389,8 @@ public abstract class AbstractNommage implements INommage {
 		}
 		
 		final AbstractNommage other = (AbstractNommage) pObject;
+		
+		/* nom. */
 		if (this.nom == null) {
 			if (other.nom != null) {
 				return false;
@@ -390,6 +399,8 @@ public abstract class AbstractNommage implements INommage {
 		else if (!this.nom.equals(other.nom)) {
 			return false;
 		}
+		
+		/* prenom. */
 		if (this.prenom == null) {
 			if (other.prenom != null) {
 				return false;

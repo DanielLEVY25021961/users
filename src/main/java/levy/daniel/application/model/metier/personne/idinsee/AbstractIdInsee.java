@@ -306,6 +306,12 @@ public abstract class AbstractIdInsee implements IIdInsee {
 
 	/**
 	 * {@inheritDoc}
+	 * <br/>
+	 * <ul>
+	 * <b>equals(...) pour un AbstractIdInsee</b> sur :
+	 * <li>numeroInsee.</li>
+	 *</ul>
+	 * <br/>
 	 */
 	@Override
 	public final boolean equals(

@@ -297,7 +297,7 @@ public class AbstractCivilite implements ICivilite {
 	 * <br/>
 	 * <ul>
 	 * <b>equals(...) pour un AbstractCivilite</b> sur :
-	 * <li>"civiliteString".</li>
+	 * <li>civiliteString.</li>
 	 *</ul>
 	 * <br/>
 	 */
