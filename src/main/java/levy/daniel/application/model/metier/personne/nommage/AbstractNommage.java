@@ -536,9 +536,9 @@ public abstract class AbstractNommage implements INommage {
 
 	/**
 	 * {@inheritDoc}
-	 */
-	@Transient
+	 */	
 	@Override
+	@Transient
 	public String getEnTeteCsv() {
 		return "id;nom;prenom;";
 	} // Fin de getEnTeteCsv().____________________________________________
@@ -574,8 +574,8 @@ public abstract class AbstractNommage implements INommage {
 	/**
 	 * {@inheritDoc}
 	 */
-	@Transient
 	@Override
+	@Transient
 	public String getEnTeteColonne(
 			final int pI) {
 		
@@ -610,8 +610,8 @@ public abstract class AbstractNommage implements INommage {
 	/**
 	 * {@inheritDoc}
 	 */
-	@Transient
 	@Override
+	@Transient
 	public Object getValeurColonne(
 			final int pI) {
 		
@@ -623,13 +623,10 @@ public abstract class AbstractNommage implements INommage {
 			if (this.getId() != null) {
 				valeur = String.valueOf(this.getId());
 			}
-			
 			break;
 
 		case 1:
-			valeur = this.getNom();
-			
-			
+			valeur = this.getNom();		
 			break;
 			
 		case 2:
