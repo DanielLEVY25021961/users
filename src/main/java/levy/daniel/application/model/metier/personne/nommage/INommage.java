@@ -172,9 +172,9 @@ public interface INommage
 	 * method compareTo(
 	 * INommage pObject) :<br/>
 	 * <ol>
-	 * Comparaison de 2 INommage par rapport : <br/>
-	 * <li>au nom.</li>
-	 * <li>au prenom.</li>
+	 * Comparaison de 2 INommage par rapport à :
+	 * <li>nom.</li>
+	 * <li>prenom.</li>
 	 * </ol>
 	 *
 	 * @param pObject : INommage.<br/>
