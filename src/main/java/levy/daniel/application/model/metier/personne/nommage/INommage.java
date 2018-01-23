@@ -172,9 +172,9 @@ public interface INommage
 	 * method compareTo(
 	 * INommage pObject) :<br/>
 	 * <ol>
-	 * Comparaison de 2 INommage par rapport à :
-	 * <li>nom.</li>
-	 * <li>prenom.</li>
+	 * Comparaison de 2 INommage par rapport : <br/>
+	 * <li>au nom.</li>
+	 * <li>au prenom.</li>
 	 * </ol>
 	 *
 	 * @param pObject : INommage.<br/>
@@ -298,7 +298,8 @@ public interface INommage
 	* Setter du Prénom du User.<br/>
 	* <br/>
 	*
-	* @param pPrenom : String : valeur à passer à prenom.<br/>
+	* @param pPrenom : String : 
+	* valeur à passer à prenom.<br/>
 	*/
 	void setPrenom(String pPrenom);
 	
