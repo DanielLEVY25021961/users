@@ -298,7 +298,8 @@ public interface INommage
 	* Setter du Prénom du User.<br/>
 	* <br/>
 	*
-	* @param pPrenom : String : valeur à passer à prenom.<br/>
+	* @param pPrenom : String : 
+	* valeur à passer à prenom.<br/>
 	*/
 	void setPrenom(String pPrenom);
 	

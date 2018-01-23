@@ -19,7 +19,7 @@ import levy.daniel.application.model.dao.daoexceptions.GestionnaireDaoException;
 
 
 /**
- * class AbstractDaoGenericJPASpring :<br/>
+ * CLASSE ABSTRAITE <b>AbstractDaoGenericJPASpring</b> :<br/>
  * <ul>
  * <li><b>DAO ABSTRAIT GENERIQUE</b> pour SPRING utilisant JPA.</li>
  * <li>
@@ -1120,4 +1120,4 @@ public abstract class AbstractDaoGenericJPASpring<T, ID extends Serializable>
 
 
 	
-} // FIN DE LA CLASSE AbstractDaoGeneric.------------------------------------
+} // FIN DE LA CLASSE AbstractDaoGenericJPASpring.---------------------------

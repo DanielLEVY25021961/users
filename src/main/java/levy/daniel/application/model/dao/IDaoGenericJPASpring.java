@@ -6,7 +6,7 @@ import java.util.List;
 import levy.daniel.application.model.dao.daoexceptions.AbstractDaoException;
 
 /**
- * class IDaoGeneric :<br/>
+ * INTERFACE <b>IDaoGenericJPASpring</b> :<br/>
  * <ul>
  * <li>INTERFACE <b>GENERIQUE</b> pour les <b>DAO</b> sous SPRING.</li>
  * <li>
@@ -811,4 +811,4 @@ public interface IDaoGenericJPASpring<T, ID extends Serializable> {
 
 	
 
-} // FIN DE L'INTERFACE IDaoGeneric.---------------------------------------
+} // FIN DE L'INTERFACE IDaoGenericJPASpring.--------------------------------
