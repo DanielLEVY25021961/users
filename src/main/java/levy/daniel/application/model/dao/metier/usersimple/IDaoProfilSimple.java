@@ -6,7 +6,7 @@ import levy.daniel.application.model.metier.user.usersimple.impl.ProfilSimple;
 
 
 /**
- * class IDaoProfilSimple :<br/>
+ * INTERFACE <b>IDaoProfilSimple</b> :<br/>
  * <ul>
  * <li>Interface des DAOs pour les <b>ProfilSimple</b>.</li>
  * <li>
