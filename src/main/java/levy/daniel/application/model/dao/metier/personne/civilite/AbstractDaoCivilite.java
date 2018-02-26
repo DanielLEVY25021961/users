@@ -272,9 +272,8 @@ public abstract class AbstractDaoCivilite
 		try {
 			
 			/* Execution de la requete HQL. */
-			/* Execution de la requete HQL. */
 			objetResultat 
-			= (ICivilite) requete.getSingleResult();
+				= (ICivilite) requete.getSingleResult();
 			
 		}
 		catch (NoResultException noResultExc) {
