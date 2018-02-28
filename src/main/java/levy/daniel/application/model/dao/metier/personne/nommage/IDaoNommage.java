@@ -67,7 +67,7 @@ public interface IDaoNommage extends IDaoGenericJPASpring<INommage, Long> {
 
 	/**
 	 * method retrieveByIdMetier(
-	 * INommage pObjet) :<br/>
+	 * INommage pObjet) :
 	 * <ul>
 	 * <li>Recherche un INommage pObjet en base 
 	 * via son identifiant métier.</li>
@@ -91,7 +91,7 @@ public interface IDaoNommage extends IDaoGenericJPASpring<INommage, Long> {
 	/**
 	 * method retrieveByNomPrenom(
 	 * String pNom
-	 * , String pPrenom) :<br/>
+	 * , String pPrenom) :
 	 * <ul>
 	 * <li>Recherche en base un INommage ayant 
 	 * pour nom pNom et pour prénom pPrenom.</li>

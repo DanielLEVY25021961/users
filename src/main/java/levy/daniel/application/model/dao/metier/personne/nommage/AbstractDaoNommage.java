@@ -260,6 +260,11 @@ public abstract class AbstractDaoNommage
 			return null;
 		}
 		
+		/* return null si pNom est null. */
+		if (pNom == null) {
+			return null;
+		}
+		
 		/* return null si pPrenom est blank. */
 		if (StringUtils.isBlank(pPrenom)) {
 			return null;
@@ -475,7 +480,7 @@ public abstract class AbstractDaoNommage
 		boolean resultat = false;		
 		INommage objetResultat = null;
 		
-		/* REQUETE HQL PARMETREE. */
+		/* REQUETE HQL PARAMETREE. */
 		final String requeteString 
 			= SELECT_OBJET
 				+ "where nommage.nom = :pNom and nommage.prenom = :pPrenom";
@@ -544,7 +549,7 @@ public abstract class AbstractDaoNommage
 		
 		return false;
 		
-	} // Fin de exists(...)._______________________________________________
+	} // Fin de exists(Long...).___________________________________________
 
 
 

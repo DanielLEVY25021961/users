@@ -19,7 +19,7 @@ import levy.daniel.application.model.services.valideurs.IValideurGeneric;
 import levy.daniel.application.model.services.valideurs.LigneRapportValidation;
 
 /**
- * class AbstractServiceGenericSpring :<br/>
+ * CLASSE ABSTRAITE <b<AbstractServiceGenericSpring</b> :<br/>
  * <ul>
  * <li><b>SERVICE ABSTRAIT GENERIQUE</b> pour <b>SPRING AVEC JPA</b>.</li>
  * <li>
@@ -331,7 +331,7 @@ public abstract class AbstractServiceGenericSpring<T, ID extends Serializable>
 	@Override
 	public void persist(
 			final T pObject) {
-		return;
+		return; // NOPMD by daniel.levy on 05/02/18 16:11
 	} // Fin de persist(...).______________________________________________
 	
 
@@ -342,7 +342,7 @@ public abstract class AbstractServiceGenericSpring<T, ID extends Serializable>
 	@Override
 	public <S extends T> void persistSousClasse(
 			final S pObject) {
-		return;
+		return; // NOPMD by daniel.levy on 05/02/18 16:12
 	} // Fin de persistSousClasse(...).____________________________________
 
 
