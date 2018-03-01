@@ -254,8 +254,9 @@ public class DaoNommage extends AbstractDaoNommage {
 	 * method findAllMaxNommage(
 	 * Long pMax) :<br/>
 	 * <ul>
-	 * <li>Retourne la liste des pMax premiers Objets métier 
-	 * de Type Nommage présents en base 
+	 * <li>Retourne sous forme de List&lt;INommage&gt; 
+	 * la liste des pMax premiers Objets métier 
+	 * de Type <b>Nommage</b> présents en base 
 	 * et retournés par findAllNommage().</li>
 	 * <li>Le champ de tri des Objets métier semble être l'ID.</li>
 	 * </ul>
@@ -268,7 +269,7 @@ public class DaoNommage extends AbstractDaoNommage {
 	 * 
 	 * @return List&lt;INommage&gt; :
 	 * liste des pMax premiers objets métier 
-	 * de Type Nommage présents en base.<br/>
+	 * de Type <b>Nommage</b> présents en base.<br/>
 	 *  
 	 * @throws AbstractDaoException
 	 */
@@ -334,7 +335,6 @@ public class DaoNommage extends AbstractDaoNommage {
 	
 
 
-
 	/**
 	 * {@inheritDoc}
 	 */
@@ -350,7 +350,7 @@ public class DaoNommage extends AbstractDaoNommage {
 	 * method deleteAllNommage() :<br/>
 	 * <ul>
 	 * <li>Détruit en base toutes les instances 
-	 * d'Objets métier de Type Nommage.</li>
+	 * d'Objets métier de Type <b>Nommage</b>.</li>
 	 * </ul>
 	 *
 	 * @throws AbstractDaoException
