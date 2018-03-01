@@ -177,8 +177,8 @@ public class DaoNommage extends AbstractDaoNommage {
 	 * method findAllNommage() :<br/>
 	 * <ul>
 	 * <li>Retourne la liste de tous les objets métier 
-	 * de Type Nommage
-	 * présents en base.</li>
+	 * de Type Nommage présents en base sous forme 
+	 * de List&lt;INommage&gt;.</li>
 	 * </ul>
 	 *
 	 * @return List&lt;INommage&gt; : 
