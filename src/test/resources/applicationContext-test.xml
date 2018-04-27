@@ -208,8 +208,10 @@
     <!-- ============================================================== -->
     <!--                                HSQLDB                          -->
     <!-- ============================================================== -->
+        <!-- en mode FILE -->
     <!--        <property name="url" value="jdbc:hsqldb:file:D:/Donnees/eclipse/eclipseworkspace_neon/users/data/base-users" /> -->
-    <!-- 	   <property name="url" value="jdbc:hsqldb:mem:base-users" /> -->
+    <!-- en mode MEMORY -->
+	<!-- 	   <property name="url" value="jdbc:hsqldb:mem:base-users" /> -->    
 <!--     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> -->
 <!--        <property name="driverClassName" value="org.hsqldb.jdbc.JDBCDriver" /> -->
 <!-- 	   <property name="url" value="jdbc:hsqldb:mem:base-users" /> -->
