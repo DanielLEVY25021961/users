@@ -140,7 +140,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		<!-- 		Version maven-war-plugin						    -->
 		<maven-war-plugin.version>3.2.0</maven-war-plugin.version>
 		<!-- 		Version maven-jar-plugin						    -->
-		<maven-jar-plugin.version>3.0.2</maven-jar-plugin.version>
+		<maven-jar-plugin.version>3.1.0</maven-jar-plugin.version>
 		<!-- 		Version maven-compiler-plugin					    -->
 		<maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
 		<!-- 		Version maven-surefire-plugin					    -->
@@ -709,7 +709,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 			</plugin>
 
 			<!-- Build des War -->
-			<!-- ATTENTION en fonction de la balise packaging - METTRE PLUGIN JAR SI APPLI DESKTOP -->
+			<!-- ATTENTION en fonction de la balise packaging - METTRE PLUGIN WAR SI APPLI WEB -->
 			<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-war-plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -730,6 +730,29 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
+			
+			<!-- Build des Jar -->
+			<!-- ATTENTION en fonction de la balise packaging - METTRE PLUGIN JAR SI APPLI DESKTOP -->
+			<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-war-plugin -->
+<!-- 			<plugin> -->
+<!-- 				<groupId>org.apache.maven.plugins</groupId> -->
+<!-- 				<artifactId>maven-jar-plugin</artifactId> -->
+<!-- 				<version>${maven-jar-plugin.version}</version> -->
+<!-- 				<configuration> -->
+<!-- 					<archive> -->
+<!-- 						<manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile> -->
+<!-- 					</archive> -->
+<!-- 				</configuration> -->
+<!-- 				<executions> -->
+<!-- 					<execution> -->
+<!-- 						<id>default-jar</id> -->
+<!-- 						<phase>package</phase> -->
+<!-- 						<goals> -->
+<!-- 							<goal>jar</goal> -->
+<!-- 						</goals> -->
+<!-- 					</execution> -->
+<!-- 				</executions> -->
+<!-- 			</plugin> -->
 			
 			
 			
