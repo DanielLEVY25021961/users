@@ -65,7 +65,11 @@ public class DaoIdInseeTest {
 	 * Boolean qui commande l'affichage pour tous les tests.<br/>
 	 */
 	public static final Boolean AFFICHAGE_GENERAL = true;
-
+	
+	/**
+	 * "unused".<br/>
+	 */
+	public static final String UNUSED = "unused";
 	
 	/**
 	 * TEST_CREATE_NULL : String :<br/>
@@ -443,6 +447,7 @@ public class DaoIdInseeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -526,6 +531,7 @@ public class DaoIdInseeTest {
 	 * 
 	 * @throws AbstractDaoException 
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -683,6 +689,7 @@ public class DaoIdInseeTest {
 	 * 
 	 * @throws AbstractDaoException 
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -804,6 +811,7 @@ public class DaoIdInseeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -888,6 +896,7 @@ public class DaoIdInseeTest {
 	 * 
 	 * @throws AbstractDaoException 
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -992,6 +1001,7 @@ public class DaoIdInseeTest {
 	 * 
 	 * @throws AbstractDaoException 
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -1112,6 +1122,7 @@ public class DaoIdInseeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -1199,6 +1210,7 @@ public class DaoIdInseeTest {
 	 * 
 	 * @throws AbstractDaoException 
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -1305,6 +1317,7 @@ public class DaoIdInseeTest {
 	 * 
 	 * @throws AbstractDaoException 
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -1432,6 +1445,7 @@ public class DaoIdInseeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -1518,6 +1532,7 @@ public class DaoIdInseeTest {
 	 * 
 	 * @throws AbstractDaoException 
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -1623,6 +1638,7 @@ public class DaoIdInseeTest {
 	 * 
 	 * @throws AbstractDaoException 
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -1750,6 +1766,7 @@ public class DaoIdInseeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -1835,6 +1852,7 @@ public class DaoIdInseeTest {
 	 * 
 	 * @throws AbstractDaoException 
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -1940,6 +1958,7 @@ public class DaoIdInseeTest {
 	 * 
 	 * @throws AbstractDaoException 
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -2069,6 +2088,7 @@ public class DaoIdInseeTest {
 	 * 
 	 * @throws AbstractDaoException 
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -2193,6 +2213,7 @@ public class DaoIdInseeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -2346,6 +2367,7 @@ public class DaoIdInseeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -2425,6 +2447,7 @@ public class DaoIdInseeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -2496,6 +2519,7 @@ public class DaoIdInseeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -2571,6 +2595,7 @@ public class DaoIdInseeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -2658,6 +2683,7 @@ public class DaoIdInseeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -2739,6 +2765,7 @@ public class DaoIdInseeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -2834,6 +2861,7 @@ public class DaoIdInseeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -2945,6 +2973,7 @@ public class DaoIdInseeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -3051,6 +3080,7 @@ public class DaoIdInseeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -3154,6 +3184,7 @@ public class DaoIdInseeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -3264,6 +3295,7 @@ public class DaoIdInseeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -3371,6 +3403,7 @@ public class DaoIdInseeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test

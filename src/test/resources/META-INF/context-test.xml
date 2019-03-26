@@ -59,7 +59,7 @@
 <!--         username="sa" -->
 <!--         password="" -->
 <!--         type="javax.sql.DataSource" -->
-<!--         driverClassName="org.hsqldb.jdbc.JDBCDriver" -->
+<!--         driverClassName="org.hsqldb.jdbc.jdbcDriver" -->
 <!--         maxTotal="10" -->
 <!--         maxIdle="5" -->
 <!--         maxWaitMillis="-1" -->

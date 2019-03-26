@@ -69,124 +69,101 @@ public class DaoCiviliteAbregeeTest {
 	 * Boolean qui commande l'affichage pour tous les tests.<br/>
 	 */
 	public static final Boolean AFFICHAGE_GENERAL = true;
-
 	
 	/**
-	 * TEST_CREATE_NULL : String :<br/>
+	 * "unused".<br/>
+	 */
+	public static final String UNUSED = "unused";
+	
+	/**
 	 * "testCreateNull()".<br/>
 	 */
 	public static final String TEST_CREATE_NULL 
 		= "testCreateNull()";
-
 	
 	/**
-	 * TEST_CREATE : String :<br/>
 	 * "testCreate()".<br/>
 	 */
 	public static final String TEST_CREATE 
 		= "testCreate()";
 	
 	/**
-	 * TEST_CREATE_DOUBLON : String :<br/>
 	 * "testCreateDoublon()".<br/>
 	 */
 	public static final String TEST_CREATE_DOUBLON 
 		= "testCreateDoublon()";
 	
 	/**
-	 * TEST_SAVE_NULL : String :<br/>
 	 * "testSaveNull()".<br/>
 	 */
 	public static final String TEST_SAVE_NULL 
 		= "testSaveNull()";
 	
 	/**
-	 * TEST_SAVE : String :<br/>
 	 * "testSave()".<br/>
 	 */
 	public static final String TEST_SAVE 
 		= "testSave()";
-	
-	
+		
 	/**
-	 * TEST_SAVE_DOUBLON : String :<br/>
 	 * "testSaveDoublon()".<br/>
 	 */
 	public static final String TEST_SAVE_DOUBLON 
 		= "testSaveDoublon()";
-
 	
 	/**
-	 * TEST_PERSIST_NULL : String :<br/>
 	 * "testPersistNull()".<br/>
 	 */
 	public static final String TEST_PERSIST_NULL 
 		= "testPersistNull()";
-
 	
 	/**
-	 * TEST_PERSIST : String :<br/>
 	 * "testPersist()".<br/>
 	 */
 	public static final String TEST_PERSIST 
 		= "testPersist()";
-
 	
 	/**
-	 * TEST_PERSIST_DOUBLON : String :<br/>
 	 * "testPersistDoublon()".<br/>
 	 */
 	public static final String TEST_PERSIST_DOUBLON 
 	= "testPersistDoublon()";
-
 	
 	/**
-	 * TEST_PERSIST_SOUSCLASSE_NULL : String :<br/>
 	 * "testPersistSousClasseNull()".<br/>
 	 */
 	public static final String TEST_PERSIST_SOUSCLASSE_NULL 
 	= "testPersistSousClasseNull()";
 
-
 	/**
-	 * TEST_PERSIST_SOUSCLASSE : String :<br/>
 	 * "testPersistSousClasse()".<br/>
 	 */
 	public static final String TEST_PERSIST_SOUSCLASSE 
 		= "testPersistSousClasse()";
 	
-	
 	/**
-	 * TEST_PERSIST_SOUSCLASSE_DOUBLON : String :<br/>
 	 * "testPersistSousClasseDoublon()".<br/>
 	 */
 	public static final String TEST_PERSIST_SOUSCLASSE_DOUBLON 
 		= "testPersistSousClasseDoublon()";
-
 	
 	/**
-	 * TEST_CREATERETURNID_NULL : String :<br/>
 	 * "testCreateReturnIdNull()".<br/>
 	 */
 	public static final String TEST_CREATERETURNID_NULL 
 		= "testCreateReturnIdNull()";
-
 	
 	/**
-	 * TEST_CREATERETURNID : String :<br/>
 	 * "testCreateReturnId()".<br/>
 	 */
 	public static final String TEST_CREATERETURNID 
 		= "testCreateReturnId()";
 	
-
 	/**
-	 * TEST_CREATERETURNID_DOUBLON : String :<br/>
 	 * "testCreateReturnIdDoublon()".<br/>
 	 */
 	public static final String TEST_CREATERETURNID_DOUBLON 
 		= "testCreateReturnIdDoublon()";
-
 	
 	/**
 	 * TEST_SAVELOT : String :<br/>
@@ -485,15 +462,15 @@ public class DaoCiviliteAbregeeTest {
 
 
 	/**
-	 * method testCreateNull() :<br/>
-	 * <ul>
 	 * Teste la méthode <b>create(null)</b>.<br/>
+	 * <ul>
 	 * <li>garantit que create(null) ne fait rien 
 	 * et retourne null.</li>
 	 * </ul>
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -577,6 +554,7 @@ public class DaoCiviliteAbregeeTest {
 	 * 
 	 * @throws AbstractDaoException 
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -584,7 +562,7 @@ public class DaoCiviliteAbregeeTest {
 		
 		// **********************************
 		// AFFICHAGE DANS LE TEST ou NON
-		final boolean affichage = true;
+		final boolean affichage = false;
 		// **********************************
 
 		/* daoCiviliteAbregee NON INJECTE. */
@@ -734,6 +712,7 @@ public class DaoCiviliteAbregeeTest {
 	 * 
 	 * @throws AbstractDaoException 
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -742,7 +721,7 @@ public class DaoCiviliteAbregeeTest {
 		
 		// **********************************
 		// AFFICHAGE DANS LE TEST ou NON
-		final boolean affichage = true;
+		final boolean affichage = false;
 		// **********************************
 
 		/* daoCiviliteAbregee NON INJECTE. */
@@ -855,6 +834,7 @@ public class DaoCiviliteAbregeeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -862,7 +842,7 @@ public class DaoCiviliteAbregeeTest {
 				
 		// **********************************
 		// AFFICHAGE DANS LE TEST ou NON
-		final boolean affichage = true;
+		final boolean affichage = false;
 		// **********************************
 
 		/* daoCiviliteAbregee NON INJECTE. */
@@ -939,6 +919,7 @@ public class DaoCiviliteAbregeeTest {
 	 * 
 	 * @throws AbstractDaoException 
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -946,7 +927,7 @@ public class DaoCiviliteAbregeeTest {
 		
 		// **********************************
 		// AFFICHAGE DANS LE TEST ou NON
-		final boolean affichage = true;
+		final boolean affichage = false;
 		// **********************************
 
 		/* daoCiviliteAbregee NON INJECTE. */
@@ -1043,6 +1024,7 @@ public class DaoCiviliteAbregeeTest {
 	 * 
 	 * @throws AbstractDaoException 
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -1163,6 +1145,7 @@ public class DaoCiviliteAbregeeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -1250,6 +1233,7 @@ public class DaoCiviliteAbregeeTest {
 	 * 
 	 * @throws AbstractDaoException 
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -1257,7 +1241,7 @@ public class DaoCiviliteAbregeeTest {
 		
 		// **********************************
 		// AFFICHAGE DANS LE TEST ou NON
-		final boolean affichage = true;
+		final boolean affichage = false;
 		// **********************************
 		
 		
@@ -1356,6 +1340,7 @@ public class DaoCiviliteAbregeeTest {
 	 * 
 	 * @throws AbstractDaoException 
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -1364,7 +1349,7 @@ public class DaoCiviliteAbregeeTest {
 		
 		// **********************************
 		// AFFICHAGE DANS LE TEST ou NON
-		final boolean affichage = true;
+		final boolean affichage = false;
 		// **********************************
 
 		/* daoCiviliteAbregee NON INJECTE. */
@@ -1483,6 +1468,7 @@ public class DaoCiviliteAbregeeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -1569,6 +1555,7 @@ public class DaoCiviliteAbregeeTest {
 	 * 
 	 * @throws AbstractDaoException 
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -1674,6 +1661,7 @@ public class DaoCiviliteAbregeeTest {
 	 * 
 	 * @throws AbstractDaoException 
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -1801,6 +1789,7 @@ public class DaoCiviliteAbregeeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -1886,6 +1875,7 @@ public class DaoCiviliteAbregeeTest {
 	 * 
 	 * @throws AbstractDaoException 
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -1893,7 +1883,7 @@ public class DaoCiviliteAbregeeTest {
 		
 		// **********************************
 		// AFFICHAGE DANS LE TEST ou NON
-		final boolean affichage = true;
+		final boolean affichage = false;
 		// **********************************
 
 		/* daoCiviliteAbregee NON INJECTE. */
@@ -1991,6 +1981,7 @@ public class DaoCiviliteAbregeeTest {
 	 * 
 	 * @throws AbstractDaoException 
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -2120,6 +2111,7 @@ public class DaoCiviliteAbregeeTest {
 	 * 
 	 * @throws AbstractDaoException 
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -2244,6 +2236,7 @@ public class DaoCiviliteAbregeeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -2397,6 +2390,7 @@ public class DaoCiviliteAbregeeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -2476,6 +2470,7 @@ public class DaoCiviliteAbregeeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -2547,6 +2542,7 @@ public class DaoCiviliteAbregeeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -2622,6 +2618,7 @@ public class DaoCiviliteAbregeeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -2709,6 +2706,7 @@ public class DaoCiviliteAbregeeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -2790,6 +2788,7 @@ public class DaoCiviliteAbregeeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -2885,6 +2884,7 @@ public class DaoCiviliteAbregeeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -2996,6 +2996,7 @@ public class DaoCiviliteAbregeeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -3102,6 +3103,7 @@ public class DaoCiviliteAbregeeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -3205,6 +3207,7 @@ public class DaoCiviliteAbregeeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -3316,6 +3319,7 @@ public class DaoCiviliteAbregeeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -3423,6 +3427,7 @@ public class DaoCiviliteAbregeeTest {
 	 *
 	 * @throws AbstractDaoException
 	 */
+	@SuppressWarnings(UNUSED)
 	@Commit
 	@Transactional
 	@Test
@@ -3561,8 +3566,6 @@ public class DaoCiviliteAbregeeTest {
 
 	
 	/**
-	 * method testRemplirTable(
-	 * ) :<br/>
 	 * <ul>
 	 * <li>.</li>
 	 * <li>.</li>

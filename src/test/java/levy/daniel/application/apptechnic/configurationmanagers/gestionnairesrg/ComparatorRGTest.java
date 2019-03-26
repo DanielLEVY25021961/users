@@ -57,6 +57,11 @@ public class ComparatorRGTest {
 	 * Boolean qui commande l'affichage pour tous les tests.<br/>
 	 */
 	public static final Boolean AFFICHAGE_GENERAL = true;
+	
+	/**
+	 * "unused".<br/>
+	 */
+	public static final String UNUSED = "unused";
 
 
 	/**
@@ -91,6 +96,7 @@ public class ComparatorRGTest {
 	 * <li>test visuel.</li>
 	 * </ul>
 	 */
+	@SuppressWarnings(UNUSED)
 	@Test
 	public void testCompare() {
 		
